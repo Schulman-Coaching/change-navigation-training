@@ -1,0 +1,110 @@
+{
+  "$ref": "#/definitions/workshops",
+  "definitions": {
+    "workshops": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "string"
+        },
+        "excerpt": {
+          "type": "string"
+        },
+        "format": {
+          "type": "string",
+          "enum": [
+            "single",
+            "multi-session",
+            "ongoing"
+          ]
+        },
+        "sessions": {
+          "type": "number"
+        },
+        "duration": {
+          "type": "string"
+        },
+        "level": {
+          "type": "string",
+          "enum": [
+            "beginner",
+            "intermediate",
+            "all-levels"
+          ]
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "ai-literacy",
+            "change-navigation",
+            "practical-tools",
+            "career",
+            "education"
+          ]
+        },
+        "cohort": {
+          "type": "string"
+        },
+        "startDate": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "integer",
+              "format": "unix-time"
+            }
+          ]
+        },
+        "dayOfWeek": {
+          "type": "string"
+        },
+        "time": {
+          "type": "string"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string"
+        },
+        "spots": {
+          "type": "number"
+        },
+        "featured": {
+          "type": "boolean",
+          "default": false
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "slug",
+        "excerpt",
+        "format",
+        "sessions",
+        "duration",
+        "level",
+        "category",
+        "cohort",
+        "startDate",
+        "dayOfWeek",
+        "time",
+        "timezone",
+        "price"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

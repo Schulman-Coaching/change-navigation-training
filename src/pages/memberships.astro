@@ -1,0 +1,198 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Testimonial from '../components/Testimonial.astro';
+---
+
+<BaseLayout
+  title="Membership — Change Navigation Training"
+  description="Flexible membership options for Change Navigation Training. Monthly, 6-month, and annual plans. All workshops, peer circles, and resource library included."
+>
+  <Header />
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Clarity. Confidence. Adaptability.</h1>
+        <p>Change Navigation Training — Membership</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="membership-intro">
+          <h2>Consistent Practice Builds Lasting Skill</h2>
+          <p>Navigating change is not something you learn in a single workshop. It is a capacity you develop over time — through exposure, practice, and reflection. Our memberships are designed to give you ongoing access to workshops, peer circles, and resources so the skills become part of how you think, not something you once learned.</p>
+        </div>
+
+        <div class="founder-quote">
+          <p>"Change does not announce itself. It arrives quietly, in small shifts. The women who navigate it well are not the ones who saw it coming first. They are the ones who built the muscle to respond."</p>
+          <cite>&mdash; Change Navigation Training</cite>
+        </div>
+
+        <h2 class="text-center">Our Pricing</h2>
+        <p class="pricing-subtitle text-center">Flexible options for every journey</p>
+
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>Monthly Explorer</h3>
+            <p class="price">$89<span>/mo</span></p>
+            <ul>
+              <li>All group workshops</li>
+              <li>Peer circle access</li>
+              <li>Resource library</li>
+              <li>Monthly Q&amp;A sessions</li>
+              <li>Workshop recordings</li>
+              <li>Community forum</li>
+              <li>Cancel anytime</li>
+            </ul>
+            <a href="/contact/" class="btn">Get Started</a>
+          </div>
+
+          <div class="pricing-card pricing-card--featured">
+            <span class="badge">Best Value</span>
+            <h3>Annual Navigator</h3>
+            <p class="price">$69<span>/mo</span></p>
+            <ul>
+              <li>All group workshops</li>
+              <li>Peer circle access</li>
+              <li>Resource library</li>
+              <li>Monthly Q&amp;A sessions</li>
+              <li>Priority coaching access</li>
+              <li>2 private sessions included</li>
+              <li>Paid once annually</li>
+            </ul>
+            <a href="/contact/" class="btn">Get Started</a>
+          </div>
+
+          <div class="pricing-card">
+            <h3>6-Month Journey</h3>
+            <p class="price">$79<span>/mo</span></p>
+            <ul>
+              <li>All group workshops</li>
+              <li>Peer circle access</li>
+              <li>Resource library</li>
+              <li>Monthly Q&amp;A sessions</li>
+              <li>Workshop recordings</li>
+              <li>Community forum</li>
+              <li>Paid once per 6 months</li>
+            </ul>
+            <a href="/contact/" class="btn">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="perks section">
+      <div class="container">
+        <h2 class="text-center">Membership Includes</h2>
+        <div class="perks-grid">
+          <div class="perk"><strong>All Workshop Access</strong></div>
+          <div class="perk"><strong>Peer Learning Circles</strong></div>
+          <div class="perk"><strong>Supportive Community</strong></div>
+          <div class="perk"><strong>Resource Library</strong></div>
+          <div class="perk"><strong>Monthly Q&amp;A Sessions</strong></div>
+          <div class="perk"><strong>Workshop Recordings</strong></div>
+          <div class="perk"><strong>Community Forum</strong></div>
+          <div class="perk"><strong>Guest Expert Sessions</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="approach section">
+      <div class="container">
+        <h2>Meeting You Where You Are</h2>
+        <p>Some women arrive comfortable with technology. Others have never opened a ChatGPT window. Both are exactly where they should be. The point is not where you start. It is that you are willing to begin.</p>
+        <p>Our workshops meet you at your current level. Whether you are exploring what AI means for your career, trying to understand what it means for your children's education, or building a business in a changing landscape — the training adapts to your context.</p>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--color-dark);">
+      <div class="container">
+        <h2 class="text-center">What Women Say</h2>
+        <div class="testimonial-grid">
+          <Testimonial
+            quote="The membership gave me something I didn't expect: a group of women who are asking the same questions I am. The learning matters. The community matters more."
+            author="Rivka G."
+          />
+          <Testimonial
+            quote="I joined thinking I would learn about AI. What I actually learned was how to stop avoiding change and start moving through it."
+            author="Shira L."
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="section text-center">
+      <div class="container">
+        <h2>Ready to Build the Skill of Change?</h2>
+        <p style="color: var(--color-gray-light); margin: 1rem 0 1.5rem;">Join a community of women navigating what comes next with confidence.</p>
+        <a href="/contact/" class="btn">Join Now</a>
+      </div>
+    </section>
+  </main>
+
+  <CTABanner />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--color-black), #1a1410);
+    padding: 5rem 1.5rem 3rem;
+    text-align: center;
+    border-bottom: 3px solid var(--color-gold);
+  }
+  .page-hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 0.5rem; }
+  .page-hero p { color: var(--color-gray-light); font-size: 1.1rem; }
+
+  .membership-intro { max-width: 700px; margin: 0 auto 3rem; text-align: center; }
+  .membership-intro h2 { font-size: 1.8rem; margin-bottom: 1rem; }
+  .membership-intro p { color: var(--color-gray-light); font-size: 1rem; }
+
+  .founder-quote {
+    max-width: 600px; margin: 0 auto 3rem; padding: 1.5rem 2rem;
+    border-left: 3px solid var(--color-gold); background: var(--color-dark);
+    text-align: center;
+  }
+  .founder-quote p { font-size: 1.1rem; font-style: italic; margin-bottom: 0.5rem; }
+  .founder-quote cite { font-size: 0.85rem; color: var(--color-gray-light); }
+
+  .pricing-subtitle { color: var(--color-gray-light); margin-bottom: 2.5rem; }
+
+  .pricing-grid { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem; }
+  .pricing-card {
+    background: var(--color-dark); border: 1px solid var(--color-gray);
+    padding: 2rem; text-align: center; min-width: 260px; max-width: 320px; flex: 1; position: relative;
+  }
+  .pricing-card--featured { border-color: var(--color-gold); }
+  .badge {
+    position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%);
+    background: var(--color-gold); color: var(--color-black); padding: 0.3rem 1rem;
+    font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
+  }
+  .pricing-card h3 { font-size: 1.2rem; margin-bottom: 0.75rem; }
+  .price { font-family: var(--font-display); font-size: 2.5rem; margin-bottom: 1rem; color: var(--color-gold); }
+  .price span { font-size: 0.9rem; color: var(--color-gray-light); font-family: var(--font-body); }
+  .pricing-card ul { list-style: none; text-align: left; margin-bottom: 1.5rem; }
+  .pricing-card ul li {
+    font-size: 0.85rem; padding: 0.4rem 0; border-bottom: 1px solid var(--color-gray-dark);
+    color: var(--color-gray-light);
+  }
+  .pricing-card ul li::before { content: '\2713  '; color: var(--color-gold); font-weight: 700; }
+
+  .perks { background: var(--color-dark); }
+  .perks-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
+  .perk {
+    background: var(--color-black); border: 1px solid var(--color-gray);
+    padding: 1.5rem; text-align: center; font-size: 0.9rem; color: var(--color-gray-light);
+  }
+  .perk strong { display: block; color: var(--color-white); margin-bottom: 0.25rem; }
+
+  .approach { text-align: center; }
+  .approach p { max-width: 700px; margin: 1rem auto; color: var(--color-gray-light); font-size: 1.05rem; }
+
+  .testimonial-grid { max-width: 700px; margin: 0 auto; }
+</style>

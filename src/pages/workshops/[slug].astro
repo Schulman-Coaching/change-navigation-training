@@ -1,0 +1,241 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+export async function getStaticPaths() {
+  const workshops = await getCollection('workshops');
+  return workshops.map((w) => ({ params: { slug: w.data.slug } }));
+}
+
+const { slug } = Astro.params;
+const workshops = await getCollection('workshops');
+const workshop = workshops.find((w) => w.data.slug === slug);
+
+if (!workshop) {
+  return Astro.redirect('/schedule/');
+}
+
+const { data, body } = workshop;
+const { title, excerpt, sessions, duration, level, category, cohort, startDate, dayOfWeek, time, timezone, price, spots } = data;
+
+const categoryLabels: Record<string, string> = {
+  'ai-literacy': 'AI Literacy',
+  'change-navigation': 'Change Navigation',
+  'practical-tools': 'Practical Tools',
+  'career': 'Career',
+  'education': 'Education',
+};
+
+const levelLabels: Record<string, string> = {
+  'beginner': 'Beginner',
+  'intermediate': 'Intermediate',
+  'all-levels': 'All Levels',
+};
+
+const startDateFormatted = new Date(startDate).toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
+---
+
+<BaseLayout
+  title={`${title} — Change Navigation Training`}
+  description={excerpt}
+>
+  <Header />
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="category-badge">{categoryLabels[category]}</div>
+        <h1>{title}</h1>
+        <p class="hero-excerpt">{excerpt}</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="layout">
+          <div class="meta-sidebar">
+            <div class="meta-card">
+              <h3>Cohort</h3>
+              <p>{cohort}</p>
+            </div>
+            <div class="meta-card">
+              <h3>Starts</h3>
+              <p>{startDateFormatted}</p>
+            </div>
+            <div class="meta-card">
+              <h3>Schedule</h3>
+              <p>{dayOfWeek}, {time} {timezone}</p>
+            </div>
+            <div class="meta-card">
+              <h3>Format</h3>
+              <p>{sessions} sessions &middot; {duration}</p>
+            </div>
+            <div class="meta-card">
+              <h3>Level</h3>
+              <p>{levelLabels[level]}</p>
+            </div>
+            <div class="meta-card">
+              <h3>Price</h3>
+              <p class="price">{price}</p>
+            </div>
+            {spots && (
+              <div class="meta-card">
+                <h3>Spots</h3>
+                <p>{spots} available</p>
+              </div>
+            )}
+            <a href="/contact/" class="btn btn-full">Register Now</a>
+            <a href="/memberships/" class="btn btn-outline btn-full" style="margin-top: 0.5rem;">Join as Member</a>
+          </div>
+
+          <div class="content">
+            <article>
+              {body}
+            </article>
+
+            <div class="related-note">
+              <p>All workshops are designed for Orthodox Jewish women. Scheduling respects Shabbat and Yom Tov.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--color-dark);">
+      <div class="container text-center">
+        <h2>Not Sure Where to Start?</h2>
+        <p style="color: var(--color-gray-light); margin: 1rem 0 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+          Every woman's starting point is different. Tell us what you are navigating, and we will help you find the right fit.
+        </p>
+        <a href="/contact/" class="btn">Talk to Us</a>
+      </div>
+    </section>
+  </main>
+
+  <CTABanner />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--color-black), #1a1410);
+    padding: 5rem 1.5rem 3rem;
+    text-align: center;
+    border-bottom: 3px solid var(--color-gold);
+  }
+  .page-hero h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin: 0.75rem 0;
+  }
+
+  .category-badge {
+    display: inline-block;
+    background: var(--color-gold);
+    color: var(--color-black);
+    padding: 0.3rem 1rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-excerpt {
+    color: var(--color-gray-light);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .meta-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    position: sticky;
+    top: calc(var(--nav-height) + 2rem);
+  }
+
+  .meta-card {
+    background: var(--color-dark);
+    border: 1px solid var(--color-gray);
+    padding: 1rem 1.25rem;
+  }
+  .meta-card h3 {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-gold);
+    margin-bottom: 0.25rem;
+  }
+  .meta-card p {
+    font-size: 0.85rem;
+    color: var(--color-gray-light);
+  }
+  .price { color: var(--color-gold); font-family: var(--font-display); font-size: 1.1rem; }
+
+  .btn-full { width: 100%; display: block; }
+
+  .content article {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  .content article :global(h2) {
+    font-size: 1.4rem;
+    margin: 2rem 0 0.75rem;
+    color: var(--color-gold);
+    letter-spacing: 0.03em;
+  }
+  .content article :global(h3) {
+    font-size: 1.1rem;
+    margin: 1.5rem 0 0.5rem;
+  }
+  .content article :global(p) {
+    margin-bottom: 1rem;
+    color: var(--color-gray-light);
+  }
+  .content article :global(strong) {
+    color: var(--color-white);
+    font-weight: 600;
+  }
+  .content article :global(em) {
+    color: var(--color-off-white);
+  }
+
+  .related-note {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: var(--color-dark);
+    border-left: 3px solid var(--color-gold);
+  }
+  .related-note p {
+    font-size: 0.85rem;
+    color: var(--color-gray-light);
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    .layout {
+      grid-template-columns: 1fr;
+    }
+    .meta-sidebar {
+      position: static;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .meta-card {
+      flex: 1;
+      min-width: 120px;
+      text-align: center;
+    }
+  }
+</style>

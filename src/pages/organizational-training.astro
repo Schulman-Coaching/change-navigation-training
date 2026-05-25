@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+---
+
+<BaseLayout
+  title="Organizational Training — Change Navigation Training"
+  description="AI and change-navigation training for schools, nonprofits, and businesses serving the Orthodox Jewish community. Help your team or community navigate change together."
+>
+  <Header />
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Organizational Training</h1>
+        <p>Help your team, school, or community navigate change together</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="intro">
+          <h2>Change Affects Organizations Differently</h2>
+          <p>When a school faces AI in the classroom, when a nonprofit sees its donor communications shifting, when a business watches its industry transform — the questions are not just personal. They are organizational. Our training programs help teams build shared understanding, align on responses, and develop collective change-navigation skills.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="offerings section">
+      <div class="container">
+        <h2 class="text-center">What We Offer</h2>
+        <div class="offerings-grid">
+          <div class="offering">
+            <h3>Staff Workshops</h3>
+            <p>Half-day or full-day sessions on AI literacy and change readiness. Practical, hands-on, built for your team's specific context.</p>
+          </div>
+          <div class="offering">
+            <h3>Leadership Training</h3>
+            <p>For principals, directors, and managers. How to lead through technological change, communicate about AI, and build team confidence.</p>
+          </div>
+          <div class="offering">
+            <h3>Strategic Planning</h3>
+            <p>Facilitated sessions to map how AI and broader change will affect your organization — and what to do about it.</p>
+          </div>
+          <div class="offering">
+            <h3>Ongoing Support</h3>
+            <p>Monthly check-ins, resource updates, and access to our community of organizational leaders navigating similar challenges.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="who section">
+      <div class="container">
+        <h2 class="text-center">Who We Work With</h2>
+        <div class="who-grid">
+          <div class="who-card">
+            <h3>Schools</h3>
+            <p>Help teachers and administrators understand AI's impact on education and develop thoughtful policies and practices.</p>
+          </div>
+          <div class="who-card">
+            <h3>Nonprofits</h3>
+            <p>Build capacity for AI-assisted operations, fundraising, and program delivery without losing the human touch.</p>
+          </div>
+          <div class="who-card">
+            <h3>Businesses</h3>
+            <p>Prepare teams for AI-driven change in their industry. Build a culture of adaptability and continuous learning.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section text-center">
+      <div class="container">
+        <h2>Start the Conversation</h2>
+        <p style="color: var(--color-gray-light); margin: 1rem 0 1.5rem;">Every organization's needs are different. Let's talk about what change means for yours.</p>
+        <a href="/contact/" class="btn">Inquire for Your Organization</a>
+      </div>
+    </section>
+  </main>
+
+  <CTABanner />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--color-black), #1a1410);
+    padding: 5rem 1.5rem 3rem;
+    text-align: center;
+    border-bottom: 3px solid var(--color-gold);
+  }
+  .page-hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 0.5rem; }
+  .page-hero p { color: var(--color-gray-light); font-size: 1.1rem; }
+
+  .intro { max-width: 700px; margin: 0 auto; text-align: center; }
+  .intro h2 { margin-bottom: 1rem; }
+  .intro p { color: var(--color-gray-light); font-size: 1.05rem; }
+
+  .offerings { background: var(--color-dark); }
+  .offerings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .offering {
+    background: var(--color-black);
+    border: 1px solid var(--color-gray);
+    padding: 2rem;
+  }
+  .offering h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--color-gold); }
+  .offering p { font-size: 0.85rem; color: var(--color-gray-light); }
+
+  .who { text-align: center; }
+  .who-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .who-card {
+    background: var(--color-dark);
+    border: 1px solid var(--color-gray);
+    padding: 2rem;
+  }
+  .who-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+  .who-card p { font-size: 0.85rem; color: var(--color-gray-light); }
+</style>
