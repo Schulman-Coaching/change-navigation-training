@@ -23,10 +23,10 @@ export const STRIPE_LINKS = {
 // Sign up at calendly.com, create event types, copy links
 
 export const CALENDLY_LINKS = {
-  consultation: 'https://calendly.com/CNT_USERNAME/free-consultation',
-  workshopBooking: 'https://calendly.com/CNT_USERNAME/workshop-signup',
-  coachingSession: 'https://calendly.com/CNT_USERNAME/coaching-session',
+  consultation: 'https://calendly.com/elie-schulman/new-meeting-1',
+  workshopBooking: 'https://calendly.com/elie-schulman/new-meeting-1',
+  coachingSession: 'https://calendly.com/elie-schulman/new-meeting-1',
 };
 
 // Calendly username — used for popup widgets
-export const CALENDLY_USERNAME = 'CNT_USERNAME';
+export const CALENDLY_USERNAME = 'elie-schulman';
