@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
@@ -7,18 +7,22 @@ import CTABanner from '../../components/CTABanner.astro';
 
 export async function getStaticPaths() {
   const workshops = await getCollection('workshops');
-  return workshops.map((w) => ({ params: { slug: w.data.slug } }));
+  return Promise.all(workshops.map(async (w) => {
+    const { Content } = await render(w);
+    return {
+      params: { slug: w.data.slug },
+      props: { workshop: w, Content },
+    };
+  }));
 }
 
-const { slug } = Astro.params;
-const workshops = await getCollection('workshops');
-const workshop = workshops.find((w) => w.data.slug === slug);
+const { workshop, Content } = Astro.props;
 
 if (!workshop) {
   return Astro.redirect('/schedule/');
 }
 
-const { data, body } = workshop;
+const { data } = workshop;
 const { title, excerpt, sessions, duration, level, category, cohort, startDate, dayOfWeek, time, timezone, price, spots } = data;
 
 const categoryLabels: Record<string, string> = {
@@ -93,7 +97,7 @@ const startDateFormatted = new Date(startDate).toLocaleDateString('en-US', { wee
 
           <div class="content">
             <article>
-              {body}
+              <Content />
             </article>
 
             <div class="related-note">

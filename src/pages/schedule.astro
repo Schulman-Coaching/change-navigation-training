@@ -62,7 +62,7 @@ const categoryLabels: Record<string, string> = {
             return (
               <div class="workshop-card">
                 <div class="card-header">
-                  <span class="level-badge level--{data.level}">{levelLabels[data.level]}</span>
+                  <span class={`level-badge level--${data.level}`}>{levelLabels[data.level]}</span>
                   <span class="category-badge">{categoryLabels[data.category]}</span>
                 </div>
                 <h3><a href={`/workshops/${data.slug}/`}>{data.title}</a></h3>
@@ -104,7 +104,7 @@ const categoryLabels: Record<string, string> = {
             return (
               <div class="workshop-card">
                 <div class="card-header">
-                  <span class="level-badge level--{data.level}">{levelLabels[data.level]}</span>
+                  <span class={`level-badge level--${data.level}`}>{levelLabels[data.level]}</span>
                   <span class="category-badge">{categoryLabels[data.category]}</span>
                 </div>
                 <h3><a href={`/workshops/${data.slug}/`}>{data.title}</a></h3>
