@@ -1,0 +1,118 @@
+---
+export interface Props {
+  name: string;
+  price: string;
+  period: string;
+  features: string[];
+  ctaText?: string;
+  ctaHref?: string;
+  featured?: boolean;
+  badge?: string;
+}
+
+const {
+  name,
+  price,
+  period,
+  features,
+  ctaText = 'Get Started',
+  ctaHref = '/contact/',
+  featured = false,
+  badge,
+} = Astro.props;
+---
+
+<div class={`pricing-card ${featured ? 'pricing-card--featured' : ''}`}>
+  {badge && <span class="pricing-badge">{badge}</span>}
+  <h3 class="pricing-name">{name}</h3>
+  <div class="pricing-amount">
+    <span class="pricing-currency">$</span>
+    <span class="pricing-price">{price}</span>
+    <span class="pricing-period">/{period}</span>
+  </div>
+  <ul class="pricing-features">
+    {features.map(f => <li>{f}</li>)}
+  </ul>
+  <a href={ctaHref} class="btn">{ctaText}</a>
+</div>
+
+<style>
+  .pricing-card {
+    background: var(--color-black);
+    border: 1px solid var(--color-gray);
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    flex: 1;
+    min-width: 260px;
+    max-width: 320px;
+  }
+
+  .pricing-card--featured {
+    border-color: var(--color-gold);
+    transform: scale(1.03);
+  }
+
+  .pricing-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--color-gold);
+    color: var(--color-black);
+    padding: 0.3rem 1rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+
+  .pricing-name {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .pricing-amount {
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-currency {
+    font-size: 1.2rem;
+    font-family: var(--font-body);
+    vertical-align: super;
+  }
+
+  .pricing-price {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--color-white);
+  }
+
+  .pricing-period {
+    font-size: 0.85rem;
+    color: var(--color-gray-light);
+    font-family: var(--font-body);
+  }
+
+  .pricing-features {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-features li {
+    font-size: 0.85rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--color-gray-dark);
+    color: var(--color-gray-light);
+  }
+
+  .pricing-features li::before {
+    content: '\2713 ';
+    color: var(--color-gold);
+    font-weight: 700;
+    margin-right: 0.5rem;
+  }
+</style>

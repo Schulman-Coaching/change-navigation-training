@@ -1,0 +1,167 @@
+---
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  ctaText?: string;
+  ctaHref?: string;
+}
+
+const {
+  title = 'Navigate What Comes Next',
+  subtitle = 'Practical skills for change. Built for women who want to move forward with clarity.',
+  ctaText = 'Get Started',
+  ctaHref = '/#cta',
+} = Astro.props;
+---
+
+<section class="cta-banner">
+  <div class="cta-inner">
+    <div class="cta-content">
+      <h2 class="cta-title">{title}</h2>
+      <p class="cta-subtitle">{subtitle}</p>
+      <div class="cta-testimonial">
+        <p>"I stopped feeling like AI was something happening to me. Now I feel like I have a say in where I'm going."</p>
+        <cite>&mdash; Chana R., Workshop Graduate</cite>
+      </div>
+    </div>
+    <div class="cta-actions">
+      <div class="cta-option">
+        <h4>First Workshop</h4>
+        <p>Try a session. See how it feels to learn alongside women who get it.</p>
+        <p class="cta-price"><span class="strike">$75</span> $35</p>
+        <a href="/group-workshops/" class="btn">Book a Session</a>
+      </div>
+      <div class="cta-option cta-option--featured">
+        <span class="cta-badge">Most Popular</span>
+        <h4>Join the Community</h4>
+        <p>Ongoing workshops, peer learning circles, and AI skill-building every month.</p>
+        <p class="cta-price">$89<span>/mo</span></p>
+        <a href="/memberships/" class="btn">Join Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-banner {
+    background: var(--color-dark);
+    padding: 5rem 1.5rem;
+    border-top: 3px solid var(--color-gold);
+  }
+
+  .cta-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cta-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-gray-light);
+    max-width: 500px;
+    margin: 0 auto 2rem;
+  }
+
+  .cta-testimonial {
+    margin-bottom: 3rem;
+    padding: 1.5rem 2rem;
+    border-left: 3px solid var(--color-gold);
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background: var(--color-black);
+  }
+
+  .cta-testimonial p {
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+
+  .cta-testimonial cite {
+    font-size: 0.8rem;
+    color: var(--color-gray-light);
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .cta-option {
+    background: var(--color-black);
+    border: 1px solid var(--color-gray);
+    padding: 2rem;
+    text-align: center;
+    max-width: 280px;
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+  }
+
+  .cta-option--featured {
+    border-color: var(--color-gold);
+  }
+
+  .cta-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--color-gold);
+    color: var(--color-black);
+    padding: 0.3rem 1rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+
+  .cta-option h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-option p {
+    font-size: 0.85rem;
+    color: var(--color-gray-light);
+    margin-bottom: 1rem;
+  }
+
+  .cta-price {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: var(--color-white);
+  }
+
+  .cta-price span {
+    font-size: 1rem;
+    color: var(--color-gray-light);
+    font-family: var(--font-body);
+  }
+
+  .strike {
+    text-decoration: line-through;
+    color: var(--color-gray-light);
+    font-size: 1.2rem;
+    font-family: var(--font-body);
+    margin-right: 0.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .cta-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>

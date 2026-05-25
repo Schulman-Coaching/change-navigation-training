@@ -1,0 +1,33 @@
+---
+// Stripe Payment Link Button
+// Uses Stripe Payment Links — no monthly SaaS cost, just transaction fees.
+//
+// Setup:
+// 1. Create a Stripe account at dashboard.stripe.com
+// 2. Go to Payments → Payment Links → Create payment link
+// 3. Set the price, description, and optionally recurring billing
+// 4. Copy the generated link (looks like https://buy.stripe.com/...)
+// 5. Pass it as the `href` prop
+//
+// Usage:
+//   <StripeButton href="https://buy.stripe.com/abc123" text="Join Now — $89/mo" />
+//   <StripeButton href="https://buy.stripe.com/abc123" text="Enroll — $349" variant="outline" />
+
+export interface Props {
+  href: string;
+  text?: string;
+  variant?: 'primary' | 'outline';
+}
+
+const {
+  href,
+  text = 'Pay Now',
+  variant = 'primary',
+} = Astro.props;
+
+const classNames = variant === 'outline' ? 'btn btn-outline' : 'btn';
+---
+
+<a href={href} class={classNames} target="_blank" rel="noopener">
+  {text}
+</a>

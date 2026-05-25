@@ -1,0 +1,134 @@
+---
+// Momence Embed Widget Component
+// Momence is the booking/scheduling platform used for workshop registration,
+// membership sign-ups, and class bookings.
+//
+// Usage: <MomenceWidget hostId="YOUR_HOST_ID" scheduleId="YOUR_SCHEDULE_ID" />
+//        <MomenceWidget type="pricing" hostId="YOUR_HOST_ID" />
+//
+// Replace placeholder IDs with real Momence account credentials when available.
+
+export interface Props {
+  hostId?: string;
+  scheduleId?: string;
+  type?: 'schedule' | 'pricing' | 'membership';
+  height?: string;
+}
+
+const {
+  hostId = 'CHANGE_NAVIGATION_HOST_ID',
+  scheduleId = '',
+  type = 'schedule',
+  height = '600px',
+} = Astro.props;
+---
+
+<div class="momence-widget-container">
+  {type === 'schedule' && (
+    <div
+      class="momence-schedule"
+      style="min-height: {height};"
+    >
+      <div class="momence-placeholder">
+        <p class="momence-placeholder-title">Workshop Schedule</p>
+        <p class="momence-placeholder-text">
+          Loading schedule via Momence&hellip;
+        </p>
+        <p class="momence-placeholder-note">
+          Connect your Momence account to display live workshop availability and booking.
+        </p>
+      </div>
+    </div>
+  )}
+
+  {type === 'pricing' && (
+    <div
+      class="momence-pricing"
+      style="min-height: {height};"
+    >
+      <div class="momence-placeholder">
+        <p class="momence-placeholder-title">Membership &amp; Pricing</p>
+        <p class="momence-placeholder-text">
+          Loading pricing via Momence&hellip;
+        </p>
+        <p class="momence-placeholder-note">
+          Connect your Momence account to display live pricing and enable direct purchases.
+        </p>
+      </div>
+    </div>
+  )}
+
+  {type === 'membership' && (
+    <div
+      class="momence-membership"
+      style="min-height: {height};"
+    >
+      <div class="momence-placeholder">
+        <p class="momence-placeholder-title">Membership Sign-Up</p>
+        <p class="momence-placeholder-text">
+          Loading memberships via Momence&hellip;
+        </p>
+        <p class="momence-placeholder-note">
+          Connect your Momence account to enable membership purchases and management.
+        </p>
+      </div>
+    </div>
+  )}
+</div>
+
+<!--
+  Momence Integration Notes:
+  ---------------------------
+  1. Create a Momence account at momence.com
+  2. Get your Host ID from Settings > Integrations > Website Embed
+  3. Replace "CHANGE_NAVIGATION_HOST_ID" above with your actual Host ID
+  4. Uncomment the script tag below and add it to BaseLayout.astro
+  5. For schedule embeds, use the specific schedule/experience ID
+  6. Momence provides:
+     - Class/workshop schedule display
+     - Online booking with payment processing
+     - Membership sign-up and management
+     - Automated email confirmations and reminders
+     - Waitlist management
+     - Attendance tracking
+
+  Example live integration script:
+  <script src="https://momence.com/platform/embed/plugin/HOST_ID.js" async></script>
+-->
+
+<style>
+  .momence-widget-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .momence-placeholder {
+    background: var(--color-dark);
+    border: 1px dashed var(--color-gray);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 4px;
+  }
+
+  .momence-placeholder-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+    color: var(--color-gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .momence-placeholder-text {
+    font-size: 1rem;
+    color: var(--color-gray-light);
+    margin-bottom: 0.75rem;
+  }
+
+  .momence-placeholder-note {
+    font-size: 0.8rem;
+    color: var(--color-gray);
+    max-width: 400px;
+    margin: 0 auto;
+  }
+</style>

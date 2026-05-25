@@ -1,0 +1,135 @@
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <span class="logo-text">CHANGE NAVIGATION <span class="text-gold">TRAINING</span></span>
+        <p class="footer-tagline">Navigate Change With Confidence</p>
+      </div>
+      <p class="footer-desc">
+        Helping Orthodox Jewish women build the skills, confidence, and clarity to navigate change — personal, professional, and technological. Workshops, coaching, and community for thriving in the AI era.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Programs</h4>
+      <ul>
+        <li><a href="/group-workshops/">Group Workshops</a></li>
+        <li><a href="/womens-ai-confidence/">Women's AI Confidence</a></li>
+        <li><a href="/community/">Community Groups</a></li>
+        <li><a href="/private-coaching/">Private Coaching</a></li>
+        <li><a href="/organizational-training/">Organizations</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/memberships/">Membership</a></li>
+        <li><a href="/schedule/">Workshop Schedule</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; {new Date().getFullYear()} Change Navigation Training. All rights reserved.</p>
+    <p>
+      <a href="/privacy-policy/">Privacy Policy</a>
+      <span class="sep">|</span>
+      <a href="/terms-and-conditions/">Terms and Conditions</a>
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-dark);
+    border-top: 1px solid var(--color-gray);
+    padding: 4rem 1.5rem 2rem;
+  }
+
+  .footer-grid {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-logo .logo-text {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-tagline {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--color-gray-light);
+    margin-top: 4px;
+  }
+
+  .footer-desc {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--color-gray-light);
+    max-width: 320px;
+  }
+
+  .footer-col h4 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+    color: var(--color-gold);
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col ul li { margin-bottom: 0.5rem; }
+
+  .footer-col ul li a {
+    font-size: 0.8rem;
+    color: var(--color-gray-light);
+    transition: color 0.2s;
+  }
+
+  .footer-col ul li a:hover { color: var(--color-white); }
+
+  .footer-bottom {
+    max-width: var(--max-width);
+    margin: 3rem auto 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-gray);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--color-gray-light);
+  }
+
+  .footer-bottom a { color: var(--color-gray-light); }
+
+  .sep { margin: 0 0.5rem; color: var(--color-gray); }
+
+  @media (max-width: 1024px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-brand { grid-column: 1 / -1; }
+  }
+
+  @media (max-width: 640px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .footer-bottom { flex-direction: column; }
+  }
+</style>

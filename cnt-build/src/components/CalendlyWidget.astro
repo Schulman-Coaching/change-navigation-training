@@ -1,0 +1,97 @@
+---
+// Calendly Inline Embed Widget
+// Free tier: 1 event type. Embed on any page.
+//
+// Setup:
+// 1. Create a free Calendly account at calendly.com
+// 2. Create your event types (e.g., "Free 20-min Consultation")
+// 3. Get your scheduling link: https://calendly.com/YOUR_USERNAME/EVENT_SLUG
+// 4. Pass the link as the `url` prop
+//
+// Usage:
+//   <CalendlyWidget url="https://calendly.com/cnt/free-consultation" />
+//   <CalendlyWidget url="https://calendly.com/cnt/free-consultation" mode="popup" text="Book a Call" />
+
+export interface Props {
+  url: string;
+  mode?: 'inline' | 'popup';
+  text?: string;
+  height?: string;
+}
+
+const {
+  url,
+  mode = 'inline',
+  text = 'Schedule a Session',
+  height = '650px',
+} = Astro.props;
+---
+
+{mode === 'inline' && (
+  <div
+    class="calendly-inline-widget"
+    data-url={url}
+    style={`min-width:320px;height:${height};`}
+  >
+    <div class="calendly-placeholder">
+      <p class="calendly-placeholder-title">Schedule a Session</p>
+      <p class="calendly-placeholder-text">Loading scheduling calendar&hellip;</p>
+      <p class="calendly-placeholder-note">
+        If the calendar does not load, <a href={url} target="_blank" rel="noopener">open scheduling page</a>.
+      </p>
+    </div>
+  </div>
+)}
+
+{mode === 'popup' && (
+  <a href={url} class="btn calendly-popup-link" target="_blank" rel="noopener">
+    {text}
+  </a>
+)}
+
+<style>
+  .calendly-inline-widget {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--color-dark);
+    border: 1px solid var(--color-gray);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .calendly-placeholder {
+    padding: 3rem 2rem;
+    text-align: center;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .calendly-placeholder-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+    color: var(--color-gold);
+    margin-bottom: 0.5rem;
+  }
+
+  .calendly-placeholder-text {
+    font-size: 1rem;
+    color: var(--color-gray-light);
+    margin-bottom: 0.75rem;
+  }
+
+  .calendly-placeholder-note {
+    font-size: 0.8rem;
+    color: var(--color-gray);
+    max-width: 400px;
+  }
+
+  .calendly-placeholder-note a {
+    color: var(--color-gold);
+    text-decoration: underline;
+  }
+</style>
