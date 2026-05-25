@@ -4,7 +4,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
-import MomenceWidget from '../components/MomenceWidget.astro';
+import CalendlyWidget from '../components/CalendlyWidget.astro';
+import { CALENDLY_LINKS } from '../config';
 
 const workshops = await getCollection('workshops');
 const sorted = workshops.sort((a, b) => {
@@ -100,9 +101,9 @@ const levelLabels: Record<string, string> = {
 
     <section class="section" style="background: var(--color-dark);">
       <div class="container">
-        <h2 class="text-center">Live Workshop Schedule</h2>
-        <p class="text-center" style="color: var(--color-gray-light); margin-bottom: 2rem;">Upcoming sessions. New workshops added monthly.</p>
-        <MomenceWidget type="schedule" height="400px" />
+        <h2 class="text-center">Book a Workshop</h2>
+        <p class="text-center" style="color: var(--color-gray-light); margin-bottom: 2rem;">Schedule a free 20-minute call to find the right workshop for you.</p>
+        <CalendlyWidget url={CALENDLY_LINKS.consultation} height="600px" />
       </div>
     </section>
   </main>

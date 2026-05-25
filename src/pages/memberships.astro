@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
 import Testimonial from '../components/Testimonial.astro';
+import StripeButton from '../components/StripeButton.astro';
+import { STRIPE_LINKS } from '../config';
 ---
 
 <BaseLayout
@@ -48,7 +50,7 @@ import Testimonial from '../components/Testimonial.astro';
               <li>Community forum</li>
               <li>Cancel anytime</li>
             </ul>
-            <a href="/contact/" class="btn">Get Started</a>
+            <StripeButton href={STRIPE_LINKS.membershipMonthly} text="Join — $89/mo" />
           </div>
 
           <div class="pricing-card pricing-card--featured">
@@ -64,7 +66,7 @@ import Testimonial from '../components/Testimonial.astro';
               <li>2 private sessions included</li>
               <li>Paid once annually</li>
             </ul>
-            <a href="/contact/" class="btn">Get Started</a>
+            <StripeButton href={STRIPE_LINKS.membershipAnnual} text="Join — $69/mo" />
           </div>
 
           <div class="pricing-card">
@@ -79,7 +81,7 @@ import Testimonial from '../components/Testimonial.astro';
               <li>Community forum</li>
               <li>Paid once per 6 months</li>
             </ul>
-            <a href="/contact/" class="btn">Get Started</a>
+            <StripeButton href={STRIPE_LINKS.membershipSixMonth} text="Join — $79/mo" />
           </div>
         </div>
       </div>
@@ -129,7 +131,7 @@ import Testimonial from '../components/Testimonial.astro';
       <div class="container">
         <h2>Ready to Build the Skill of Change?</h2>
         <p style="color: var(--color-gray-light); margin: 1rem 0 1.5rem;">Join a community of women navigating what comes next with confidence.</p>
-        <a href="/contact/" class="btn">Join Now</a>
+        <StripeButton href={STRIPE_LINKS.membershipMonthly} text="Choose Your Plan" />
       </div>
     </section>
   </main>

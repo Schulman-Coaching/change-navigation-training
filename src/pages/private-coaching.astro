@@ -3,6 +3,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
+import StripeButton from '../components/StripeButton.astro';
+import CalendlyWidget from '../components/CalendlyWidget.astro';
+import { STRIPE_LINKS, CALENDLY_LINKS } from '../config';
 ---
 
 <BaseLayout
@@ -62,7 +65,17 @@ import CTABanner from '../components/CTABanner.astro';
       <div class="container">
         <h2>Ready to Begin?</h2>
         <p style="color: var(--color-gray-light); margin: 1rem 0 1.5rem;">Schedule a free 20-minute call to discuss what you need and how coaching can help.</p>
-        <a href="/contact/" class="btn">Book a Consultation</a>
+                <CalendlyWidget url={CALENDLY_LINKS.coachingSession} text="Book a Consultation" mode="popup" />
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--color-dark);">
+      <div class="container text-center">
+        <h2>Book a Free Consultation</h2>
+        <p style="color: var(--color-gray-light); margin: 1rem 0 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+          Not sure which coaching option fits? Schedule a free 20-minute call to discuss your goals.
+        </p>
+        <CalendlyWidget url={CALENDLY_LINKS.consultation} height="600px" />
       </div>
     </section>
   </main>

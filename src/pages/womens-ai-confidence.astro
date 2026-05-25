@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
 import Testimonial from '../components/Testimonial.astro';
+import StripeButton from '../components/StripeButton.astro';
+import { STRIPE_LINKS } from '../config';
 ---
 
 <BaseLayout
@@ -26,7 +28,7 @@ import Testimonial from '../components/Testimonial.astro';
           <h2>Find Your Footing Here</h2>
           <p>AI is changing how we work, learn, parent, and connect. For many Orthodox Jewish women, the conversation about AI has felt distant — technical, masculine, or simply irrelevant to daily life. It is none of those things. AI is a tool. And like any tool, it belongs to whoever learns to use it.</p>
           <p>Our flagship 8-week program is built for women who want to understand AI on their own terms. Not to become engineers. To become confident navigators of a changing world.</p>
-          <a href="/contact/" class="btn">Join the Program</a>
+                    <StripeButton href={STRIPE_LINKS.womensAIProgram} text="Join the Program" />
         </div>
 
         <div class="testimonial-box">
@@ -66,7 +68,7 @@ import Testimonial from '../components/Testimonial.astro';
               <li>Session recordings</li>
               <li>Certificate of completion</li>
             </ul>
-            <a href="/contact/" class="btn">Enroll Now</a>
+                        <StripeButton href={STRIPE_LINKS.womensAIProgram} text="Enroll — $349" />
           </div>
           <div class="pricing-card pricing-card--featured">
             <span class="badge">Recommended</span>
