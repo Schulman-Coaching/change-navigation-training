@@ -3,20 +3,20 @@
 
 export const STRIPE_LINKS = {
   // Memberships
-  membershipMonthly: 'https://buy.stripe.com/PLACEHOLDER_MONTHLY',
-  membershipAnnual: 'https://buy.stripe.com/PLACEHOLDER_ANNUAL',
-  membershipSixMonth: 'https://buy.stripe.com/PLACEHOLDER_6MONTH',
+  membershipMonthly: 'https://buy.stripe.com/9B63cv4MN4dgaYu4xh4ow05',
+  membershipAnnual: 'https://buy.stripe.com/9B66oH6UV6lo4A6d3N4ow06',
+  membershipSixMonth: 'https://buy.stripe.com/3cIcN54MN8twaYu8Nx4ow07',
 
   // Women's AI Confidence
-  womensAIProgram: 'https://buy.stripe.com/PLACEHOLDER_WOMENS_AI',
+  womensAIProgram: 'https://buy.stripe.com/5kQ5kDbbbdNQc2y1l54ow08',
 
   // Private Coaching
-  coachingSingle: 'https://buy.stripe.com/PLACEHOLDER_COACHING_SINGLE',
-  coachingIntensive: 'https://buy.stripe.com/PLACEHOLDER_COACHING_INTENSIVE',
-  coachingAIOnboarding: 'https://buy.stripe.com/PLACEHOLDER_AI_ONBOARDING',
+  coachingSingle: 'https://buy.stripe.com/00wbJ11ABeRUc2y7Jt4ow09',
+  coachingIntensive: 'https://buy.stripe.com/5kQcN57YZeRUfeK1l54ow0a',
+  coachingAIOnboarding: 'https://buy.stripe.com/6oU14ndjjfVYgiO4xh4ow0b',
 
   // First workshop session
-  firstWorkshop: 'https://buy.stripe.com/PLACEHOLDER_FIRST_WORKSHOP',
+  firstWorkshop: 'https://buy.stripe.com/7sY7sLbbb6lo7Mi4xh4ow0c',
 };
 
 // Calendly Links — replace with your real Calendly scheduling links
