@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../config';
+---
+
+<BaseLayout
+  title={`Change Readiness Self-Assessment — ${SITE.name}`}
+  description="Where are you in your change journey? Take our free 3-minute self-assessment and discover your Change Readiness Profile."
+>
+  <Header />
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Change Readiness Self-Assessment</h1>
+        <p>10 questions. 3 minutes. Discover where you are in your change journey — and what to do next.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div id="quiz" class="quiz-container"></div>
+        <div id="results" class="results-container" style="display:none;"></div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  const questions = [
+    { id: 1, text: "When a new technology appears, my first instinct is to learn about it." },
+    { id: 2, text: "I feel confident that I can adapt to changes in my work or industry." },
+    { id: 3, text: "I have a clear sense of what I want my next chapter to look like." },
+    { id: 4, text: "When I face a difficult decision, I trust my ability to make it — even with incomplete information." },
+    { id: 5, text: "I have a community of women I can talk to about navigating change." },
+    { id: 6, text: "The pace of change in the world feels manageable to me." },
+    { id: 7, text: "I actively seek out opportunities to learn new skills." },
+    { id: 8, text: "I have a system or framework for handling uncertainty." },
+    { id: 9, text: "I feel like change is something that happens to me.", reverse: true },
+    { id: 10, text: "I am excited about what AI can do for my life — not afraid of it." },
+  ];
+
+  const profiles = [
+    { min: 10, max: 22, name: "The Observer", emoji: "🔭", desc: "You are watching. Waiting. Most people start here. The important thing is that you are paying attention.", cta: "Start with three blog posts. Sign up for our email sequence.", link: "/blog/", linkText: "Read the Blog" },
+    { min: 23, max: 34, name: "The Explorer", emoji: "🧭", desc: "You are curious. You want to understand more — what AI actually is, whether this is worth your time.", cta: "Book a free 20-minute call. No sales pitch. Just a conversation.", link: "/contact/", linkText: "Book a Free Call" },
+    { min: 35, max: 42, name: "The Navigator", emoji: "🗺️", desc: "You are moving. You want structure and specific skills. Ready to stop thinking about change and start practicing it.", cta: "Sign up for a workshop. First session is $35.", link: "/schedule/", linkText: "View Workshops" },
+    { min: 43, max: 50, name: "The Trailblazer", emoji: "🚀", desc: "You are moving fast. You want community and ongoing practice — not a one-time event.", cta: "Join a membership. All workshops. Peer circles. $89/month.", link: "/memberships/", linkText: "Join Now" },
+  ];
+
+  function getProfile(score) {
+    for (const p of profiles) if (score >= p.min && score <= p.max) return p;
+    return profiles[0];
+  }
+
+  function renderQuiz() {
+    const quiz = document.getElementById('quiz');
+    let html = '';
+    questions.forEach((q, i) => {
+      html += `<div class="qq"><p class="qq-num">${i + 1} / 10</p><p class="qq-text">${q.text}</p><div class="qq-opts">${[1,2,3,4,5].map(v => `<label class="qq-opt"><input type="radio" name="q${q.id}" value="${v}"><span>${v}</span></label>`).join('')}</div><div class="qq-labels"><span>Not at all</span><span>Exactly</span></div></div>`;
+    });
+    html += `<div class="qq-submit"><button class="btn" onclick="calc()">See My Results</button></div>`;
+    quiz.innerHTML = html;
+  }
+
+  window.calc = function() {
+    let score = 0, all = true;
+    questions.forEach(q => {
+      const s = document.querySelector(`input[name="q${q.id}"]:checked`);
+      if (!s) { all = false; return; }
+      let v = parseInt(s.value);
+      if (q.reverse) v = 6 - v;
+      score += v;
+    });
+    if (!all) { alert('Please answer all 10 questions.'); return; }
+    const p = getProfile(score);
+    document.getElementById('quiz').style.display = 'none';
+    const r = document.getElementById('results');
+    r.style.display = 'block';
+    r.innerHTML = `<div class="rc"><div class="rc-emoji">${p.emoji}</div><h2>${p.name}</h2><p class="rc-score">Score: ${score}/50</p><p class="rc-desc">${p.desc}</p><div class="rc-cta"><p>${p.cta}</p><a href="${p.link}" class="btn">${p.linkText} →</a></div><p style="margin-top:2rem;font-size:0.8rem;color:var(--color-gray)"><a href="javascript:retake()" style="text-decoration:underline;color:var(--color-gray-light)">← Retake assessment</a></p></div>`;
+  };
+
+  window.retake = function() {
+    document.getElementById('results').style.display = 'none';
+    document.getElementById('quiz').style.display = 'block';
+    document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+    scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  renderQuiz();
+</script>
+
+<style>
+  .page-hero { background: linear-gradient(135deg, var(--color-black), #1a1410); padding: 5rem 1.5rem 3rem; text-align: center; border-bottom: 3px solid var(--color-gold); }
+  .page-hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 0.5rem; }
+  .page-hero p { color: var(--color-gray-light); font-size: 1.1rem; max-width: 500px; margin: 0 auto; }
+  .quiz-container, .results-container { max-width: 600px; margin: 0 auto; }
+  .qq { background: var(--color-dark); border: 1px solid var(--color-gray); padding: 2rem; margin-bottom: 1.5rem; }
+  .qq-num { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold); margin-bottom: 0.5rem; }
+  .qq-text { font-size: 1.05rem; margin-bottom: 1.25rem; color: var(--color-white); }
+  .qq-opts { display: flex; gap: 0.75rem; justify-content: center; margin-bottom: 0.5rem; }
+  .qq-opt { cursor: pointer; }
+  .qq-opt input { display: none; }
+  .qq-opt span { display: flex; align-items: center; justify-content: center; width: 42px; height: 42px; border: 2px solid var(--color-gray); border-radius: 50%; font-size: 1rem; font-weight: 600; transition: all 0.2s; color: var(--color-gray-light); }
+  .qq-opt input:checked + span { border-color: var(--color-gold); background: var(--color-gold); color: var(--color-black); }
+  .qq-opt span:hover { border-color: var(--color-gold-light); }
+  .qq-labels { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--color-gray); padding: 0 1rem; }
+  .qq-submit { text-align: center; margin-top: 2rem; }
+  .rc { background: var(--color-dark); border: 2px solid var(--color-gold); padding: 3rem 2rem; text-align: center; }
+  .rc-emoji { font-size: 3rem; margin-bottom: 0.5rem; }
+  .rc h2 { font-size: 2rem; margin-bottom: 0.5rem; color: var(--color-gold); }
+  .rc-score { font-size: 0.85rem; color: var(--color-gray-light); margin-bottom: 1.5rem; }
+  .rc-desc { font-size: 1.1rem; color: var(--color-white); margin-bottom: 1.5rem; line-height: 1.6; }
+  .rc-cta { background: var(--color-black); border: 1px solid var(--color-gray); padding: 1.5rem; margin-bottom: 0; }
+  .rc-cta p { font-size: 0.95rem; color: var(--color-gray-light); margin-bottom: 1rem; }
+</style>

@@ -1,7 +1,9 @@
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://www.build.changenavigationtraining.com',
+  site: 'https://build.changenavigationtraining.com',
+  integrations: [sitemap()],
   build: {
     format: 'directory',
   },
