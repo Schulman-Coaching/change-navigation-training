@@ -21,14 +21,14 @@ export const NAV_ITEMS = [
 ];
 
 export const STRIPE_LINKS = {
-  membershipMonthly: 'https://buy.stripe.com/PLACEHOLDER_BUILD_MONTHLY',
-  membershipAnnual: 'https://buy.stripe.com/PLACEHOLDER_BUILD_ANNUAL',
-  membershipSixMonth: 'https://buy.stripe.com/PLACEHOLDER_BUILD_6MONTH',
-  womensAIProgram: 'https://buy.stripe.com/PLACEHOLDER_BUILD_PROGRAM',
-  coachingSingle: 'https://buy.stripe.com/PLACEHOLDER_BUILD_COACHING',
-  coachingIntensive: 'https://buy.stripe.com/PLACEHOLDER_BUILD_INTENSIVE',
-  coachingAIOnboarding: 'https://buy.stripe.com/PLACEHOLDER_BUILD_AI',
-  firstWorkshop: 'https://buy.stripe.com/PLACEHOLDER_BUILD_WORKSHOP',
+  membershipMonthly: 'https://buy.stripe.com/28E14n2EFh024A6d3N4ow0k',
+  membershipAnnual: 'https://buy.stripe.com/eVq4gz7YZh02feKbZJ4ow0l',
+  membershipSixMonth: 'https://buy.stripe.com/28E14n2EFh024A6d3N4ow0k',
+  womensAIProgram: 'https://buy.stripe.com/aFa7sL7YZ9xA4A60h14ow0m',
+  coachingSingle: 'https://buy.stripe.com/3cIfZh5QRbFI6Ie6Fp4ow0n',
+  coachingIntensive: 'https://buy.stripe.com/14AcN5gvv2584A6e7R4ow0o',
+  coachingAIOnboarding: 'https://buy.stripe.com/dRm00j933eRUaYu7Jt4ow0p',
+  firstWorkshop: 'https://buy.stripe.com/7sYcN5gvvbFI8Qm8Nx4ow0q',
 };
 
 export const CALENDLY_LINKS = {
