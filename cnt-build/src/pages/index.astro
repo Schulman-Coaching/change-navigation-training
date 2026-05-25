@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+import { SITE } from '../config';
+---
+
+<BaseLayout
+  title={`${SITE.name} — ${SITE.tagline}`}
+  description={SITE.description}
+>
+  <Header />
+
+  <main>
+    <section class="hero">
+      <div class="hero-content container">
+        <h1 class="hero-title">
+          Build the Life You Want<br/>
+          <span class="text-gold">With Less Overwhelm</span>
+        </h1>
+        <p class="hero-subtitle">
+          You are balancing work, young children, a household, and a community. AI is not one more thing to learn. It is the thing that makes everything else more manageable. Practical skills for women who don't have time to waste.
+        </p>
+        <div class="hero-actions">
+          <a href="/group-workshops/" class="btn">View Workshops</a>
+          <a href="/memberships/" class="btn btn-outline">See Memberships</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mission section">
+      <div class="container">
+        <div class="mission-grid">
+          <div class="mission-text">
+            <h2>You're Doing Enough. Let's Make It Easier.</h2>
+            <p class="mission-lead">
+              AI is the best assistant you have never hired. It does not replace you. It frees you.
+            </p>
+            <p>
+              The overwhelm is real. Work demands. Kids' schedules. Community obligations. The mental load. Our workshops are designed for women who need practical tools — not theory, not hype — that slot into a life that is already full. Two hours a week. Immediate results.
+            </p>
+            <div class="mission-stats">
+              <div class="stat"><span class="stat-number">8</span><span class="stat-label">Workshops</span></div>
+              <div class="stat"><span class="stat-number">6</span><span class="stat-label">Peer Circles</span></div>
+              <div class="stat"><span class="stat-number">$35</span><span class="stat-label">First Session</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="philosophy section">
+      <div class="container text-center">
+        <h2>What Changes When You Have the Right Tools</h2>
+        <div class="philosophy-grid">
+          <div class="philosophy-item"><h3>Time Back</h3><p>AI handles the repetitive. Emails, scheduling, research, meal planning. You get hours back every week.</p></div>
+          <div class="philosophy-item"><h3>Mental Space</h3><p>Fewer tabs open in your brain. AI as external memory and thinking partner.</p></div>
+          <div class="philosophy-item"><h3>Career Growth</h3><p>Use AI to work smarter — not harder — and position yourself for what is next.</p></div>
+          <div class="philosophy-item"><h3>Calm</h3><p>Knowing you have systems and tools that work. The overwhelm recedes.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="programs section">
+      <div class="container">
+        <h2 class="text-center">Built For Your Life</h2>
+        <div class="programs-grid">
+          <a href="/group-workshops/" class="program-card"><h3 class="font-display">Group Workshops</h3><p>Evening sessions. Practical, hands-on. Leave with something you used that week.</p></a>
+          <a href="/womens-ai-confidence/" class="program-card"><h3 class="font-display">AI for Busy Women</h3><p>Our flagship. AI literacy + time-saving workflows over 8 weeks.</p></a>
+          <a href="/community/" class="program-card"><h3 class="font-display">Peer Circles</h3><p>Women who get it. Monthly topics. Real accountability.</p></a>
+          <a href="/private-coaching/" class="program-card"><h3 class="font-display">1-on-1 Coaching</h3><p>Tailored to your specific career, family, and goals.</p></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials section">
+      <div class="container">
+        <h2 class="text-center">What Women Say</h2>
+        <div class="testimonials-grid">
+          <blockquote class="testimonial-card"><p>"I have three kids under six and a part-time job. I did not think I had time for 'learning AI.' Turns out, learning AI is what gave me time back."</p><cite>&mdash; Rivka M., 32</cite></blockquote>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <CTABanner />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .hero { background: linear-gradient(135deg, #0a0a0a, #1a0a16); padding: 5rem 1.5rem; text-align: center; border-bottom: 3px solid var(--color-gold); }
+  .hero-title { font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: 1rem; }
+  .hero-subtitle { font-size: 1.15rem; color: var(--color-gray-light); max-width: 650px; margin: 0 auto 2rem; }
+  .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .mission { padding: 5rem 0; }
+  .mission-grid { max-width: 800px; margin: 0 auto; text-align: center; }
+  .mission-lead { font-size: 1.3rem; margin: 1rem 0; color: var(--color-gold); }
+  .mission-text p { color: var(--color-gray-light); margin-bottom: 1.5rem; font-size: 1.05rem; }
+  .mission-stats { display: flex; gap: 2rem; justify-content: center; margin-top: 2rem; }
+  .stat { text-align: center; }
+  .stat-number { font-family: var(--font-display); font-size: 2.5rem; color: var(--color-gold); display: block; }
+  .stat-label { font-size: 0.8rem; color: var(--color-gray-light); text-transform: uppercase; letter-spacing: 0.1em; }
+  .philosophy { background: var(--color-dark); }
+  .philosophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .philosophy-item { background: var(--color-black); border: 1px solid var(--color-gray); padding: 2rem; }
+  .philosophy-item h3 { color: var(--color-gold); margin-bottom: 0.5rem; font-size: 1.2rem; }
+  .philosophy-item p { color: var(--color-gray-light); font-size: 0.85rem; }
+  .programs { padding: 5rem 0; }
+  .programs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
+  .program-card { display: block; background: var(--color-dark); border: 1px solid var(--color-gray); padding: 2rem; transition: border-color 0.2s; }
+  .program-card:hover { border-color: var(--color-gold); }
+  .program-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+  .program-card p { font-size: 0.85rem; color: var(--color-gray-light); }
+  .testimonials { background: var(--color-dark); }
+  .testimonials-grid { max-width: 600px; margin: 2rem auto 0; }
+  .testimonial-card { border-left: 3px solid var(--color-gold); padding: 1.5rem; background: var(--color-black); font-style: italic; }
+  .testimonial-card cite { display: block; margin-top: 0.75rem; font-size: 0.85rem; color: var(--color-gray-light); font-style: normal; }
+</style>

@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+---
+
+<BaseLayout
+  title="FAQ — Change Navigation Training"
+  description="Frequently asked questions about Change Navigation Training. Workshops, memberships, peer circles, and what to expect."
+>
+  <Header />
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        <p>Everything you need to know about learning with us</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>What should I expect at my first workshop?</summary>
+            <p>Your first workshop will introduce you to a key change-navigation concept and a practical AI tool. Sessions are 90 minutes, hands-on, and designed for all comfort levels. You will leave with something you can use immediately. No preparation needed — just bring yourself.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Do I need technical experience to join?</summary>
+            <p>No. Our workshops are built for women with zero technical background. The only requirement is willingness to learn. We start with fundamentals and move at a pace that works for everyone in the room.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>How is this different from other AI training?</summary>
+            <p>Most AI training focuses on technical skills and assumes a baseline comfort with technology. Our training starts with change navigation — the mindset and frameworks for assessing change clearly — and builds AI literacy on top of that foundation. It is also designed specifically for Orthodox Jewish women, respecting the values and rhythms of frum life.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>How often should I attend workshops?</summary>
+            <p>Consistency matters more than volume. We recommend attending 2-3 workshops per month to build and maintain momentum. Our membership gives you unlimited access so you can attend as often as you like.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>What is a peer learning circle?</summary>
+            <p>A peer circle is a small group of 6-10 women who meet monthly to discuss a specific change-related topic. Circles are facilitated but not taught — the learning comes from shared experience, honest questions, and mutual accountability. Each circle has a focus area so you can join one that matches your context.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Are workshops live or recorded?</summary>
+            <p>Workshops are live and interactive, with recordings available afterward for members. We believe the best learning happens in real time, with real questions, alongside real people. Recordings are a supplement, not a replacement.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can I cancel my membership?</summary>
+            <p>Yes. Monthly memberships can be cancelled at any time. Annual and 6-month memberships are paid upfront and non-refundable, but can be paused with notice.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>Are workshops women-only?</summary>
+            <p>Yes. All workshops, circles, and coaching sessions are for women only. This is by design — we believe women learn differently and more openly in spaces built for them.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>What tools or software do I need?</summary>
+            <p>Just a computer or tablet with internet access. We will guide you through setting up any tools we use during the workshops. No prior installations or accounts required.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>What if I'm not sure where to start?</summary>
+            <p>That is exactly where most women begin. We recommend starting with a single workshop or a free consultation call. You do not need to know your path before you begin. That is what the training is for.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <CTABanner />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--color-black), #1a1410);
+    padding: 5rem 1.5rem 3rem;
+    text-align: center;
+    border-bottom: 3px solid var(--color-gold);
+  }
+  .page-hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 0.5rem; }
+  .page-hero p { color: var(--color-gray-light); font-size: 1.1rem; }
+
+  .faq-list { max-width: 750px; margin: 0 auto; }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-gray);
+    padding: 1.25rem 0;
+  }
+
+  .faq-item summary {
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1.05rem;
+    color: var(--color-white);
+    padding-right: 2rem;
+    position: relative;
+  }
+
+  .faq-item summary:hover { color: var(--color-gold); }
+
+  .faq-item p {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--color-gray-light);
+    line-height: 1.6;
+    padding-right: 1rem;
+  }
+</style>

@@ -1,0 +1,165 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+import CalendlyWidget from '../components/CalendlyWidget.astro';
+import { CALENDLY_LINKS } from '../config';
+---
+
+<BaseLayout
+  title="Contact — Change Navigation Training"
+  description="Get in touch with Change Navigation Training. Book a workshop, ask about memberships, or inquire about private coaching and organizational training."
+>
+  <Header />
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you. Ask a question, book a workshop, or start a conversation.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h2>Get in Touch</h2>
+
+            <div class="contact-methods">
+              <h3>Email</h3>
+              <p><a href="mailto:info@changenavigationtraining.com">info@changenavigationtraining.com</a></p>
+            </div>
+
+            <div class="contact-methods">
+              <h3>Follow Us</h3>
+              <div class="social-links">
+                <a href="#" target="_blank" rel="noopener">WhatsApp Community</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form class="form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone (optional)</label>
+                <input type="tel" id="phone" name="phone" />
+              </div>
+              <div class="form-group">
+                <label for="interest">I'm interested in</label>
+                <select id="interest" name="interest">
+                  <option value="">Select an option</option>
+                  <option value="workshop">Booking a workshop</option>
+                  <option value="membership">Membership information</option>
+                  <option value="womens">Women's AI Confidence program</option>
+                  <option value="community">Joining a peer circle</option>
+                  <option value="private">Private coaching</option>
+                  <option value="organizational">Organizational training</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5"></textarea>
+              </div>
+              <button type="submit" class="btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--color-dark);">
+      <div class="container text-center">
+        <h2>Schedule a Call</h2>
+        <p style="color: var(--color-gray-light); margin: 1rem 0 2rem;">Prefer to talk? Book a free 20-minute consultation directly.</p>
+        <CalendlyWidget url={CALENDLY_LINKS.consultation} height="600px" />
+      </div>
+    </section>
+  </main>
+
+  <CTABanner />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--color-black), #1a1410);
+    padding: 5rem 1.5rem 3rem;
+    text-align: center;
+    border-bottom: 3px solid var(--color-gold);
+  }
+  .page-hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 0.5rem; }
+  .page-hero p { color: var(--color-gray-light); font-size: 1.1rem; }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .contact-info h2 { margin-bottom: 2rem; }
+
+  .contact-methods { margin-bottom: 2rem; }
+  .contact-methods h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+  .contact-methods p { color: var(--color-gray-light); }
+  .contact-methods a { color: var(--color-gold); }
+
+  .social-links { margin-top: 1rem; }
+  .social-links a {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: var(--color-gray-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .social-links a:hover { color: var(--color-gold); }
+
+  .contact-form h2 { margin-bottom: 2rem; }
+
+  .form { display: flex; flex-direction: column; gap: 1.25rem; }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+  .form-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-gray-light);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: var(--color-dark);
+    border: 1px solid var(--color-gray);
+    padding: 0.75rem 1rem;
+    color: var(--color-white);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-gold);
+  }
+
+  .form-group select option { background: var(--color-dark); color: var(--color-white); }
+
+  @media (max-width: 768px) {
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+</style>

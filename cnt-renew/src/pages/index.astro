@@ -1,0 +1,119 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+import { SITE } from '../config';
+---
+
+<BaseLayout
+  title={`${SITE.name} — ${SITE.tagline}`}
+  description={SITE.description}
+>
+  <Header />
+
+  <main>
+    <section class="hero">
+      <div class="hero-content container">
+        <h1 class="hero-title">
+          What You Know<br/>
+          <span class="text-gold">Matters More Than Ever</span>
+        </h1>
+        <p class="hero-subtitle">
+          You have built careers, raised families, run communities. The world is changing, and your experience is not obsolete — it is the foundation. AI is a tool. Your wisdom is the asset. Let's put them together.
+        </p>
+        <div class="hero-actions">
+          <a href="/group-workshops/" class="btn">View Workshops</a>
+          <a href="/memberships/" class="btn btn-outline">See Memberships</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mission section">
+      <div class="container">
+        <div class="mission-grid">
+          <div class="mission-text">
+            <h2>You Are Not Behind. You Are Ahead.</h2>
+            <p class="mission-lead">
+              AI is new. Judgment — the kind that comes from decades of navigating real life — is not.
+            </p>
+            <p>
+              The women who will lead through this change are not the ones who grew up with technology. They are the ones who know how to assess, decide, mentor, and adapt. That describes you. Our workshops meet you where you are — with respect for what you already know.
+            </p>
+            <div class="mission-stats">
+              <div class="stat"><span class="stat-number">8</span><span class="stat-label">Workshops</span></div>
+              <div class="stat"><span class="stat-number">4</span><span class="stat-label">Peer Circles</span></div>
+              <div class="stat"><span class="stat-number">$35</span><span class="stat-label">First Session</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="philosophy section">
+      <div class="container text-center">
+        <h2>What This Chapter Can Hold</h2>
+        <div class="philosophy-grid">
+          <div class="philosophy-item"><h3>Reinvention</h3><p>New career. New project. New way to contribute. AI opens doors you did not know were there.</p></div>
+          <div class="philosophy-item"><h3>Mentorship</h3><p>Your experience is valuable. Learn to package and share it — using AI to scale your impact.</p></div>
+          <div class="philosophy-item"><h3>Independence</h3><p>Manage your own finances, health information, and planning with AI tools built for clarity.</p></div>
+          <div class="philosophy-item"><h3>Connection</h3><p>A community of women at the same stage. Learning together. No condescension. No rush.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="programs section">
+      <div class="container">
+        <h2 class="text-center">Find Your Path</h2>
+        <div class="programs-grid">
+          <a href="/group-workshops/" class="program-card"><h3 class="font-display">Group Workshops</h3><p>Patient, thorough. Built for learners who want to understand, not just click.</p></a>
+          <a href="/womens-ai-confidence/" class="program-card"><h3 class="font-display">New Chapters</h3><p>Our flagship. AI literacy plus life redesign over 8 weeks.</p></a>
+          <a href="/community/" class="program-card"><h3 class="font-display">Peer Circles</h3><p>Women navigating the same transitions. Shared wisdom. Real support.</p></a>
+          <a href="/private-coaching/" class="program-card"><h3 class="font-display">1-on-1 Coaching</h3><p>Personalized, unhurried. Your pace. Your goals.</p></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials section">
+      <div class="container">
+        <h2 class="text-center">You Are Not Alone</h2>
+        <div class="testimonials-grid">
+          <blockquote class="testimonial-card"><p>"I thought I was too old to learn this. My daughter showed me ChatGPT. Then I took this workshop and realized: I am not learning from scratch. I am adding a tool to a lifetime of knowing how things work."</p><cite>&mdash; Devorah L., 58</cite></blockquote>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <CTABanner />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .hero { background: linear-gradient(135deg, #0a0a0a, #12141a); padding: 5rem 1.5rem; text-align: center; border-bottom: 3px solid var(--color-gold); }
+  .hero-title { font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: 1rem; }
+  .hero-subtitle { font-size: 1.15rem; color: var(--color-gray-light); max-width: 650px; margin: 0 auto 2rem; }
+  .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .mission { padding: 5rem 0; }
+  .mission-grid { max-width: 800px; margin: 0 auto; text-align: center; }
+  .mission-lead { font-size: 1.3rem; margin: 1rem 0; color: var(--color-gold); }
+  .mission-text p { color: var(--color-gray-light); margin-bottom: 1.5rem; font-size: 1.05rem; }
+  .mission-stats { display: flex; gap: 2rem; justify-content: center; margin-top: 2rem; }
+  .stat { text-align: center; }
+  .stat-number { font-family: var(--font-display); font-size: 2.5rem; color: var(--color-gold); display: block; }
+  .stat-label { font-size: 0.8rem; color: var(--color-gray-light); text-transform: uppercase; letter-spacing: 0.1em; }
+  .philosophy { background: var(--color-dark); }
+  .philosophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .philosophy-item { background: var(--color-black); border: 1px solid var(--color-gray); padding: 2rem; }
+  .philosophy-item h3 { color: var(--color-gold); margin-bottom: 0.5rem; font-size: 1.2rem; }
+  .philosophy-item p { color: var(--color-gray-light); font-size: 0.85rem; }
+  .programs { padding: 5rem 0; }
+  .programs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
+  .program-card { display: block; background: var(--color-dark); border: 1px solid var(--color-gray); padding: 2rem; transition: border-color 0.2s; }
+  .program-card:hover { border-color: var(--color-gold); }
+  .program-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+  .program-card p { font-size: 0.85rem; color: var(--color-gray-light); }
+  .testimonials { background: var(--color-dark); }
+  .testimonials-grid { max-width: 600px; margin: 2rem auto 0; }
+  .testimonial-card { border-left: 3px solid var(--color-gold); padding: 1.5rem; background: var(--color-black); font-style: italic; }
+  .testimonial-card cite { display: block; margin-top: 0.75rem; font-size: 0.85rem; color: var(--color-gray-light); font-style: normal; }
+</style>

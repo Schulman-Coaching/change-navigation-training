@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+import { SITE } from '../config';
+---
+
+<BaseLayout
+  title={`${SITE.name} — ${SITE.tagline}`}
+  description={SITE.description}
+>
+  <Header />
+
+  <main>
+    <section class="hero">
+      <div class="hero-content container">
+        <h1 class="hero-title">
+          Your First Step<br/>
+          <span class="text-gold">Into a Bigger World</span>
+        </h1>
+        <p class="hero-subtitle">
+          You just finished seminary. Or you are starting your first job. Or you are looking at college and wondering what comes next. AI is part of that world now. Let's make sure you walk in ready.
+        </p>
+        <div class="hero-actions">
+          <a href="/group-workshops/" class="btn">View Workshops</a>
+          <a href="/memberships/" class="btn btn-outline">See Memberships</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mission section">
+      <div class="container">
+        <div class="mission-grid">
+          <div class="mission-text">
+            <h2>You Belong in This Conversation</h2>
+            <p class="mission-lead">
+              AI is not just for engineers. It is for anyone starting out — and starting out is exactly where you are.
+            </p>
+            <p>
+              The women who will thrive in the next decade are not the ones who learned to code at 14. They are the ones who learned to navigate change, ask clear questions, and move forward without waiting for permission. That can be you. Starting now.
+            </p>
+            <div class="mission-stats">
+              <div class="stat"><span class="stat-number">8</span><span class="stat-label">Workshops</span></div>
+              <div class="stat"><span class="stat-number">4</span><span class="stat-label">Peer Circles</span></div>
+              <div class="stat"><span class="stat-number">$35</span><span class="stat-label">First Session</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="philosophy section">
+      <div class="container text-center">
+        <h2>What You'll Build Here</h2>
+        <p class="philosophy-lead">The skills that matter in your twenties are not the ones they teach in school.</p>
+        <div class="philosophy-grid">
+          <div class="philosophy-item"><h3>Confidence</h3><p>Walk into any room — classroom, office, interview — knowing you have something to offer.</p></div>
+          <div class="philosophy-item"><h3>AI Literacy</h3><p>Use AI as your advantage. While others are intimidated, you will be equipped.</p></div>
+          <div class="philosophy-item"><h3>Direction</h3><p>Clarity about what you want. Not what anyone else wants for you.</p></div>
+          <div class="philosophy-item"><h3>Community</h3><p>Other women your age asking the same questions. Learning together.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="programs section">
+      <div class="container">
+        <h2 class="text-center">Start Here</h2>
+        <div class="programs-grid">
+          <a href="/group-workshops/" class="program-card"><h3 class="font-display">Group Workshops</h3><p>Hands-on AI sessions built for beginners. No experience needed.</p></a>
+          <a href="/womens-ai-confidence/" class="program-card"><h3 class="font-display">Career Launch</h3><p>Our flagship program. Build AI literacy and career readiness over 8 weeks.</p></a>
+          <a href="/community/" class="program-card"><h3 class="font-display">Peer Circles</h3><p>Small groups of women your age. Real conversations. Real support.</p></a>
+          <a href="/private-coaching/" class="program-card"><h3 class="font-display">1-on-1 Coaching</h3><p>Personalized guidance for your specific path.</p></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials section">
+      <div class="container">
+        <h2 class="text-center">You Are Not Alone</h2>
+        <div class="testimonials-grid">
+          <blockquote class="testimonial-card"><p>"I thought AI was this big, scary thing. After two workshops, I was using it to plan my week and write applications. I feel like I have an edge now."</p><cite>&mdash; Shira K., 22</cite></blockquote>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <CTABanner />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .hero { background: linear-gradient(135deg, #0a0a0a, #0a1a18); padding: 5rem 1.5rem; text-align: center; border-bottom: 3px solid var(--color-gold); }
+  .hero-title { font-size: clamp(2.5rem, 6vw, 5rem); margin-bottom: 1rem; }
+  .hero-subtitle { font-size: 1.15rem; color: var(--color-gray-light); max-width: 650px; margin: 0 auto 2rem; }
+  .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .mission { padding: 5rem 0; }
+  .mission-grid { max-width: 800px; margin: 0 auto; text-align: center; }
+  .mission-lead { font-size: 1.3rem; margin: 1rem 0; color: var(--color-gold); }
+  .mission-text p { color: var(--color-gray-light); margin-bottom: 1.5rem; font-size: 1.05rem; }
+  .mission-stats { display: flex; gap: 2rem; justify-content: center; margin-top: 2rem; }
+  .stat { text-align: center; }
+  .stat-number { font-family: var(--font-display); font-size: 2.5rem; color: var(--color-gold); display: block; }
+  .stat-label { font-size: 0.8rem; color: var(--color-gray-light); text-transform: uppercase; letter-spacing: 0.1em; }
+  .philosophy { background: var(--color-dark); }
+  .philosophy-lead { color: var(--color-gray-light); max-width: 600px; margin: 1rem auto 2rem; font-size: 1.1rem; }
+  .philosophy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .philosophy-item { background: var(--color-black); border: 1px solid var(--color-gray); padding: 2rem; }
+  .philosophy-item h3 { color: var(--color-gold); margin-bottom: 0.5rem; font-size: 1.2rem; }
+  .philosophy-item p { color: var(--color-gray-light); font-size: 0.85rem; }
+  .programs { padding: 5rem 0; }
+  .programs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 2rem; }
+  .program-card { display: block; background: var(--color-dark); border: 1px solid var(--color-gray); padding: 2rem; transition: border-color 0.2s; }
+  .program-card:hover { border-color: var(--color-gold); }
+  .program-card h3 { font-size: 1.3rem; margin-bottom: 0.5rem; }
+  .program-card p { font-size: 0.85rem; color: var(--color-gray-light); }
+  .testimonials { background: var(--color-dark); }
+  .testimonials-grid { max-width: 600px; margin: 2rem auto 0; }
+  .testimonial-card { border-left: 3px solid var(--color-gold); padding: 1.5rem; background: var(--color-black); font-style: italic; }
+  .testimonial-card cite { display: block; margin-top: 0.75rem; font-size: 0.85rem; color: var(--color-gray-light); font-style: normal; }
+</style>

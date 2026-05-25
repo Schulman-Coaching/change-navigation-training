@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+---
+
+<BaseLayout
+  title="Community — Change Navigation Training"
+  description="Peer learning circles for Orthodox Jewish women. Small groups, monthly topics, shared accountability. Learn AI and change-navigation skills together."
+>
+  <Header />
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Peer Learning Circles</h1>
+        <p>Small groups. Real support. The change journey is better together.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="mission">
+          <h2>Learning That Sticks Happens in Community</h2>
+          <p>A workshop gives you information. A peer circle gives you a place to process it, apply it, and return with questions. Our circles meet monthly, with groups of 6-10 women at similar stages of their change journey. Each circle is facilitated but not taught — the learning comes from shared experience, honest questions, and mutual accountability.</p>
+        </div>
+
+        <div class="quote-box">
+          <p>"My circle is the first place I've been able to say 'I don't know how to use this tool' without feeling embarrassed. And every time, someone else says 'me neither.' That is when the real learning starts."</p>
+          <cite>&mdash; Tova F.</cite>
+        </div>
+      </div>
+    </section>
+
+    <section class="circles section">
+      <div class="container">
+        <h2 class="text-center">Current Circles</h2>
+        <p class="subtitle text-center">Join a group that fits your context</p>
+
+        <div class="circles-grid">
+          <div class="circle-card">
+            <h3>Career Changers</h3>
+            <p>For women exploring new professional directions in the AI era. Resume building, skill identification, navigating the job market.</p>
+            <p class="circle-meta">Meets monthly &middot; 8 spots</p>
+          </div>
+          <div class="circle-card">
+            <h3>Business Builders</h3>
+            <p>For women running or starting businesses. AI tools for marketing, operations, customer service, and growth.</p>
+            <p class="circle-meta">Meets monthly &middot; 8 spots</p>
+          </div>
+          <div class="circle-card">
+            <h3>AI Curious</h3>
+            <p>For women who want to understand AI fundamentals in a low-pressure environment. No experience needed.</p>
+            <p class="circle-meta">Meets bi-weekly &middot; 10 spots</p>
+          </div>
+          <div class="circle-card">
+            <h3>Educators &amp; Parents</h3>
+            <p>For teachers and mothers navigating AI's impact on learning, schools, and children's development.</p>
+            <p class="circle-meta">Meets monthly &middot; 8 spots</p>
+          </div>
+          <div class="circle-card">
+            <h3>Community Leaders</h3>
+            <p>For women in organizational or community roles. Leading change, communicating about AI, building buy-in.</p>
+            <p class="circle-meta">Meets monthly &middot; 8 spots</p>
+          </div>
+          <div class="circle-card">
+            <h3>General Navigator</h3>
+            <p>For women who simply want to build change-navigation skills across all areas of life.</p>
+            <p class="circle-meta">Meets monthly &middot; 10 spots</p>
+          </div>
+        </div>
+
+        <p class="text-center circle-note">* Peer circles are included with all memberships. Membership required to join.</p>
+      </div>
+    </section>
+
+    <section class="section text-center">
+      <div class="container">
+        <h2>Find Your Circle</h2>
+        <p style="color: var(--color-gray-light); margin: 1rem 0 1.5rem;">The right group changes everything. Tell us what you're looking for and we'll find your fit.</p>
+        <a href="/contact/" class="btn">Join a Circle</a>
+      </div>
+    </section>
+  </main>
+
+  <CTABanner />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #0a0a05, var(--color-black));
+    padding: 5rem 1.5rem 3rem;
+    text-align: center;
+    border-bottom: 3px solid var(--color-gold);
+  }
+  .page-hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 0.5rem; }
+  .page-hero p { color: var(--color-gray-light); font-size: 1.1rem; }
+
+  .mission { max-width: 700px; margin: 0 auto; text-align: center; }
+  .mission h2 { margin-bottom: 1rem; }
+  .mission p { color: var(--color-gray-light); font-size: 1.05rem; }
+
+  .quote-box {
+    max-width: 600px; margin: 3rem auto; padding: 1.5rem 2rem;
+    border-left: 3px solid var(--color-gold); background: var(--color-dark);
+  }
+  .quote-box p { font-style: italic; margin-bottom: 0.5rem; }
+  .quote-box cite { font-size: 0.85rem; color: var(--color-gray-light); }
+
+  .circles { background: var(--color-dark); }
+  .subtitle { color: var(--color-gray-light); margin-bottom: 2.5rem; }
+
+  .circles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .circle-card {
+    background: var(--color-black);
+    border: 1px solid var(--color-gray);
+    padding: 2rem;
+  }
+  .circle-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--color-gold); }
+  .circle-card p { font-size: 0.85rem; color: var(--color-gray-light); margin-bottom: 0.5rem; }
+  .circle-meta { font-size: 0.75rem; color: var(--color-gray); margin-top: 1rem; }
+
+  .circle-note { font-size: 0.8rem; color: var(--color-gray); margin-top: 2rem; font-style: italic; }
+</style>

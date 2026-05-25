@@ -1,0 +1,204 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+import CalendlyWidget from '../components/CalendlyWidget.astro';
+import { CALENDLY_LINKS } from '../config';
+
+const workshops = await getCollection('workshops');
+const sorted = workshops.sort((a, b) => {
+  const da = new Date(a.data.startDate).getTime();
+  const db = new Date(b.data.startDate).getTime();
+  return da - db;
+});
+
+const levelLabels: Record<string, string> = {
+  'beginner': 'Beginner',
+  'intermediate': 'Intermediate',
+  'all-levels': 'All Levels',
+};
+---
+
+<BaseLayout
+  title="Group Workshops — Change Navigation Training"
+  description="Hands-on group workshops for Orthodox Jewish women. Learn AI tools, change frameworks, and practical navigation skills in a supportive group setting. View our schedule for upcoming sessions."
+>
+  <Header />
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Group Workshops</h1>
+        <p>Learn together. The most effective way to build change-navigation skills is with others who share your context.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="schedule-intro">
+          <p>Our workshops combine AI literacy with change-navigation frameworks. Each session is hands-on — you will leave with something you can use immediately. All workshops are designed for Orthodox Jewish women and respect the values and rhythms of frum life.</p>
+          <a href="/schedule/" class="btn" style="margin-top: 1.5rem;">View Full Schedule With Dates</a>
+        </div>
+
+        <div class="workshop-list">
+          <h2>Upcoming Workshops</h2>
+
+          <div class="upcoming-grid">
+            {sorted.map((w) => {
+              const { data } = w;
+              const startDate = new Date(data.startDate);
+              const startStr = startDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+              return (
+                <a href={`/workshops/${data.slug}/`} class="upcoming-card">
+                  <span class="upcoming-cohort">{data.cohort}</span>
+                  <h3>{data.title}</h3>
+                  <p class="upcoming-excerpt">{data.excerpt}</p>
+                  <div class="upcoming-meta">
+                    <span>Starts {startStr}</span>
+                    <span>&middot;</span>
+                    <span>{data.sessions} sessions</span>
+                    <span>&middot;</span>
+                    <span>{levelLabels[data.level]}</span>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+
+        <div class="workshop-list" style="margin-top: 3rem;">
+          <h2>All Workshop Topics</h2>
+
+          <table class="schedule-table">
+            <thead>
+              <tr><th>Workshop</th><th>Format</th><th>Duration</th><th>Level</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>AI Fundamentals for Everyday Life</td><td>4 sessions</td><td>90 min each</td><td>Beginner</td></tr>
+              <tr><td>Change Mapping: See What's Coming</td><td>2 sessions</td><td>90 min each</td><td>All Levels</td></tr>
+              <tr><td>AI Tools for Work &amp; Business</td><td>6 sessions</td><td>90 min each</td><td>Intermediate</td></tr>
+              <tr><td>Decision-Making Under Uncertainty</td><td>3 sessions</td><td>90 min each</td><td>All Levels</td></tr>
+              <tr><td>AI-Assisted Writing &amp; Communication</td><td>4 sessions</td><td>90 min each</td><td>Beginner</td></tr>
+              <tr><td>Navigating Career Change in the AI Era</td><td>6 sessions</td><td>90 min each</td><td>Intermediate</td></tr>
+              <tr><td>AI for Learning &amp; Teaching</td><td>4 sessions</td><td>90 min each</td><td>All Levels</td></tr>
+              <tr><td>Building Your Change Toolkit</td><td>2 sessions</td><td>90 min each</td><td>All Levels</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="schedule-cta text-center">
+          <h2>Ready to Join a Workshop?</h2>
+          <p>First session is $35. See what it feels like to learn alongside women who get it.</p>
+          <div class="cta-buttons">
+            <a href="/schedule/" class="btn">View Schedule &amp; Register</a>
+            <a href="/contact/" class="btn btn-outline">Ask a Question</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--color-dark);">
+      <div class="container">
+        <h2 class="text-center">Book a Workshop</h2>
+        <p class="text-center" style="color: var(--color-gray-light); margin-bottom: 2rem;">Schedule a free 20-minute call to find the right workshop for you.</p>
+        <CalendlyWidget url={CALENDLY_LINKS.consultation} height="600px" />
+      </div>
+    </section>
+  </main>
+
+  <CTABanner />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--color-black), #1a1410);
+    padding: 5rem 1.5rem 3rem;
+    text-align: center;
+    border-bottom: 3px solid var(--color-gold);
+  }
+  .page-hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 0.5rem; }
+  .page-hero p { color: var(--color-gray-light); font-size: 1.1rem; }
+
+  .schedule-intro {
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+  .schedule-intro p { color: var(--color-gray-light); font-size: 1.05rem; }
+
+  .workshop-list { margin-bottom: 3rem; }
+  .workshop-list h2 { font-size: 1.6rem; margin-bottom: 1.5rem; color: var(--color-gold); }
+
+  .upcoming-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+
+  .upcoming-card {
+    display: block;
+    background: var(--color-dark);
+    border: 1px solid var(--color-gray);
+    padding: 1.5rem;
+    transition: border-color 0.2s;
+  }
+  .upcoming-card:hover { border-color: var(--color-gold); }
+
+  .upcoming-cohort {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-gold);
+    font-weight: 600;
+  }
+
+  .upcoming-card h3 {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    color: var(--color-white);
+  }
+
+  .upcoming-excerpt {
+    font-size: 0.82rem;
+    color: var(--color-gray-light);
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .upcoming-meta {
+    font-size: 0.7rem;
+    color: var(--color-gray);
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .schedule-table th {
+    text-align: left;
+    padding: 0.75rem;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    border-bottom: 2px solid var(--color-gold);
+    color: var(--color-white);
+    text-transform: uppercase;
+  }
+  .schedule-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--color-gray-dark);
+    color: var(--color-gray-light);
+  }
+  .schedule-table tr:hover td { background: var(--color-dark); color: var(--color-white); }
+
+  .schedule-cta { padding: 3rem 0 1rem; }
+  .schedule-cta p { color: var(--color-gray-light); margin: 0.75rem 0 1.5rem; }
+  .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+</style>

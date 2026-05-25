@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return Promise.all(posts.map(async (post) => {
+    const { Content } = await render(post);
+    return {
+      params: { slug: post.data.slug },
+      props: { post, Content },
+    };
+  }));
+}
+
+const { post, Content } = Astro.props;
+---
+
+<BaseLayout
+  title={`${post.data.title} — Change Navigation Training`}
+  description={post.data.excerpt || 'Blog post from Change Navigation Training'}
+>
+  <Header />
+
+  <main>
+    <article class="post">
+      <div class="container">
+        <header class="post-header">
+          <h1>{post.data.title}</h1>
+          <div class="post-meta">
+            <time datetime={post.data.date.toISOString()}>
+              {post.data.date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
+            </time>
+            {post.data.categories && post.data.categories.length > 0 && (
+              <span class="post-categories">
+                {post.data.categories.join(' · ')}
+              </span>
+            )}
+            {post.data.word_count && (
+              <span class="post-reading-time">{Math.ceil(post.data.word_count / 200)} min read</span>
+            )}
+          </div>
+        </header>
+        <div class="post-content">
+          <Content />
+        </div>
+        <footer class="post-footer">
+          <a href="/blog/" class="btn btn-outline">&larr; Back to Blog</a>
+        </footer>
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .post {
+    padding: 4rem 0;
+  }
+
+  .post-header {
+    max-width: 720px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+
+  .post-header h1 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .post-meta {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    color: var(--color-gray-light);
+  }
+
+  .post-meta time {
+    color: var(--color-gold);
+  }
+
+  .post-content {
+    max-width: 720px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--color-off-white);
+  }
+
+  .post-content :global(p) {
+    margin-bottom: 1.5rem;
+  }
+
+  .post-content :global(h2) {
+    font-size: 1.5rem;
+    margin: 2.5rem 0 1rem;
+    color: var(--color-gold);
+  }
+
+  .post-content :global(h3) {
+    font-size: 1.2rem;
+    margin: 2rem 0 0.75rem;
+  }
+
+  .post-content :global(blockquote) {
+    border-left: 3px solid var(--color-gold);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    background: var(--color-dark);
+    font-style: italic;
+  }
+
+  .post-content :global(a) {
+    color: var(--color-gold);
+    text-decoration: underline;
+  }
+
+  .post-footer {
+    max-width: 720px;
+    margin: 4rem auto 0;
+    text-align: center;
+  }
+</style>

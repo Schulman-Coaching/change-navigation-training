@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+import Testimonial from '../components/Testimonial.astro';
+import StripeButton from '../components/StripeButton.astro';
+import { STRIPE_LINKS } from '../config';
+---
+
+<BaseLayout
+  title="Women's AI Confidence — Change Navigation Training"
+  description="Our flagship program for Orthodox Jewish women. Build AI literacy and change-navigation skills over 8 weeks. Hands-on workshops in a supportive, values-aligned environment."
+>
+  <Header />
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Women's AI Confidence</h1>
+        <p>You are not behind. You are exactly where you need to be.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="mission">
+          <h2>Find Your Footing Here</h2>
+          <p>AI is changing how we work, learn, parent, and connect. For many Orthodox Jewish women, the conversation about AI has felt distant — technical, masculine, or simply irrelevant to daily life. It is none of those things. AI is a tool. And like any tool, it belongs to whoever learns to use it.</p>
+          <p>Our flagship 8-week program is built for women who want to understand AI on their own terms. Not to become engineers. To become confident navigators of a changing world.</p>
+                    <StripeButton href={STRIPE_LINKS.womensAIProgram} text="Join the Program" />
+        </div>
+
+        <div class="testimonial-box">
+          <Testimonial
+            quote="I spent months feeling like AI was this big, complicated thing I would never understand. After four weeks, I was using it to plan lessons, write emails, and help my kids with research. The shift wasn't in my technical skill. It was in my sense of what was possible."
+            author="Esther M."
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="why section">
+      <div class="container">
+        <h2>Redefining AI Literacy: Practical, Not Technical</h2>
+        <p>Most AI training is built for people who already speak the language of technology. Ours is different. We start where you are — with the questions you actually have, the tools you can actually use, and the context you actually live in.</p>
+
+        <blockquote class="quote-big">
+          <p>"We are not teaching women to code. We are teaching women to navigate. The difference matters."</p>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center">Choose Your Path</h2>
+        <p class="text-center pricing-intro">The Women's AI Confidence program is included with all membership tiers. If you prefer to enroll in just this program, we offer a standalone option.</p>
+
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <h3>Program Only</h3>
+            <p class="price">$349</p>
+            <p class="price-note">8-week program</p>
+            <ul>
+              <li>All 8 weekly sessions</li>
+              <li>Workshop materials</li>
+              <li>Practice exercises</li>
+              <li>Session recordings</li>
+              <li>Certificate of completion</li>
+            </ul>
+                        <StripeButton href={STRIPE_LINKS.womensAIProgram} text="Enroll — $349" />
+          </div>
+          <div class="pricing-card pricing-card--featured">
+            <span class="badge">Recommended</span>
+            <h3>With Membership</h3>
+            <p class="price">$89<span>/mo</span></p>
+            <p class="price-note">Includes full program + ongoing access</p>
+            <ul>
+              <li>Full 8-week program</li>
+              <li>All group workshops</li>
+              <li>Peer circle access</li>
+              <li>Resource library</li>
+              <li>Ongoing community</li>
+              <li>Monthly Q&amp;A sessions</li>
+            </ul>
+            <a href="/memberships/" class="btn">See Memberships</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="learn section">
+      <div class="container">
+        <h2 class="text-center">What You'll Build</h2>
+        <div class="learn-grid">
+          <div class="learn-card">
+            <h3>AI Literacy</h3>
+            <p>Understand what AI actually is, how it works in plain terms, and what it can and cannot do. No technical background required.</p>
+          </div>
+          <div class="learn-card">
+            <h3>Practical Tool Use</h3>
+            <p>Hands-on practice with AI tools for writing, research, planning, learning, and everyday tasks. Leave each session with something you used.</p>
+          </div>
+          <div class="learn-card">
+            <h3>Change Navigation</h3>
+            <p>Develop the mindset to face new technologies and shifting landscapes without fear. Learn to assess change clearly and respond thoughtfully.</p>
+          </div>
+          <div class="learn-card">
+            <h3>Confidence &amp; Agency</h3>
+            <p>Build the belief that you belong in this conversation. That your perspective matters. That you can shape how AI enters your life and community.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="private section">
+      <div class="container text-center">
+        <h2>Prefer One-on-One Attention?</h2>
+        <p>Private coaching sessions provide focused guidance for your specific goals. Whether you want to build AI skills for your career, your business, or your personal life, one-on-one support accelerates the process.</p>
+        <a href="/private-coaching/" class="btn">Learn About Private Coaching</a>
+      </div>
+    </section>
+  </main>
+
+  <CTABanner />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #0a0805, var(--color-black));
+    padding: 5rem 1.5rem 3rem;
+    text-align: center;
+    border-bottom: 3px solid var(--color-gold);
+  }
+  .page-hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 0.5rem; }
+  .page-hero p { color: var(--color-gray-light); font-size: 1.1rem; }
+
+  .mission { max-width: 700px; margin: 0 auto; text-align: center; }
+  .mission h2 { margin-bottom: 1rem; }
+  .mission p { color: var(--color-gray-light); margin-bottom: 1.5rem; font-size: 1.05rem; }
+
+  .testimonial-box { max-width: 600px; margin: 3rem auto; }
+
+  .why { background: var(--color-dark); text-align: center; }
+  .why p { max-width: 700px; margin: 1rem auto; color: var(--color-gray-light); }
+
+  .quote-big {
+    max-width: 650px; margin: 2rem auto; padding: 2rem;
+    border-left: 4px solid var(--color-gold); background: var(--color-black);
+    text-align: center; font-style: italic; font-size: 1.1rem; color: var(--color-off-white);
+  }
+
+  .pricing-intro { color: var(--color-gray-light); max-width: 600px; margin: 0 auto 2rem; }
+
+  .pricing-grid { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+  .pricing-card {
+    background: var(--color-dark); border: 1px solid var(--color-gray);
+    padding: 2rem; text-align: center; min-width: 260px; max-width: 320px; flex: 1; position: relative;
+  }
+  .pricing-card--featured { border-color: var(--color-gold); }
+  .badge {
+    position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%);
+    background: var(--color-gold); color: var(--color-black); padding: 0.3rem 1rem;
+    font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;
+  }
+  .pricing-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+  .price { font-family: var(--font-display); font-size: 2.5rem; color: var(--color-gold); margin-bottom: 0.25rem; }
+  .price span { font-size: 0.9rem; color: var(--color-gray-light); font-family: var(--font-body); }
+  .price-note { font-size: 0.8rem; color: var(--color-gray-light); margin-bottom: 1.5rem; }
+  .pricing-card ul { list-style: none; text-align: left; margin-bottom: 1.5rem; }
+  .pricing-card ul li {
+    font-size: 0.85rem; padding: 0.4rem 0; border-bottom: 1px solid var(--color-gray-dark); color: var(--color-gray-light);
+  }
+  .pricing-card ul li::before { content: '\2713  '; color: var(--color-gold); font-weight: 700; }
+
+  .learn { background: var(--color-dark); }
+  .learn-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+  .learn-card {
+    background: var(--color-black); border: 1px solid var(--color-gray); padding: 2rem;
+  }
+  .learn-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+  .learn-card p { font-size: 0.85rem; color: var(--color-gray-light); line-height: 1.5; }
+
+  .private { padding: 4rem 0; }
+  .private p { max-width: 600px; margin: 1rem auto 1.5rem; color: var(--color-gray-light); }
+</style>
