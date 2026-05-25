@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: 'https://www.changenavigationtraining.com',
   build: {
-    format: 'file',
+    format: 'directory',
   },
   markdown: {
     shikiConfig: {
