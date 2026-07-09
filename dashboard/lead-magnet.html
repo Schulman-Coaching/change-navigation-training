@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change Readiness Self-Assessment — Change Navigation Training</title>
+<style>
+  @media print { body { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  .header {
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 3px solid #c8963e;
+    margin-bottom: 40px;
+  }
+  .header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    color: #c8963e;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+  .header .subtitle {
+    color: #777777;
+    font-size: 16px;
+  }
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 24px;
+    color: #c8963e;
+    margin: 32px 0 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .instructions {
+    background: #111111;
+    border: 1px solid #333333;
+    padding: 20px;
+    margin-bottom: 32px;
+    font-size: 14px;
+    color: #777777;
+  }
+  .question {
+    background: #111111;
+    border: 1px solid #333333;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  .question .q-num {
+    font-size: 11px;
+    color: #c8963e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .question .q-text {
+    font-size: 16px;
+    color: #e0e0e0;
+    margin-bottom: 12px;
+  }
+  .scale {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .scale .circles {
+    display: flex;
+    gap: 12px;
+  }
+  .scale .circle {
+    width: 36px;
+    height: 36px;
+    border: 2px solid #333333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555555;
+  }
+  .scale .labels {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 10px;
+    color: #555555;
+    margin-top: 4px;
+    padding: 0 4px;
+  }
+  .scoring {
+    background: #111111;
+    border: 2px solid #c8963e;
+    padding: 24px;
+    margin: 32px 0;
+  }
+  .scoring h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #c8963e;
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  .scoring table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .scoring td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #222222;
+    font-size: 14px;
+  }
+  .scoring td:first-child { font-weight: 600; color: #e0e0e0; width: 160px; }
+  .scoring td:last-child { color: #777777; text-align: right; }
+  .profile {
+    background: #111111;
+    border: 1px solid #333333;
+    border-left: 4px solid #c8963e;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+  .profile .p-emoji { font-size: 28px; margin-bottom: 8px; }
+  .profile .p-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: #c8963e;
+    margin-bottom: 4px;
+  }
+  .profile .p-range {
+    font-size: 12px;
+    color: #555555;
+    margin-bottom: 8px;
+  }
+  .profile .p-desc {
+    font-size: 14px;
+    color: #e0e0e0;
+    margin-bottom: 8px;
+  }
+  .profile .p-cta {
+    font-size: 13px;
+    color: #777777;
+    font-style: italic;
+  }
+  .footer-cta {
+    text-align: center;
+    padding: 32px 20px;
+    margin-top: 40px;
+    border-top: 1px solid #333333;
+  }
+  .footer-cta p {
+    color: #c8963e;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .footer-cta .url {
+    color: #777777;
+    font-size: 14px;
+  }
+  .no-print {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #c8963e;
+    color: #0a0a0a;
+    border: none;
+    padding: 12px 24px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+  }
+  @media print {
+    .no-print { display: none; }
+    body { padding: 0; }
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="header">
+  <h1>Change Readiness<br>Self-Assessment</h1>
+  <p class="subtitle">Change Navigation Training &mdash; 10 questions. 3 minutes.</p>
+</div>
+
+<div class="instructions">
+  <strong>Instructions:</strong> For each statement, circle the number that best describes you. <em>1 = Not at all. 5 = Exactly.</em><br>
+  Question 9 is reverse-scored — see the note.
+</div>
+
+<div class="section-title">The Questions</div>
+
+<div class="question">
+  <div class="q-num">Question 1</div>
+  <div class="q-text">When a new technology appears, my first instinct is to learn about it.</div>
+  <div class="scale">
+    <div class="circles"><span class="circle">1</span><span class="circle">2</span><span class="circle">3</span><span class="circle">4</span><span class="circle">5</span></div>
+  </div>
+  <div class="labels"><span>Not at all</span><span></span><span></span><span></span><span>Exactly</span></div>
+</div>
+
+<div class="question">
+  <div class="q-num">Question 2</div>
+  <div class="q-text">I feel confident that I can adapt to changes in my work or industry.</div>
+  <div class="scale">
+    <div class="circles"><span class="circle">1</span><span class="circle">2</span><span class="circle">3</span><span class="circle">4</span><span class="circle">5</span></div>
+  </div>
+  <div class="labels"><span>Not at all</span><span></span><span></span><span></span><span>Exactly</span></div>
+</div>
+
+<div class="question">
+  <div class="q-num">Question 3</div>
+  <div class="q-text">I have a clear sense of what I want my next chapter to look like.</div>
+  <div class="scale">
+    <div class="circles"><span class="circle">1</span><span class="circle">2</span><span class="circle">3</span><span class="circle">4</span><span class="circle">5</span></div>
+  </div>
+  <div class="labels"><span>Not at all</span><span></span><span></span><span></span><span>Exactly</span></div>
+</div>
+
+<div class="question">
+  <div class="q-num">Question 4</div>
+  <div class="q-text">When I face a difficult decision, I trust my ability to make it — even with incomplete information.</div>
+  <div class="scale">
+    <div class="circles"><span class="circle">1</span><span class="circle">2</span><span class="circle">3</span><span class="circle">4</span><span class="circle">5</span></div>
+  </div>
+  <div class="labels"><span>Not at all</span><span></span><span></span><span></span><span>Exactly</span></div>
+</div>
+
+<div class="question">
+  <div class="q-num">Question 5</div>
+  <div class="q-text">I have a community of women I can talk to about navigating change.</div>
+  <div class="scale">
+    <div class="circles"><span class="circle">1</span><span class="circle">2</span><span class="circle">3</span><span class="circle">4</span><span class="circle">5</span></div>
+  </div>
+  <div class="labels"><span>Not at all</span><span></span><span></span><span></span><span>Exactly</span></div>
+</div>
+
+<div class="question">
+  <div class="q-num">Question 6</div>
+  <div class="q-text">The pace of change in the world feels manageable to me.</div>
+  <div class="scale">
+    <div class="circles"><span class="circle">1</span><span class="circle">2</span><span class="circle">3</span><span class="circle">4</span><span class="circle">5</span></div>
+  </div>
+  <div class="labels"><span>Not at all</span><span></span><span></span><span></span><span>Exactly</span></div>
+</div>
+
+<div class="question">
+  <div class="q-num">Question 7</div>
+  <div class="q-text">I actively seek out opportunities to learn new skills.</div>
+  <div class="scale">
+    <div class="circles"><span class="circle">1</span><span class="circle">2</span><span class="circle">3</span><span class="circle">4</span><span class="circle">5</span></div>
+  </div>
+  <div class="labels"><span>Not at all</span><span></span><span></span><span></span><span>Exactly</span></div>
+</div>
+
+<div class="question">
+  <div class="q-num">Question 8</div>
+  <div class="q-text">I have a system or framework for handling uncertainty.</div>
+  <div class="scale">
+    <div class="circles"><span class="circle">1</span><span class="circle">2</span><span class="circle">3</span><span class="circle">4</span><span class="circle">5</span></div>
+  </div>
+  <div class="labels"><span>Not at all</span><span></span><span></span><span></span><span>Exactly</span></div>
+</div>
+
+<div class="question">
+  <div class="q-num">Question 9 &mdash; REVERSE SCORED</div>
+  <div class="q-text">I feel like change is something that happens <em>to</em> me.</div>
+  <div class="scale">
+    <div class="circles"><span class="circle">1</span><span class="circle">2</span><span class="circle">3</span><span class="circle">4</span><span class="circle">5</span></div>
+  </div>
+  <div class="labels"><span>Not at all = 5 pts</span><span></span><span></span><span></span><span>Exactly = 1 pt</span></div>
+  <p style="font-size:11px;color:#c8963e;margin-top:8px;">Scoring for Q9: If you circled 1, count it as 5. If 2 → 4. If 3 → 3. If 4 → 2. If 5 → 1.</p>
+</div>
+
+<div class="question">
+  <div class="q-num">Question 10</div>
+  <div class="q-text">I am excited about what AI can do for my life — not afraid of it.</div>
+  <div class="scale">
+    <div class="circles"><span class="circle">1</span><span class="circle">2</span><span class="circle">3</span><span class="circle">4</span><span class="circle">5</span></div>
+  </div>
+  <div class="labels"><span>Not at all</span><span></span><span></span><span></span><span>Exactly</span></div>
+</div>
+
+<div class="section-title">Scoring</div>
+
+<div class="scoring">
+  <h3>Your Total: ______ / 50</h3>
+  <p style="color:#777777;font-size:13px;margin-bottom:16px;">Add up all 10 scores (remember to reverse Q9). Then find your profile below.</p>
+  <table>
+    <tr><td>10 – 22</td><td>The Observer</td></tr>
+    <tr><td>23 – 34</td><td>The Explorer</td></tr>
+    <tr><td>35 – 42</td><td>The Navigator</td></tr>
+    <tr><td>43 – 50</td><td>The Trailblazer</td></tr>
+  </table>
+</div>
+
+<div class="section-title">Your Profile</div>
+
+<div class="profile">
+  <div class="p-emoji">🔭</div>
+  <div class="p-name">The Observer</div>
+  <div class="p-range">Score: 10 – 22</div>
+  <div class="p-desc">You are watching. Waiting. Most people start here. The important thing is that you are paying attention. Change is not a test you pass or fail — it is a skill you develop over time. Your awareness is the foundation.</div>
+  <div class="p-cta">Next step: Read the blog. Join the email list. One short read every few days. No pitch. Just thinking.</div>
+</div>
+
+<div class="profile">
+  <div class="p-emoji">🧭</div>
+  <div class="p-name">The Explorer</div>
+  <div class="p-range">Score: 23 – 34</div>
+  <div class="p-desc">You are curious. You want to understand more — what AI actually is, whether this is worth your time. You are asking the right questions. The next step is turning curiosity into a simple action.</div>
+  <div class="p-cta">Next step: Book a free 20-minute call. No sales pitch. We'll talk about where you are and what you're curious about. You'll leave with clarity either way.</div>
+</div>
+
+<div class="profile">
+  <div class="p-emoji">🗺️</div>
+  <div class="p-name">The Navigator</div>
+  <div class="p-range">Score: 35 – 42</div>
+  <div class="p-desc">You are moving. You want structure and specific skills. You are ready to stop thinking about change and start practicing it. What you need now is a framework and some momentum.</div>
+  <div class="p-cta">Next step: Sign up for a workshop. First session is $35. No commitment. See how it feels.</div>
+</div>
+
+<div class="profile">
+  <div class="p-emoji">🚀</div>
+  <div class="p-name">The Trailblazer</div>
+  <div class="p-range">Score: 43 – 50</div>
+  <div class="p-desc">You are moving fast. You want community and ongoing practice — not a one-time event. You are ready for depth. The right environment will accelerate what is already building.</div>
+  <div class="p-cta">Next step: Join a membership. All workshops. Peer circles. Resource library. $89/month. Cancel anytime.</div>
+</div>
+
+<div class="footer-cta">
+  <p>Ready to take the next step?</p>
+  <div class="url">changenavigationtraining.com/assessment</div>
+</div>
+
+<button class="no-print" onclick="window.print()">🖨 Print / Save as PDF</button>
+
+</body>
+</html>

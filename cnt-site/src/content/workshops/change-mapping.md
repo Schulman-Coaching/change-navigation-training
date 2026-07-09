@@ -7,13 +7,14 @@ sessions: 2
 duration: "90 min each"
 level: "all-levels"
 category: "change-navigation"
-cohort: "June 2026"
-startDate: 2026-06-03
+cohort: "September 2026"
+startDate: 2026-09-09
 dayOfWeek: "Wednesdays"
 time: "10:00 AM"
 timezone: "ET"
 price: "$35 first session / included with membership"
 spots: 10
+audience: "lead"
 ---
 
 Change feels chaotic because we experience it all at once. This workshop gives you a framework for separating what is happening from how you feel about it — so you can see clearly and respond intentionally.

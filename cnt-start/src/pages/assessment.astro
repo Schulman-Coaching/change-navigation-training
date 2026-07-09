@@ -80,7 +80,54 @@ import { SITE } from '../config';
     document.getElementById('quiz').style.display = 'none';
     const r = document.getElementById('results');
     r.style.display = 'block';
-    r.innerHTML = `<div class="rc"><div class="rc-emoji">${p.emoji}</div><h2>${p.name}</h2><p class="rc-score">Score: ${score}/50</p><p class="rc-desc">${p.desc}</p><div class="rc-cta"><p>${p.cta}</p><a href="${p.link}" class="btn">${p.linkText} →</a></div><p style="margin-top:2rem;font-size:0.8rem;color:var(--color-gray)"><a href="javascript:retake()" style="text-decoration:underline;color:var(--color-gray-light)">← Retake assessment</a></p></div>`;
+    const profileLink = p.link;
+    const profileScore = score;
+    r.innerHTML = `<div class="rc"><div class="rc-emoji">${p.emoji}</div><h2>${p.name}</h2><p class="rc-score">Score: ${score}/50</p><p class="rc-desc">${p.desc}</p><div class="rc-cta"><p>${p.cta}</p><a href="${p.link}" class="btn">${p.linkText} →</a></div>
+      <div class="rc-subscribe" style="margin-top:2rem;padding:1.5rem;background:var(--color-black);border:1px solid var(--color-gray);">
+        <p style="font-size:0.95rem;color:var(--color-white);margin-bottom:0.75rem;">Get your full results + a 5-day guide by email</p>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center;">
+          <input type="email" id="sub-email" placeholder="Your email" style="background:var(--color-dark);border:1px solid var(--color-gray);padding:0.75rem 1rem;color:var(--color-white);font-size:0.9rem;min-width:220px;" />
+          <button class="btn" onclick="subscribe(${profileScore})" id="sub-btn">Send Me the Guide</button>
+        </div>
+        <p id="sub-msg" style="margin-top:0.75rem;font-size:0.8rem;"></p>
+      </div>
+      <p style="margin-top:2rem;font-size:0.8rem;color:var(--color-gray)"><a href="javascript:retake()" style="text-decoration:underline;color:var(--color-gray-light)">← Retake assessment</a></p></div>`;
+  };
+
+  window.subscribe = async function(score) {
+    const email = document.getElementById('sub-email').value;
+    const btn = document.getElementById('sub-btn');
+    const msg = document.getElementById('sub-msg');
+    if (!email || !email.includes('@')) {
+      msg.textContent = 'Please enter a valid email address.';
+      msg.style.color = '#c83e6b';
+      return;
+    }
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    msg.textContent = '';
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, score }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        msg.textContent = data.message;
+        msg.style.color = '#3ec870';
+        document.getElementById('sub-email').style.display = 'none';
+        btn.style.display = 'none';
+      } else {
+        msg.textContent = data.error;
+        msg.style.color = '#c83e6b';
+      }
+    } catch {
+      msg.textContent = 'Network error. Please try again.';
+      msg.style.color = '#c83e6b';
+    }
+    btn.textContent = 'Send Me the Guide';
+    btn.disabled = false;
   };
 
   window.retake = function() {

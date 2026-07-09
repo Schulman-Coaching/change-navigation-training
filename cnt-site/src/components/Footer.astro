@@ -1,12 +1,16 @@
+---
+import { SITE } from '../config';
+---
+
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="footer-logo">
         <span class="logo-text">CHANGE NAVIGATION <span class="text-gold">TRAINING</span></span>
-        <p class="footer-tagline">Navigate Change With Confidence</p>
+        <p class="footer-tagline">{SITE.tagline}</p>
       </div>
       <p class="footer-desc">
-        Helping Orthodox Jewish women build the skills, confidence, and clarity to navigate change — personal, professional, and technological. Workshops, coaching, and community for thriving in the AI era.
+        {SITE.description}
       </p>
     </div>
 
@@ -27,6 +31,7 @@
         <li><a href="/about/">About</a></li>
         <li><a href="/memberships/">Membership</a></li>
         <li><a href="/schedule/">Workshop Schedule</a></li>
+        <li><a href="/assessment/">Free Assessment</a></li>
         <li><a href="/faq/">FAQ</a></li>
       </ul>
     </div>
@@ -43,9 +48,7 @@
   <div class="footer-bottom">
     <p>&copy; {new Date().getFullYear()} Change Navigation Training. All rights reserved.</p>
     <p>
-      <a href="/privacy-policy/">Privacy Policy</a>
-      <span class="sep">|</span>
-      <a href="/terms-and-conditions/">Terms and Conditions</a>
+      <a href="/privacy/">Privacy Policy</a>
     </p>
   </div>
 </footer>

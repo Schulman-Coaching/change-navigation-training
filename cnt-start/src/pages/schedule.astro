@@ -16,8 +16,8 @@ const sorted = allWorkshops.sort((a, b) => {
   return da - db;
 });
 
-const juneWorkshops = sorted.filter((w) => w.data.cohort === 'June 2026');
-const julyWorkshops = sorted.filter((w) => w.data.cohort === 'July 2026');
+const juneWorkshops = sorted.filter((w) => w.data.cohort === 'September 2026');
+const julyWorkshops = sorted.filter((w) => w.data.cohort === 'September 2026');
 
 const levelLabels: Record<string, string> = {
   'beginner': 'Beginner',
@@ -36,7 +36,7 @@ const categoryLabels: Record<string, string> = {
 
 <BaseLayout
   title="Upcoming Classes & Workshops — Change Navigation Training"
-  description="View our upcoming workshops for June and July 2026. AI literacy, change navigation, career development, and more. Designed for Orthodox Jewish women."
+  description="View our upcoming workshops for June and September 2026. AI literacy, change navigation, career development, and more. Designed for Orthodox Jewish women."
 >
   <Header />
 
@@ -54,8 +54,8 @@ const categoryLabels: Record<string, string> = {
           <p>All workshops are live, online, and designed for Orthodox Jewish women. Scheduling respects Shabbat and Yom Tov. No sessions on Friday evening or Saturday.</p>
         </div>
 
-        <!-- June 2026 -->
-        <h2 class="month-heading">June 2026</h2>
+        <!-- September 2026 -->
+        <h2 class="month-heading">September 2026</h2>
         <div class="workshop-grid">
           {juneWorkshops.map((w) => {
             const { data } = w;
@@ -96,8 +96,8 @@ const categoryLabels: Record<string, string> = {
           })}
         </div>
 
-        <!-- July 2026 -->
-        <h2 class="month-heading">July 2026</h2>
+        <!-- September 2026 -->
+        <h2 class="month-heading">September 2026</h2>
         <div class="workshop-grid">
           {julyWorkshops.map((w) => {
             const { data } = w;
@@ -155,7 +155,7 @@ const categoryLabels: Record<string, string> = {
     <section class="section" style="background: var(--color-dark);">
       <div class="container text-center">
         <h2>Not Sure Which Workshop Fits?</h2>
-        <p style="color: var(--color-gray-light); margin: 1rem 0 2rem;">Book a free 15-minute call. We will help you find the right starting point.</p>
+        <p style="color: var(--color-gray-light); margin: 1rem 0 2rem;">Book a free 20-minute call. We will help you find the right starting point.</p>
         <CalendlyWidget url={CALENDLY_LINKS.consultation} height="600px" />
       </div>
     </section>

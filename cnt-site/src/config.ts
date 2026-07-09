@@ -1,16 +1,67 @@
-// CNT: Lead — For women 35-50 leading in career, community, and family
-// Accent: Gold (#c8963e)
+// Change Navigation Training — Unified Site
+// All audience segments on one site, served from a single codebase
 
 export const SITE = {
-  name: 'CNT: Lead',
-  domain: 'https://lead.changenavigationtraining.com',
-  audience: 'Orthodox Jewish women 35-50',
+  name: 'Change Navigation Training',
+  domain: 'https://changenavigationtraining.com',
+  audience: 'Orthodox Jewish women',
   tagline: 'Navigate Change With Confidence',
-  description: 'Change-navigation training for Orthodox Jewish women leading through personal, professional, and technological change.',
+  description: 'AI training and change-navigation workshops for Orthodox Jewish women. Build confidence, master AI tools, and navigate change — at every stage of life.',
   accent: '#c8963e',
   accentDark: '#a67c2e',
   accentLight: '#d4a853',
 };
+
+export const SEGMENTS = [
+  {
+    id: 'start',
+    name: 'First Steps',
+    age: '18–24',
+    tagline: 'Your First Step Into a Bigger World',
+    message: 'You belong in this conversation.',
+    emotion: 'Uncertainty → confidence',
+    accent: '#3ec8a0',
+    accentDark: '#2a8a6e',
+    accentLight: '#5ed4b4',
+    description: 'For women beginning their journey with AI and change. Build career confidence, learn AI tools, and develop the skills to navigate your future.',
+  },
+  {
+    id: 'build',
+    name: 'Build',
+    age: '25–35',
+    tagline: 'Build the Life You Want — With Less Overwhelm',
+    message: 'It is the thing that makes everything else manageable.',
+    emotion: 'Overwhelm → relief',
+    accent: '#c83e6b',
+    accentDark: '#9e2e50',
+    accentLight: '#e06090',
+    description: 'For women balancing careers, families, and community. Practical AI training to get hours back, reduce overwhelm, and build systems that work.',
+  },
+  {
+    id: 'lead',
+    name: 'Lead',
+    age: '35–50',
+    tagline: 'Navigate Change With Confidence',
+    message: 'Lead through change on your terms.',
+    emotion: 'Pressure → clarity',
+    accent: '#c8963e',
+    accentDark: '#a67c2e',
+    accentLight: '#d4a853',
+    description: 'For women leading in career, community, and family. Master AI tools and change-navigation skills to lead with confidence.',
+  },
+  {
+    id: 'renew',
+    name: 'Renew',
+    age: '50+',
+    tagline: 'What You Know Matters More Than Ever',
+    message: 'Your wisdom, amplified.',
+    emotion: 'Doubt → empowerment',
+    accent: '#8b9dc3',
+    accentDark: '#6a7fa3',
+    accentLight: '#a8b9d8',
+    description: 'For women in new chapters. Amplify your wisdom, navigate transitions, and mentor the next generation — with AI as your tool.',
+  },
+];
 
 export const NAV_ITEMS = [
   { label: 'Home', href: '/' },
@@ -22,6 +73,7 @@ export const NAV_ITEMS = [
   { label: 'Organizations', href: '/organizational-training/' },
   { label: 'Membership', href: '/memberships/' },
   { label: 'About', href: '/about/' },
+  { label: 'Free Assessment', href: '/assessment/' },
   { label: 'Blog', href: '/blog/' },
   { label: 'Contact', href: '/contact/' },
 ];
@@ -43,16 +95,16 @@ export const STRIPE_LINKS = {
 
   // First workshop session
   firstWorkshop: 'https://buy.stripe.com/7sY7sLbbb6lo7Mi4xh4ow0c',
+
+  // Digital Products
+  toolkitChangeReadiness: 'https://buy.stripe.com/cNicN5ennaBE1nUbZJ4ow0y',
 };
 
-// Calendly Links — replace with your real Calendly scheduling links
-// Sign up at calendly.com, create event types, copy links
-
+// Calendly Links
 export const CALENDLY_LINKS = {
-  consultation: 'https://calendly.com/elie-schulman/new-meeting-1',
-  workshopBooking: 'https://calendly.com/elie-schulman/new-meeting-1',
-  coachingSession: 'https://calendly.com/elie-schulman/new-meeting-1',
+  consultation: 'https://calendly.com/elie-schulman/free-20-minute-consultation',
+  workshopBooking: 'https://calendly.com/elie-schulman/workshop-discovery-call',
+  coachingSession: 'https://calendly.com/elie-schulman/coaching-discovery-call',
 };
 
-// Calendly username — used for popup widgets
 export const CALENDLY_USERNAME = 'elie-schulman';

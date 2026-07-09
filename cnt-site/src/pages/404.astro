@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Page Not Found — Change Navigation Training"
+  description="The page you are looking for does not exist."
+>
+  <Header />
+
+  <main>
+    <section class="page-hero">
+      <div class="container text-center">
+        <h1 style="font-size:6rem;color:var(--color-gold);line-height:1.1;">404</h1>
+        <p style="font-size:1.2rem;color:var(--color-gray-light);margin:1rem 0 2rem;">The page you are looking for does not exist.</p>
+        <p style="color:var(--color-gray-light);margin-bottom:2rem;">It may have moved. It may never have been here. Either way, the path forward is the same.</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+          <a href="/" class="btn">Go Home</a>
+          <a href="/blog/" class="btn btn-outline">Read the Blog</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero { background: linear-gradient(135deg, var(--color-black), #1a1410); padding: 8rem 1.5rem; border-bottom: 3px solid var(--color-gold); }
+</style>

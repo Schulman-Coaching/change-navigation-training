@@ -5,6 +5,7 @@ date: 2026-05-01
 excerpt: "In a world that rewards certainty, the ability to sit with not-knowing is a competitive advantage."
 categories: ["Change Navigation", "Personal Growth"]
 word_count: 550
+audience: "lead"
 ---
 
 Certainty is seductive. It feels like strength. It looks like confidence. It is neither of those things. Certainty is often just the absence of new information.

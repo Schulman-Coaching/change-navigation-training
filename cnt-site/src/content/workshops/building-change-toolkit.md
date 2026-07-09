@@ -7,14 +7,15 @@ sessions: 2
 duration: "90 min each"
 level: "all-levels"
 category: "change-navigation"
-cohort: "July 2026"
-startDate: 2026-07-13
+cohort: "September 2026"
+startDate: 2026-09-21
 dayOfWeek: "Mondays"
 time: "10:00 AM"
 timezone: "ET"
 price: "$35 first session / included with membership"
 spots: 10
 featured: true
+audience: "lead"
 ---
 
 Most of us navigate change reactively. Something happens. We respond. Then something else happens. This workshop is about building a proactive toolkit — so when change arrives, you have something to reach for that is not panic.

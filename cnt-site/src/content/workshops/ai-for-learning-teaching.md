@@ -7,13 +7,14 @@ sessions: 4
 duration: "90 min each"
 level: "all-levels"
 category: "education"
-cohort: "July 2026"
-startDate: 2026-07-08
+cohort: "September 2026"
+startDate: 2026-09-16
 dayOfWeek: "Wednesdays"
 time: "10:00 AM"
 timezone: "ET"
 price: "$35 first session / included with membership"
 spots: 12
+audience: "lead"
 ---
 
 Children are using AI. Schools are uncertain what to do about it. Parents are caught in the middle. This workshop is for educators, parents, and community leaders who want to think clearly about AI in learning — not panic, not pretend it is not happening.

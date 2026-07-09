@@ -1,7 +1,7 @@
 # Handoff: Change Navigation Training Website
 
-**Date**: 2026-05-25
-**Status**: Full static site built, verified (16 pages, clean build). Ready for next development phase.
+**Date**: 2026-05-26
+**Status**: Full static site built, verified (19 pages, clean build). Calendly + Stripe wired up. Momence removed.
 
 ---
 
@@ -20,7 +20,7 @@ To start a new DeepSeek TUI session, set the workspace to that path. All source,
 ```bash
 cd /Users/elieschulman/Projects/change-navigation-training/cnt-site
 npm run dev      # Dev server
-npm run build    # Static build → dist/ (16 pages in ~570ms)
+npm run build    # Static build → dist/ (19 pages)
 npm run preview  # Preview built output
 ```
 
@@ -49,7 +49,7 @@ Gold instead of KME's red — warmer, professional, fitting for the audience.
 | Route | Purpose |
 |---|---|
 | `/` | Homepage — hero, mission, philosophy, programs, testimonials, blog preview, pricing |
-| `/group-workshops/` | Workshop menu table + Momence schedule embed |
+| `/group-workshops/` | Workshop menu table + Calendly schedule embed |
 | `/memberships/` | 3 tiers: Explorer $89/mo, Navigator $69/mo, Journey $79/mo |
 | `/womens-ai-confidence/` | Flagship 8-week program (parallel to KME Women's Self-Defense) |
 | `/community/` | Peer learning circles — 6 circle types |
@@ -71,9 +71,10 @@ Gold instead of KME's red — warmer, professional, fitting for the audience.
 | `Testimonial.astro` | Gold left border blockquote |
 | `PricingCard.astro` | Name, price, features, badge |
 | `BlogCard.astro` | Categories, title, excerpt, date |
-| `MomenceWidget.astro` | 3 modes (schedule/pricing/membership) — placeholder state, ready for real Host ID |
+| `CalendlyWidget.astro` | Inline + popup scheduling via Calendly |
+| `StripeButton.astro` | Direct Stripe payment link buttons |
 
-### Blog Posts (5)
+### Blog Posts (8)
 
 All in KME/CNT voice — direct, observational, short paragraphs, no hard sell:
 
@@ -97,45 +98,36 @@ See `VOICE_PROFILE.md`. Core rules:
 
 ---
 
-## Momence Integration
+## Scheduling & Payments
 
-**Status: Placeholder. Not connected to a real account.**
+**Calendly** — free tier, 1 event type. Wired up on 4 pages per site (schedule, contact, group-workshops, private-coaching). Config in `src/config.ts` → `CALENDLY_LINKS`.
 
-`MomenceWidget.astro` has three embed modes ready. To activate:
-
-1. Create a Momence account at momence.com
-2. Get your Host ID from Settings → Integrations → Website Embed
-3. Replace `CHANGE_NAVIGATION_HOST_ID` in `src/components/MomenceWidget.astro`
-4. Add to `src/layouts/BaseLayout.astro` in `<head>`:
-   ```html
-   <script src="https://momence.com/platform/embed/plugin/YOUR_HOST_ID.js" async></script>
-   ```
-
-Currently used on `group-workshops.astro`. Should also be added to `memberships.astro` and `contact.astro`.
+**Stripe** — payment links for memberships, workshops, coaching. Config in `src/config.ts` → `STRIPE_LINKS`. Used via `StripeButton.astro`.
 
 ---
 
 ## What's Not Yet Done — By Priority
 
 ### High
-1. Real Momence account connection
-2. Replace placeholder testimonials with real names and quotes
-3. Add images — logo, photos
-4. Contact form backend (HTML-only currently)
+1. Replace placeholder testimonials with real names and quotes
+2. Add images — logo, photos
+3. Contact form backend (HTML-only currently)
 
 ### Medium
-5. Blog category pages (`src/pages/blog/category/[category].astro`)
-6. RSS feed (`@astrojs/rss`)
-7. Sitemap (`@astrojs/sitemap`)
-8. 404 page
-9. Privacy Policy and Terms pages
-10. More blog posts (aim for 10-15 for launch)
+4. Performance: image optimization, critical CSS
+5. WhatsApp community link instead of placeholder social
+6. Analytics
 
-### Low
-11. Performance: image optimization, critical CSS
-12. WhatsApp community link instead of placeholder social
-13. Lead magnet (e.g., "Change Readiness Self-Assessment" PDF)
-14. Analytics
+### Done (since last handoff)
+- Blog category pages (`src/pages/blog/category/[category].astro`)
+- RSS feed (`@astrojs/rss`) — `src/pages/rss.xml.js`
+- Sitemap (`@astrojs/sitemap`) — in `astro.config.mjs`
+- 404 page — `src/pages/404.astro`
+- Privacy Policy — `src/pages/privacy.astro`
+- Lead magnet — `dashboard/lead-magnet.html`
+- Assessment page — `src/pages/assessment.astro`
+- 8 blog posts total (up from 5)
+- MomenceWidget removed — replaced by Calendly + Stripe
 
 ---
 
@@ -165,7 +157,7 @@ Currently used on `group-workshops.astro`. Should also be added to `memberships.
 
 ## Build Verification
 
-Last build: **2026-05-25 15:43** — 16 pages, 569ms, zero errors.
+Last build: **2026-05-26** — 19 pages, zero errors.
 
 ```bash
 cd /Users/elieschulman/Projects/change-navigation-training/cnt-site
@@ -185,10 +177,10 @@ cnt-site/
 ├── public/
 ├── src/
 │   ├── content.config.ts
-│   ├── content/blog/          (5 markdown posts)
+│   ├── content/blog/          (8 markdown posts)
 │   ├── layouts/BaseLayout.astro
-│   ├── components/            (7 .astro files)
-│   └── pages/                 (10 .astro files + blog/)
+│   ├── components/            (8 .astro files)
+│   └── pages/                 (12 .astro files + blog/)
 ├── node_modules/
-└── dist/                      (16 HTML files)
+└── dist/                      (19 HTML files)
 ```

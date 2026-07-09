@@ -5,6 +5,7 @@ date: 2026-05-25
 excerpt: "Eight workshops. Two months. A chance to build the skill that matters more than any tool. Here is what is coming in June and July."
 categories: ["Change Navigation", "Announcements"]
 word_count: 520
+audience: "lead"
 ---
 
 Summer is a strange season for learning. The days are longer. The pace is looser. The pressure to produce eases slightly. It is, in other words, exactly the right time to build a skill that requires space to breathe.

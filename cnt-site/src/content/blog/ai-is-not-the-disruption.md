@@ -5,6 +5,7 @@ date: 2026-05-20
 excerpt: "Why the most important skill in the age of AI is not technical — it is the ability to face change without freezing."
 categories: ["Change Navigation", "AI Literacy"]
 word_count: 650
+audience: "lead"
 ---
 
 The conversation about AI has settled into two camps. One insists it will take everything. The other insists it will change nothing. Both are wrong. Both are reactions, not responses.

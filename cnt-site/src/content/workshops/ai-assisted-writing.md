@@ -7,13 +7,14 @@ sessions: 4
 duration: "90 min each"
 level: "beginner"
 category: "practical-tools"
-cohort: "June 2026"
-startDate: 2026-06-09
+cohort: "September 2026"
+startDate: 2026-09-15
 dayOfWeek: "Tuesdays"
 time: "8:00 PM"
 timezone: "ET"
 price: "$35 first session / included with membership"
 spots: 12
+audience: "lead"
 ---
 
 AI can write. But should it? And how do you use it without losing your voice? This workshop is about partnership — using AI as a thinking tool, an editor, and a collaborator, not a replacement.

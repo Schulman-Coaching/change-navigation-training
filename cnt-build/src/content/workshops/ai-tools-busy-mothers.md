@@ -7,8 +7,8 @@ sessions: 4
 duration: "90 min each"
 level: "all-levels"
 category: "practical-tools"
-cohort: "June 2026"
-startDate: 2026-06-04
+cohort: "September 2026"
+startDate: 2026-09-03
 dayOfWeek: "Thursdays"
 time: "8:00 PM"
 timezone: "ET"

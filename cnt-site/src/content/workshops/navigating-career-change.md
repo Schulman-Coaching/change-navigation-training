@@ -7,13 +7,14 @@ sessions: 6
 duration: "90 min each"
 level: "intermediate"
 category: "career"
-cohort: "July 2026"
-startDate: 2026-07-06
+cohort: "September 2026"
+startDate: 2026-09-14
 dayOfWeek: "Mondays"
 time: "8:00 PM"
 timezone: "ET"
 price: "$35 first session / included with membership"
 spots: 10
+audience: "lead"
 ---
 
 Career change has always been difficult. AI has made it both more urgent and more possible. This workshop helps you navigate the intersection — with clarity about what is changing, confidence in what you bring, and a concrete plan for what comes next.

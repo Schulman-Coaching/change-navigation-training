@@ -12,6 +12,7 @@ const blog = defineCollection({
     categories: z.array(z.string()).optional(),
     tags: z.array(z.string()).optional(),
     word_count: z.number().optional(),
+    audience: z.string().optional(),
   }),
 });
 
@@ -40,6 +41,7 @@ const workshops = defineCollection({
     price: z.string(),
     spots: z.number().optional(),
     featured: z.boolean().default(false),
+    audience: z.string().optional(),
   }),
 });
 

@@ -5,6 +5,7 @@ date: 2026-04-20
 excerpt: "The most underrated resource in navigating change is other women who are navigating it too."
 categories: ["Community", "Change Navigation"]
 word_count: 480
+audience: "lead"
 ---
 
 There is a particular kind of loneliness that comes with learning something new. You sit with a tool, a concept, a framework — and you wonder if you are the only one who does not get it. The silence around you confirms the fear.

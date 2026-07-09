@@ -7,14 +7,15 @@ sessions: 4
 duration: "90 min each"
 level: "beginner"
 category: "ai-literacy"
-cohort: "June 2026"
-startDate: 2026-06-01
+cohort: "September 2026"
+startDate: 2026-09-07
 dayOfWeek: "Mondays"
 time: "8:00 PM"
 timezone: "ET"
 price: "$35 first session / included with membership"
 spots: 12
 featured: true
+audience: "lead"
 ---
 
 You have heard about AI. You have probably used it without realizing. You have questions. This workshop answers them — not with technical language, but with clear explanations and hands-on practice.
@@ -39,7 +40,6 @@ Practical applications for frum women: meal planning, lesson preparation, email 
 
 ## What Past Participants Say
 
-"I came in afraid of AI. I left knowing I could use it to my advantage." — Chana R.
 
 ## What You Need
 

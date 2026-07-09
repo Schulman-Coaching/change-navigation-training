@@ -5,6 +5,7 @@ date: 2026-05-10
 excerpt: "The feeling of being late to AI is widespread among women. It is also inaccurate. Starting now puts you exactly where you need to be."
 categories: ["Change Navigation", "Confidence"]
 word_count: 520
+audience: "lead"
 ---
 
 There is a particular feeling that shows up whenever the topic of AI enters a room of women. It is not fear exactly. It is closer to guilt. The sense that everyone else already understands this. That you missed the starting line. That the race is underway and you are still putting on your shoes.

@@ -5,6 +5,7 @@ date: 2026-05-15
 excerpt: "The tool matters less than what the learning process reveals about your own adaptability."
 categories: ["AI Literacy", "Personal Growth"]
 word_count: 580
+audience: "lead"
 ---
 
 Most people approach AI the way they approach any new technology: with the hope that someone will just tell them which button to press. This is understandable. It is also the wrong frame.

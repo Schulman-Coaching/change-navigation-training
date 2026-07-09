@@ -6,7 +6,7 @@ export const SITE = {
   domain: 'https://renew.changenavigationtraining.com',
   audience: 'Orthodox Jewish women 50+',
   tagline: 'What You Know Matters More Than Ever',
-  description: 'Change-navigation and AI literacy for women entering new chapters — empty nest, career pivots, mentoring.',
+  description: 'AI literacy and change-navigation training for Orthodox Jewish women 50+. Amplify your wisdom, navigate new chapters, and mentor the next generation — with AI as your tool.',
   accent: '#8b9dc3',
   accentDark: '#6a7fa3',
   accentLight: '#a8b9d8',
@@ -17,13 +17,13 @@ export const NAV_ITEMS = [
   { label: 'Workshops', href: '/group-workshops/' }, { label: 'New Chapters', href: '/womens-ai-confidence/' },
   { label: 'Community', href: '/community/' }, { label: 'Coaching', href: '/private-coaching/' },
   { label: 'Membership', href: '/memberships/' }, { label: 'About', href: '/about/' },
-  { label: 'Blog', href: '/blog/' }, { label: 'Contact', href: '/contact/' },
+  { label: 'Free Assessment', href: '/assessment/' }, { label: 'Blog', href: '/blog/' }, { label: 'Contact', href: '/contact/' },
 ];
 
 export const STRIPE_LINKS = {
   membershipMonthly: 'https://buy.stripe.com/8x214n7YZ6lod6C0h14ow0r',
   membershipAnnual: 'https://buy.stripe.com/6oU4gzenn39cc2y5Bl4ow0s',
-  membershipSixMonth: 'https://buy.stripe.com/8x214n7YZ6lod6C0h14ow0r',
+  membershipSixMonth: 'https://buy.stripe.com/6oU4gzenn39cc2y5Bl4ow0s',
   womensAIProgram: 'https://buy.stripe.com/5kQ28rcff5hkfeKd3N4ow0t',
   coachingSingle: 'https://buy.stripe.com/00w5kD6UVbFI7Mi8Nx4ow0u',
   coachingIntensive: 'https://buy.stripe.com/00w14ncffaBEd6Ce7R4ow0v',
@@ -32,8 +32,8 @@ export const STRIPE_LINKS = {
 };
 
 export const CALENDLY_LINKS = {
-  consultation: 'https://calendly.com/elie-schulman/new-meeting-1',
-  workshopBooking: 'https://calendly.com/elie-schulman/new-meeting-1',
-  coachingSession: 'https://calendly.com/elie-schulman/new-meeting-1',
+  consultation: 'https://calendly.com/elie-schulman/free-20-minute-consultation',
+  workshopBooking: 'https://calendly.com/elie-schulman/workshop-discovery-call',
+  coachingSession: 'https://calendly.com/elie-schulman/coaching-discovery-call',
 };
 export const CALENDLY_USERNAME = 'elie-schulman';

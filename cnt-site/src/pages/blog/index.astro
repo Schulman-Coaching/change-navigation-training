@@ -4,14 +4,22 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import BlogCard from '../../components/BlogCard.astro';
 import { getCollection } from 'astro:content';
+import { SEGMENTS } from '../../config';
 
 const posts = await getCollection('blog');
 const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const audienceLabels: Record<string, string> = {
+  'start': 'First Steps (18–24)',
+  'build': 'Build (25–35)',
+  'lead': 'Lead (35–50)',
+  'renew': 'Renew (50+)',
+};
 ---
 
 <BaseLayout
   title="Blog — Change Navigation Training"
-  description="Insights on navigating change, AI literacy, and building confidence in the age of AI. Written for Orthodox Jewish women."
+  description="Insights on navigating change, AI literacy, and building confidence in the age of AI. Written for Orthodox Jewish women at every stage of life."
 >
   <Header />
 
@@ -19,7 +27,7 @@ const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.get
     <section class="page-hero">
       <div class="container">
         <h1>Blog</h1>
-        <p>Navigate Change With Confidence</p>
+        <p>29 posts. Every audience. One conversation.</p>
       </div>
     </section>
 
@@ -27,13 +35,20 @@ const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.get
       <div class="container">
         <div class="blog-grid">
           {sortedPosts.map(post => (
-            <BlogCard
-              title={post.data.title}
-              slug={post.data.slug}
-              date={post.data.date.toISOString()}
-              excerpt={post.data.excerpt}
-              categories={post.data.categories}
-            />
+            <div class="blog-card-wrapper">
+              {post.data.audience && (
+                <span class={`audience-tag audience--${post.data.audience}`}>
+                  {audienceLabels[post.data.audience] || post.data.audience}
+                </span>
+              )}
+              <BlogCard
+                title={post.data.title}
+                slug={post.data.slug}
+                date={post.data.date.toISOString()}
+                excerpt={post.data.excerpt}
+                categories={post.data.categories}
+              />
+            </div>
           ))}
         </div>
       </div>
@@ -58,6 +73,27 @@ const sortedPosts = posts.sort((a, b) => b.data.date.getTime() - a.data.date.get
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     gap: 1.5rem;
   }
+
+  .blog-card-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .audience-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.2rem 0.6rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    width: fit-content;
+  }
+
+  .audience--start { background: rgba(62, 200, 160, 0.15); color: #3ec8a0; }
+  .audience--build { background: rgba(200, 62, 107, 0.15); color: #c83e6b; }
+  .audience--lead { background: rgba(200, 150, 62, 0.15); color: #c8963e; }
+  .audience--renew { background: rgba(139, 157, 195, 0.15); color: #8b9dc3; }
 
   @media (max-width: 640px) {
     .blog-grid { grid-template-columns: 1fr; }

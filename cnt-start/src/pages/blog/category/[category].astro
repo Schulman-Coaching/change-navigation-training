@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import BlogCard from '../../../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const categories = [...new Set(posts.flatMap(p => p.data.categories || []))];
+  return categories.map(cat => ({
+    params: { category: cat.toLowerCase().replace(/\s+/g, '-') },
+    props: { category: cat, posts: posts.filter(p => (p.data.categories || []).includes(cat)) },
+  }));
+}
+
+const { category, posts } = Astro.props;
+const sortedPosts = posts.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+---
+
+<BaseLayout
+  title={`${category} — Blog — Change Navigation Training`}
+  description={`Blog posts about ${category.toLowerCase()} from Change Navigation Training.`}
+>
+  <Header />
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>Category: {category}</h1>
+        <p>{sortedPosts.length} post{sortedPosts.length !== 1 ? 's' : ''}</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="blog-grid">
+          {sortedPosts.map(post => (
+            <BlogCard
+              title={post.data.title}
+              slug={post.data.slug}
+              excerpt={post.data.excerpt}
+              date={post.data.date.toISOString().split('T')[0]}
+              categories={post.data.categories}
+            />
+          ))}
+        </div>
+        <div class="text-center" style="margin-top:2rem;">
+          <a href="/blog/" class="btn btn-outline">← All Posts</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, var(--color-black), #1a1410);
+    padding: 5rem 1.5rem 3rem;
+    text-align: center;
+    border-bottom: 3px solid var(--color-gold);
+  }
+  .page-hero h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 0.5rem; }
+  .page-hero p { color: var(--color-gray-light); font-size: 1rem; }
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  @media (max-width: 600px) {
+    .blog-grid { grid-template-columns: 1fr; }
+  }
+</style>

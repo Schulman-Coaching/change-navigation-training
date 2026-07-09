@@ -3,11 +3,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
+import { SEGMENTS } from '../config';
+import { getCollection } from 'astro:content';
+
+// Get a featured blog post for each segment
+const allPosts = await getCollection('blog');
+const sortedPosts = allPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+function getFeaturedPost(audience: string) {
+  return sortedPosts.find(p => p.data.audience === audience) || sortedPosts[0];
+}
 ---
 
 <BaseLayout
   title="Change Navigation Training — Navigate AI Change With Confidence"
-  description="Change Navigation Training helps Orthodox Jewish women build the skills, confidence, and clarity to navigate change — personal, professional, and technological. Workshops, coaching, and community for thriving in the AI era."
+  description="AI training and change-navigation workshops for Orthodox Jewish women. Build confidence, master AI tools, and navigate change — at every stage of life. Workshops, coaching, and community."
 >
   <Header />
 
@@ -24,7 +34,8 @@ import CTABanner from '../components/CTABanner.astro';
           who want to move forward with clarity, not fear.
         </p>
         <div class="hero-actions">
-          <a href="/group-workshops/" class="btn">View Workshops</a>
+          <a href="/assessment/" class="btn">Take Free Assessment</a>
+          <a href="/group-workshops/" class="btn btn-outline">View Workshops</a>
           <a href="/memberships/" class="btn btn-outline">See Memberships</a>
         </div>
       </div>
@@ -47,7 +58,7 @@ import CTABanner from '../components/CTABanner.astro';
             </p>
             <div class="mission-stats">
               <div class="stat">
-                <span class="stat-number">12+</span>
+                <span class="stat-number">14</span>
                 <span class="stat-label">Workshop Modules</span>
               </div>
               <div class="stat">
@@ -55,11 +66,39 @@ import CTABanner from '../components/CTABanner.astro';
                 <span class="stat-label">Peer Circles</span>
               </div>
               <div class="stat">
-                <span class="stat-number">200+</span>
-                <span class="stat-label">Women Trained</span>
+                <span class="stat-number">Free</span>
+                <span class="stat-label">First Call</span>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Audience Segments -->
+    <section class="segments section">
+      <div class="container">
+        <h2 class="text-center">A Path for Every Woman</h2>
+        <p class="segments-subtitle text-center">Wherever you are in life, there is a room here for you.</p>
+        <div class="segments-grid">
+          {SEGMENTS.map((seg) => {
+            const post = getFeaturedPost(seg.id);
+            return (
+              <div class="segment-card" style={`--seg-accent: ${seg.accent};`}>
+                <div class="segment-header">
+                  <span class="segment-age">{seg.age}</span>
+                  <h3>{seg.name}</h3>
+                </div>
+                <p class="segment-tagline">{seg.tagline}</p>
+                <p class="segment-message">{seg.message}</p>
+                <p class="segment-emotion">{seg.emotion}</p>
+                <div class="segment-cta">
+                  <a href="/assessment/" class="btn btn-sm" style={`border-color: ${seg.accent}; background: ${seg.accent};`}>Take the Assessment</a>
+                  {post && <a href={`/blog/${post.data.slug}/`} class="segment-blog-link">Read: {post.data.title}</a>}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -73,28 +112,20 @@ import CTABanner from '../components/CTABanner.astro';
         </p>
         <div class="philosophy-grid">
           <div class="philosophy-item">
-            <h3>Clarity</h3>
-            <p>Learn to assess what is changing and what it means — for your work, your family, and yourself.</p>
-            <div class="bar"><span class="bar-fill" style="--w:90%"></span></div>
-            <span class="bar-label">90%</span>
+            <h3>Facilitated, Not Lectured</h3>
+            <p>The room does the work. The facilitator creates the conditions. Learning comes from participation, not from the front of the room.</p>
           </div>
           <div class="philosophy-item">
-            <h3>Confidence</h3>
-            <p>Build the unshakeable belief that you can handle what comes next — with AI or without it.</p>
-            <div class="bar"><span class="bar-fill" style="--w:95%"></span></div>
-            <span class="bar-label">95%</span>
+            <h3>Context First</h3>
+            <p>Shabbos-aware scheduling. Women-only spaces. Values-aligned content. Training built in your context from the start.</p>
           </div>
           <div class="philosophy-item">
-            <h3>Adaptability</h3>
-            <p>Develop the skill of learning itself. The ability to face new tools, new roles, and new realities without freezing.</p>
-            <div class="bar"><span class="bar-fill" style="--w:88%"></span></div>
-            <span class="bar-label">88%</span>
+            <h3>Discomfort Is the Signal</h3>
+            <p>Learning anything new is uncomfortable. That is not a sign you are in the wrong place. It is the signal that growth is happening.</p>
           </div>
           <div class="philosophy-item">
-            <h3>Agency</h3>
-            <p>Move from feeling like change is happening to you — to knowing you have a say in where you are going.</p>
-            <div class="bar"><span class="bar-fill" style="--w:85%"></span></div>
-            <span class="bar-label">85%</span>
+            <h3>Community Is the Mechanism</h3>
+            <p>The question that stumps you at 10 PM is the same question three other women had that week. In a room together, someone asks out loud.</p>
           </div>
         </div>
       </div>
@@ -130,45 +161,21 @@ import CTABanner from '../components/CTABanner.astro';
       </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials section">
-      <div class="container">
-        <h2 class="text-center">What Women Say</h2>
-        <div class="testimonials-grid">
-          <blockquote class="testimonial-card">
-            <p>"I came in afraid of AI. I left knowing I could use it to my advantage. More importantly, I stopped feeling like change was something that happened to me."</p>
-            <cite>&mdash; Chana R.</cite>
-          </blockquote>
-          <blockquote class="testimonial-card">
-            <p>"The workshops gave me language for what I was feeling. And practical tools for what to do about it. I use what I learned every week."</p>
-            <cite>&mdash; Miriam S., Workshop Graduate</cite>
-          </blockquote>
-          <blockquote class="testimonial-card">
-            <p>"I didn't just learn about AI. I learned about myself. About how I respond to change. That was the real gift."</p>
-            <cite>&mdash; Devorah K.</cite>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
     <!-- Blog Preview -->
-    <section class="blog-preview section">
+    <section class="blog-preview section" style="background: var(--color-dark);">
       <div class="container">
         <div class="blog-preview-header">
-          <h2>Navigate Change With Confidence</h2>
-          <p class="blog-preview-subtitle">Latest from our blog</p>
+          <h2>From the Blog</h2>
+          <p class="blog-preview-subtitle">Latest thinking on change, AI, and what it means for you</p>
         </div>
         <div class="blog-preview-grid">
-          <div class="blog-preview-card">
-            <h3>AI Is Not the Disruption. Your Response to It Is.</h3>
-            <p>Why the most important skill in the age of AI is not technical — it is the ability to face change without freezing.</p>
-            <a href="/blog/ai-is-not-the-disruption/" class="btn">Read More</a>
-          </div>
-          <div class="blog-preview-card">
-            <h3>What Learning to Use AI Actually Teaches You</h3>
-            <p>The tool matters less than what the learning process reveals about your own adaptability.</p>
-            <a href="/blog/what-learning-ai-teaches-you/" class="btn">Read More</a>
-          </div>
+          {sortedPosts.slice(0, 3).map((post) => (
+            <a href={`/blog/${post.data.slug}/`} class="blog-preview-card">
+              <h3>{post.data.title}</h3>
+              <p>{post.data.excerpt}</p>
+              <span class="blog-preview-link">Read More →</span>
+            </a>
+          ))}
         </div>
         <div class="text-center">
           <a href="/blog/" class="btn btn-outline">Read the Blog</a>
@@ -177,7 +184,7 @@ import CTABanner from '../components/CTABanner.astro';
     </section>
 
     <!-- Membership Preview -->
-    <section class="section" style="background: var(--color-dark);">
+    <section class="section">
       <div class="container text-center">
         <h2>Our Memberships</h2>
         <p class="programs-subtitle">Flexible options for every journey</p>
@@ -279,8 +286,90 @@ import CTABanner from '../components/CTABanner.astro';
     margin-top: 0.25rem;
   }
 
-  .philosophy { background: var(--color-dark); }
+  /* Audience Segments */
+  .segments { background: var(--color-dark); }
+  .segments-subtitle { color: var(--color-gray-light); margin-bottom: 3rem; }
 
+  .segments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .segment-card {
+    background: var(--color-black);
+    border: 1px solid var(--color-gray);
+    border-top: 3px solid var(--seg-accent);
+    padding: 2rem;
+    transition: border-color 0.2s;
+  }
+
+  .segment-card:hover { border-color: var(--seg-accent); }
+
+  .segment-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .segment-age {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--seg-accent);
+    font-weight: 600;
+  }
+
+  .segment-card h3 {
+    font-size: 1.3rem;
+    color: var(--color-white);
+    margin: 0;
+  }
+
+  .segment-tagline {
+    font-size: 0.9rem;
+    color: var(--color-gray-light);
+    margin-bottom: 0.5rem;
+    font-style: italic;
+  }
+
+  .segment-message {
+    font-size: 1rem;
+    color: var(--color-white);
+    margin-bottom: 0.5rem;
+  }
+
+  .segment-emotion {
+    font-size: 0.75rem;
+    color: var(--seg-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
+  }
+
+  .segment-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .segment-blog-link {
+    font-size: 0.85rem;
+    color: var(--color-gray-light);
+    text-decoration: underline;
+    text-decoration-color: var(--seg-accent);
+  }
+
+  .segment-blog-link:hover { color: var(--color-white); }
+
+  .btn-sm {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  /* Philosophy */
   .philosophy-lead {
     font-size: 1.2rem;
     color: var(--color-gray-light);
@@ -296,34 +385,16 @@ import CTABanner from '../components/CTABanner.astro';
   }
 
   .philosophy-item {
-    background: var(--color-black);
+    background: var(--color-dark);
     border: 1px solid var(--color-gray);
     padding: 2rem;
     text-align: left;
   }
 
-  .philosophy-item h3 { font-size: 1.3rem; margin-bottom: 0.75rem; }
-  .philosophy-item p { font-size: 0.85rem; color: var(--color-gray-light); margin-bottom: 1rem; }
+  .philosophy-item h3 { font-size: 1.1rem; margin-bottom: 0.75rem; color: var(--color-gold); }
+  .philosophy-item p { font-size: 0.85rem; color: var(--color-gray-light); line-height: 1.5; }
 
-  .bar {
-    height: 4px;
-    background: var(--color-gray-dark);
-    margin-bottom: 0.5rem;
-  }
-
-  .bar-fill {
-    display: block;
-    height: 100%;
-    background: var(--color-gold);
-    width: var(--w);
-  }
-
-  .bar-label {
-    font-size: 0.75rem;
-    color: var(--color-gold);
-    font-weight: 600;
-  }
-
+  /* Programs */
   .programs { text-align: center; }
   .programs-subtitle { color: var(--color-gray-light); margin-bottom: 2.5rem; }
 
@@ -345,66 +416,49 @@ import CTABanner from '../components/CTABanner.astro';
   .program-card h3 { font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--color-gold); }
   .program-card p { font-size: 0.85rem; color: var(--color-gray-light); line-height: 1.5; }
 
-  .testimonials { background: var(--color-dark); }
-
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .testimonial-card {
-    background: var(--color-black);
-    border-left: 3px solid var(--color-gold);
-    padding: 1.5rem 2rem;
-    margin: 0;
-  }
-
-  .testimonial-card p {
-    font-size: 1rem;
-    font-style: italic;
-    color: var(--color-off-white);
-    margin-bottom: 0.75rem;
-    line-height: 1.5;
-  }
-
-  .testimonial-card cite {
-    font-size: 0.85rem;
-    color: var(--color-gray-light);
-    font-style: normal;
-  }
-
+  /* Blog Preview */
   .blog-preview { text-align: center; }
   .blog-preview-header { margin-bottom: 2rem; }
   .blog-preview-subtitle { color: var(--color-gray-light); margin-top: 0.5rem; }
 
   .blog-preview-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-bottom: 2.5rem;
-  }
-
-  .blog-preview-card {
-    background: var(--color-dark);
-    border: 1px solid var(--color-gray);
-    padding: 2rem;
     text-align: left;
   }
 
+  .blog-preview-card {
+    background: var(--color-black);
+    border: 1px solid var(--color-gray);
+    padding: 2rem;
+    transition: border-color 0.2s;
+  }
+
+  .blog-preview-card:hover { border-color: var(--color-gold); }
+
   .blog-preview-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-bottom: 0.75rem;
     color: var(--color-gold);
   }
 
   .blog-preview-card p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--color-gray-light);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
   }
 
+  .blog-preview-link {
+    font-size: 0.8rem;
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Pricing */
   .pricing-row {
     display: flex;
     gap: 1.5rem;
@@ -414,7 +468,7 @@ import CTABanner from '../components/CTABanner.astro';
   }
 
   .pricing-card {
-    background: var(--color-black);
+    background: var(--color-dark);
     border: 1px solid var(--color-gray);
     padding: 2rem;
     min-width: 240px;

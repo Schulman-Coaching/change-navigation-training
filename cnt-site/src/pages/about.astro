@@ -3,70 +3,107 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CTABanner from '../components/CTABanner.astro';
+import CalendlyWidget from '../components/CalendlyWidget.astro';
+import { CALENDLY_LINKS } from '../config';
 ---
 
 <BaseLayout
   title="About — Change Navigation Training"
-  description="Change Navigation Training helps Orthodox Jewish women build the skills to navigate change with confidence. Learn about our mission, approach, and team."
+  description="Change Navigation Training is led by Elie Schulman — 18 years of group facilitation and 18 years of conflict management. Training Orthodox Jewish women to navigate change with confidence."
 >
   <Header />
 
   <main>
     <section class="page-hero">
       <div class="container">
-        <h1>About Change Navigation Training</h1>
-        <p>Helping women navigate what comes next</p>
+        <h1>About</h1>
+        <p>Who is teaching matters as much as what is taught.</p>
       </div>
     </section>
 
+    <!-- Founder Section -->
     <section class="section">
       <div class="container">
-        <div class="about-intro">
-          <h2>Who We Are</h2>
-          <p>Change Navigation Training exists for one reason: Orthodox Jewish women deserve a space to build the skills they need to navigate a rapidly changing world. AI is reshaping how we work, learn, parent, and connect. The conversation about what that means has largely happened without women's voices — and certainly without the voices of women whose lives are shaped by Torah values and frum community.</p>
-          <p>We are not a tech company. We are a training organization built on the belief that change is a skill — not a disruption to survive, but a capacity to develop. Our workshops, peer circles, and coaching programs are designed for women who want to move forward with clarity, not fear.</p>
-        </div>
-      </div>
-    </section>
+        <div class="founder-layout">
+          <div class="founder-text">
+            <h2>Elie Schulman</h2>
+            <p class="founder-role">Founder, Change Navigation Training</p>
 
-    <section class="story section">
-      <div class="container">
-        <h2>Our Approach</h2>
-        <p>Most AI training assumes you already speak the language of technology. Most change-management frameworks were built for corporate boardrooms. Neither serves the woman who is wondering what AI means for her job, her children's education, or her ability to stay grounded in her values amid so much change.</p>
-        <p>Our training starts where you are — with the questions you actually have, the tools you can actually use, and the context you actually live in. We do not teach women to become engineers. We teach women to become confident navigators. The distinction matters.</p>
-        <p>Every workshop, circle, and coaching session is designed for Orthodox Jewish women. That means we respect Shabbos and Yom Tov scheduling, we understand the values and rhythms of frum life, and we create spaces where women can learn without having to explain their context.</p>
-      </div>
-    </section>
+            <p>I have spent eighteen years facilitating groups. Not training groups. Facilitating them. The distinction matters. A trainer stands in front and delivers information. A facilitator sits in the room and helps the people in it find what they already know, name what they don't, and build from there.</p>
 
-    <section class="values section">
-      <div class="container">
-        <h2 class="text-center">What We Believe</h2>
-        <div class="values-grid">
-          <div class="value">
-            <h3>Change Is a Skill</h3>
-            <p>It can be learned. It can be practiced. It can become part of how you think, not something you react to.</p>
+            <p>Before CNT, I spent eighteen years in litigation and conflict management. That work taught me something most AI training misses: the hardest part of any change is not the technical learning. It is the human response — the fear, the resistance, the moment of freezing. I have watched that moment in boardrooms, in courtrooms, and in classrooms. It looks the same everywhere.</p>
+
+            <p>The women who come to CNT are not behind. They are not insufficient. They are standing at the edge of something new and feeling the discomfort that comes with it. My job is not to push them across. It is to stand next to them while they decide to step.</p>
+
+            <p>That is what facilitation is. That is what CNT is.</p>
           </div>
-          <div class="value">
-            <h3>Women Belong Here</h3>
-            <p>The AI conversation needs women's perspectives — in the tools being built, the policies being shaped, and the communities being affected.</p>
-          </div>
-          <div class="value">
-            <h3>Start Where You Are</h3>
-            <p>No technical background required. No catching up needed. You are exactly where you need to be to begin.</p>
-          </div>
-          <div class="value">
-            <h3>Community Accelerates Growth</h3>
-            <p>Learning alongside women who share your context is more effective than learning alone. The support matters as much as the content.</p>
+
+          <div class="founder-credentials">
+            <div class="credential-card">
+              <h3>Group Facilitation</h3>
+              <p class="credential-years">18 years</p>
+              <p>Trained in the Ormont method under Dr. Louis Ormont — the leading figure in modern group facilitation. Facilitated ongoing psychodynamic groups with Dr. Brook, Dr. Grover, and at the Center for Group Studies.</p>
+            </div>
+            <div class="credential-card">
+              <h3>Conflict Management</h3>
+              <p class="credential-years">18 years</p>
+              <p>Litigation practice. Mediation. The daily work of helping people in high-stakes situations make decisions with incomplete information — and live with the outcomes.</p>
+            </div>
+            <div class="credential-card">
+              <h3>Community</h3>
+              <p class="credential-years">A life</p>
+              <p>Orthodox. Frum. Living in the rhythm of Shabbos and Yom Tov. The women who come to CNT do not need to explain their context. I share it.</p>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Mission Section -->
+    <section class="mission-section">
+      <div class="container">
+        <h2>Why This Exists</h2>
+        <div class="mission-content">
+          <p>The conversation about AI has largely happened without women's voices — and certainly without the voices of women whose lives are shaped by Torah values and frum community.</p>
+          <p>Change Navigation Training exists to change that. Not by arguing that women should be in the conversation. By giving them the skills to enter it on their own terms.</p>
+          <p>We are not a tech company. We are a training organization built on the belief that change is a skill — not a disruption to survive, but a capacity to develop. The tools are the context. The skill is the product.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Approach Section -->
+    <section class="section" style="background: var(--color-dark);">
+      <div class="container">
+        <h2 class="text-center">The Approach</h2>
+        <div class="approach-grid">
+          <div class="approach-card">
+            <h3>Facilitated, Not Lectured</h3>
+            <p>The room does the work. The facilitator creates the conditions. Every workshop is designed so the learning comes from participation, not from the front of the room.</p>
+          </div>
+          <div class="approach-card">
+            <h3>Context First</h3>
+            <p>Frum women do not need a translated version of secular AI training. They need training built in their context from the start. Shabbos-aware scheduling. Women-only spaces. Values-aligned content.</p>
+          </div>
+          <div class="approach-card">
+            <h3>Discomfort Is the Signal</h3>
+            <p>Learning anything new is uncomfortable. That discomfort is not a sign you are in the wrong place. It is the signal that growth is happening. We do not remove it. We help you move through it.</p>
+          </div>
+          <div class="approach-card">
+            <h3>Community Is the Mechanism</h3>
+            <p>The question that stumps you at 10 PM is the same question three other women had that week. In a room together, someone asks out loud and everyone learns. Alone, you close the laptop.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call Section -->
     <section class="section text-center">
       <div class="container">
-        <h2>Ready to Start Your Journey?</h2>
-        <p style="color: var(--color-gray-light); margin: 1rem 0 1.5rem;">First workshop is $35. No commitment required.</p>
-        <a href="/contact/" class="btn">Get Started</a>
+        <h2>Have a Conversation</h2>
+        <p style="color: var(--color-gray-light); margin: 1rem 0 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto;">
+          The best way to understand what CNT is, is to talk about it. Twenty minutes. No pitch. Tell me what you are navigating. I will tell you whether this can help.
+        </p>
+        <a href={CALENDLY_LINKS.consultation} class="btn">Book a Free Call</a>
       </div>
     </section>
   </main>
@@ -85,26 +122,115 @@ import CTABanner from '../components/CTABanner.astro';
   .page-hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 0.5rem; }
   .page-hero p { color: var(--color-gray-light); font-size: 1.1rem; }
 
-  .about-intro { max-width: 700px; margin: 0 auto; text-align: center; }
-  .about-intro h2 { margin-bottom: 1rem; }
-  .about-intro p { color: var(--color-gray-light); font-size: 1.05rem; margin-bottom: 1rem; }
+  .founder-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
 
-  .story { background: var(--color-dark); }
-  .story h2 { text-align: center; margin-bottom: 1.5rem; }
-  .story p { max-width: 700px; margin: 0 auto 1rem; color: var(--color-gray-light); font-size: 1.05rem; }
+  .founder-text h2 {
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+    color: var(--color-gold);
+  }
 
-  .values-grid {
+  .founder-role {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-gray-light);
+    margin-bottom: 2rem;
+  }
+
+  .founder-text p {
+    color: var(--color-gray-light);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .founder-credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .credential-card {
+    background: var(--color-dark);
+    border: 1px solid var(--color-gray);
+    padding: 1.5rem;
+  }
+
+  .credential-card h3 {
+    font-size: 1rem;
+    color: var(--color-gold);
+    margin-bottom: 0.25rem;
+  }
+
+  .credential-years {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    color: var(--color-white);
+    margin-bottom: 0.75rem;
+  }
+
+  .credential-card p:last-child {
+    font-size: 0.85rem;
+    color: var(--color-gray-light);
+    line-height: 1.5;
+  }
+
+  .mission-section {
+    background: var(--color-dark);
+    padding: 5rem 0;
+  }
+
+  .mission-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .mission-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .mission-content p {
+    color: var(--color-gray-light);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .approach-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
     margin-top: 2rem;
   }
-  .value {
-    background: var(--color-dark);
+
+  .approach-card {
+    background: var(--color-black);
     border: 1px solid var(--color-gray);
     padding: 2rem;
-    text-align: center;
   }
-  .value h3 { margin-bottom: 0.75rem; }
-  .value p { font-size: 0.85rem; color: var(--color-gray-light); }
+
+  .approach-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+    color: var(--color-gold);
+  }
+
+  .approach-card p {
+    font-size: 0.85rem;
+    color: var(--color-gray-light);
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .founder-layout {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>

@@ -30,6 +30,9 @@ const metaDescription = description || SITE.description;
   <meta name="twitter:title" content={fullTitle} />
   <meta name="twitter:description" content={metaDescription} />
 
+  <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).href} />
+  <meta name="robots" content="index, follow" />
+
   <script type="application/ld+json" is:inline>
     {
       "@context": "https://schema.org",
@@ -53,6 +56,21 @@ const metaDescription = description || SITE.description;
 
   <!-- Calendly scheduling widget -->
   <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+  <!-- Analytics: Plausible (set PUBLIC_PLAUSIBLE_DOMAIN in Vercel env) -->
+  {import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN && (
+    <script defer data-domain={import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN} src="https://plausible.io/js/script.js"></script>
+  )}
+
+  <!-- Analytics: Google Analytics (set PUBLIC_GA_ID in Vercel env) -->
+  {import.meta.env.PUBLIC_GA_ID && (
+    <script>
+      {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${import.meta.env.PUBLIC_GA_ID}');`}
+    </script>
+  )}
+  {import.meta.env.PUBLIC_GA_ID && (
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA_ID}`}></script>
+  )}
 
   <style is:global>
     :root {

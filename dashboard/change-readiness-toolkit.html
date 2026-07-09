@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change Readiness Toolkit — Change Navigation Training</title>
+<style>
+  @media print {
+    body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .page-break { page-break-before: always; }
+    .no-print { display: none; }
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+  .cover {
+    text-align: center;
+    padding: 80px 40px;
+    border: 3px solid #c8963e;
+    margin-bottom: 48px;
+    page-break-after: always;
+  }
+  .cover h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    color: #c8963e;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .cover .subtitle {
+    font-size: 20px;
+    color: #777;
+    margin-bottom: 32px;
+  }
+  .cover .brand {
+    font-size: 14px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  h1 { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: #c8963e; letter-spacing: 1px; text-transform: uppercase; margin: 40px 0 16px; }
+  h2 { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: #c8963e; letter-spacing: 0.5px; text-transform: uppercase; margin: 32px 0 12px; }
+  h3 { font-size: 18px; color: #e0e0e0; margin: 24px 0 8px; font-weight: 600; }
+  p { margin-bottom: 12px; font-size: 15px; color: #ccc; }
+  .intro-box {
+    background: #111;
+    border-left: 4px solid #c8963e;
+    padding: 24px;
+    margin: 24px 0;
+    font-size: 16px;
+    color: #e0e0e0;
+    line-height: 1.7;
+  }
+  .section-divider {
+    border: none;
+    border-top: 1px solid #333;
+    margin: 48px 0;
+  }
+  .question {
+    background: #111;
+    border: 1px solid #333;
+    padding: 20px;
+    margin-bottom: 12px;
+  }
+  .question .q-num {
+    font-size: 11px;
+    color: #c8963e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .question .q-text { font-size: 15px; color: #e0e0e0; }
+  .circle-row { display: flex; gap: 16px; margin-top: 8px; }
+  .circle-row .c { width: 36px; height: 36px; border: 2px solid #333; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #555; font-weight: 600; }
+  .scale-labels { display: flex; justify-content: space-between; font-size: 10px; color: #555; margin-top: 4px; padding: 0 4px; }
+  .scoring-box {
+    background: #111;
+    border: 2px solid #c8963e;
+    padding: 24px;
+    margin: 24px 0;
+  }
+  .scoring-box table { width: 100%; border-collapse: collapse; }
+  .scoring-box td { padding: 8px 12px; border-bottom: 1px solid #222; font-size: 14px; }
+  .scoring-box td:first-child { font-weight: 600; color: #e0e0e0; width: 120px; }
+  .profile-deep {
+    background: #111;
+    border: 1px solid #333;
+    border-left: 4px solid #c8963e;
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+  .profile-deep .pd-emoji { font-size: 32px; margin-bottom: 8px; }
+  .profile-deep .pd-name { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: #c8963e; margin-bottom: 4px; }
+  .profile-deep .pd-range { font-size: 11px; color: #555; margin-bottom: 8px; }
+  .profile-deep .pd-desc { font-size: 14px; color: #ccc; margin-bottom: 6px; }
+  .profile-deep .pd-trap { font-size: 13px; color: #c83e6b; }
+  .profile-deep .pd-action { font-size: 13px; color: #3ec8a0; margin-top: 8px; }
+  .framework-step {
+    background: #111;
+    border: 1px solid #333;
+    padding: 24px;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .framework-step .fs-num {
+    position: absolute;
+    top: -16px;
+    left: 20px;
+    background: #c8963e;
+    color: #0a0a0a;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .framework-step .fs-title { font-size: 18px; color: #c8963e; font-weight: 600; margin: 8px 0 8px; }
+  .worksheet {
+    background: #111;
+    border: 1px dashed #555;
+    padding: 32px;
+    margin: 24px 0;
+    min-height: 300px;
+  }
+  .worksheet h3 { text-align: center; color: #c8963e; margin-bottom: 20px; font-size: 20px; }
+  .worksheet .prompt { margin-bottom: 16px; }
+  .worksheet .prompt .p-label { font-size: 12px; color: #777; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+  .worksheet .prompt .p-lines { border-bottom: 1px solid #333; height: 28px; }
+  .day-plan {
+    background: #111;
+    border: 1px solid #333;
+    padding: 16px;
+    margin-bottom: 8px;
+  }
+  .day-plan .day-num { font-size: 11px; color: #c8963e; text-transform: uppercase; letter-spacing: 1px; }
+  .day-plan .day-action { font-size: 14px; color: #e0e0e0; margin-top: 4px; }
+  .back-cover {
+    text-align: center;
+    padding: 60px 40px;
+    border: 2px solid #333;
+    margin-top: 48px;
+    page-break-before: always;
+  }
+  .back-cover h2 { margin-bottom: 16px; }
+  .back-cover .url { color: #777; font-size: 14px; }
+  .no-print {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #c8963e;
+    color: #0a0a0a;
+    border: none;
+    padding: 14px 28px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    z-index: 100;
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <p class="brand">Change Navigation Training</p>
+  <h1>Change Readiness<br>Toolkit</h1>
+  <p class="subtitle">A practical guide to navigating change with clarity, confidence, and agency — in the AI era and beyond.</p>
+</div>
+
+<!-- INTRODUCTION -->
+<h1>Welcome</h1>
+<div class="intro-box">
+  <p>Change is not a disruption to survive. It is a skill to develop.</p>
+  <p>This toolkit is built on a simple premise: the women who will thrive over the next decade are not the ones who learned to code at 14. They are the ones who know how to assess a situation, decide with incomplete information, adapt when conditions shift, and move forward without freezing.</p>
+  <p>Those skills can be learned. This workbook is where you start.</p>
+</div>
+
+<p><strong>What you'll find inside:</strong></p>
+<p>• A 10-question self-assessment to identify your Change Readiness Profile<br>
+• Deep-dive analysis of each profile — what it means and what to do next<br>
+• The Change Navigation Framework — a 4-step system for any transition<br>
+• Four guided worksheets to build clarity, confidence, adaptability, and agency<br>
+• A 30-day practice plan with daily actions<br>
+• A resource guide for AI tools and further learning</p>
+
+<p><strong>How to use this:</strong> Work through it in order, or jump to the section that calls to you. There is no test at the end. There is only the practice.</p>
+
+<hr class="section-divider">
+
+<!-- ASSESSMENT -->
+<h1>Part 1: The Self-Assessment</h1>
+<p>Answer each question honestly. Circle the number that best describes you. <em>1 = Not at all. 5 = Exactly.</em> Question 9 is reverse-scored.</p>
+
+<div class="question">
+  <div class="q-num">1</div>
+  <div class="q-text">When a new technology appears, my first instinct is to learn about it.</div>
+  <div class="circle-row"><span class="c">1</span><span class="c">2</span><span class="c">3</span><span class="c">4</span><span class="c">5</span></div>
+  <div class="scale-labels"><span>Not at all</span><span></span><span></span><span></span><span>Exactly</span></div>
+</div>
+
+<div class="question">
+  <div class="q-num">2</div>
+  <div class="q-text">I feel confident that I can adapt to changes in my work or industry.</div>
+  <div class="circle-row"><span class="c">1</span><span class="c">2</span><span class="c">3</span><span class="c">4</span><span class="c">5</span></div>
+  <div class="scale-labels"><span>Not at all</span><span></span><span></span><span></span><span>Exactly</span></div>
+</div>
+
+<div class="question">
+  <div class="q-num">3</div>
+  <div class="q-text">I have a clear sense of what I want my next chapter to look like.</div>
+  <div class="circle-row"><span class="c">1</span><span class="c">2</span><span class="c">3</span><span class="c">4</span><span class="c">5</span></div>
+  <div class="scale-labels"><span>Not at all</span><span></span><span></span><span></span><span>Exactly</span></div>
+</div>
+
+<div class="question">
+  <div class="q-num">4</div>
+  <div class="q-text">When I face a difficult decision, I trust my ability to make it — even with incomplete information.</div>
+  <div class="circle-row"><span class="c">1</span><span class="c">2</span><span class="c">3</span><span class="c">4</span><span class="c">5</span></div>
+  <div class="scale-labels"><span>Not at all</span><span></span><span></span><span></span><span>Exactly</span></div>
+</div>
+
+<div class="question">
+  <div class="q-num">5</div>
+  <div class="q-text">I have a community of women I can talk to about navigating change.</div>
+  <div class="circle-row"><span class="c">1</span><span class="c">2</span><span class="c">3</span><span class="c">4</span><span class="c">5</span></div>
+  <div class="scale-labels"><span>Not at all</span><span></span><span></span><span></span><span>Exactly</span></div>
+</div>
+
+<div class="question">
+  <div class="q-num">6</div>
+  <div class="q-text">The pace of change in the world feels manageable to me.</div>
+  <div class="circle-row"><span class="c">1</span><span class="c">2</span><span class="c">3</span><span class="c">4</span><span class="c">5</span></div>
+  <div class="scale-labels"><span>Not at all</span><span></span><span></span><span></span><span>Exactly</span></div>
+</div>
+
+<div class="question">
+  <div class="q-num">7</div>
+  <div class="q-text">I actively seek out opportunities to learn new skills.</div>
+  <div class="circle-row"><span class="c">1</span><span class="c">2</span><span class="c">3</span><span class="c">4</span><span class="c">5</span></div>
+  <div class="scale-labels"><span>Not at all</span><span></span><span></span><span></span><span>Exactly</span></div>
+</div>
+
+<div class="question">
+  <div class="q-num">8</div>
+  <div class="q-text">I have a system or framework for handling uncertainty.</div>
+  <div class="circle-row"><span class="c">1</span><span class="c">2</span><span class="c">3</span><span class="c">4</span><span class="c">5</span></div>
+  <div class="scale-labels"><span>Not at all</span><span></span><span></span><span></span><span>Exactly</span></div>
+</div>
+
+<div class="question">
+  <div class="q-num">9 — REVERSE SCORED</div>
+  <div class="q-text">I feel like change is something that happens <em>to</em> me.</div>
+  <div class="circle-row"><span class="c">1</span><span class="c">2</span><span class="c">3</span><span class="c">4</span><span class="c">5</span></div>
+  <div class="scale-labels"><span>Not at all = 5 pts</span><span></span><span></span><span></span><span>Exactly = 1 pt</span></div>
+  <p style="font-size:11px;color:#c8963e;margin-top:8px;">Reverse scoring: If you circled 1 → count as 5. 2 → 4. 3 → 3. 4 → 2. 5 → 1.</p>
+</div>
+
+<div class="question">
+  <div class="q-num">10</div>
+  <div class="q-text">I am excited about what AI can do for my life — not afraid of it.</div>
+  <div class="circle-row"><span class="c">1</span><span class="c">2</span><span class="c">3</span><span class="c">4</span><span class="c">5</span></div>
+  <div class="scale-labels"><span>Not at all</span><span></span><span></span><span></span><span>Exactly</span></div>
+</div>
+
+<div class="scoring-box">
+  <h3>Your Total: ______ / 50</h3>
+  <table>
+    <tr><td>10 – 22</td><td>The Observer 🔭</td></tr>
+    <tr><td>23 – 34</td><td>The Explorer 🧭</td></tr>
+    <tr><td>35 – 42</td><td>The Navigator 🗺️</td></tr>
+    <tr><td>43 – 50</td><td>The Trailblazer 🚀</td></tr>
+  </table>
+</div>
+
+<hr class="section-divider page-break">
+
+<!-- PROFILES -->
+<h1>Part 2: Understanding Your Profile</h1>
+<p>Your profile is not a diagnosis. It is a snapshot of where you are right now — not where you will be in three months. Use it as a starting point, not a label.</p>
+
+<div class="profile-deep">
+  <div class="pd-emoji">🔭</div>
+  <div class="pd-name">The Observer</div>
+  <div class="pd-range">Score: 10 – 22</div>
+  <div class="pd-desc"><strong>You are watching. Waiting.</strong> Most people start here. You are paying attention, and that is more than most. Change feels like something happening around you rather than something you are participating in. There is a gap between noticing change and feeling equipped to navigate it.</div>
+  <div class="pd-trap"><strong>Watch out for:</strong> Staying in observation mode indefinitely. Watching is useful. It is not the same as doing.</div>
+  <div class="pd-action"><strong>Your next move:</strong> Read three blog posts. Join an email list. Take in information without pressure. The goal is exposure, not expertise. Start here: changenavigationtraining.com/blog</div>
+</div>
+
+<div class="profile-deep">
+  <div class="pd-emoji">🧭</div>
+  <div class="pd-name">The Explorer</div>
+  <div class="pd-range">Score: 23 – 34</div>
+  <div class="pd-desc"><strong>You are curious.</strong> You want to understand more — what AI actually is, whether this is worth your time. You are asking the right questions. The next step is turning curiosity into a simple action. You have enough awareness to know change matters, but not yet the momentum to feel like you are moving.</div>
+  <div class="pd-trap"><strong>Watch out for:</strong> Endless research. At some point, you need to stop reading about the pool and get in.</div>
+  <div class="pd-action"><strong>Your next move:</strong> Book a free 20-minute call. No sales pitch. Just a conversation about where you are and what you are curious about. calendly.com/elie-schulman/free-20-minute-consultation</div>
+</div>
+
+<div class="profile-deep">
+  <div class="pd-emoji">🗺️</div>
+  <div class="pd-name">The Navigator</div>
+  <div class="pd-range">Score: 35 – 42</div>
+  <div class="pd-desc"><strong>You are moving.</strong> You want structure and specific skills. You are ready to stop thinking about change and start practicing it. What you need now is a framework and some momentum. You have the awareness and the willingness — now add the system.</div>
+  <div class="pd-trap"><strong>Watch out for:</strong> Trying to do it alone. The women who make the fastest progress are the ones who learn alongside others.</div>
+  <div class="pd-action"><strong>Your next move:</strong> Sign up for a workshop. First session is $35. No commitment. See how it feels. changenavigationtraining.com/schedule</div>
+</div>
+
+<div class="profile-deep">
+  <div class="pd-emoji">🚀</div>
+  <div class="pd-name">The Trailblazer</div>
+  <div class="pd-range">Score: 43 – 50</div>
+  <div class="pd-desc"><strong>You are moving fast.</strong> You want community and ongoing practice — not a one-time event. You are ready for depth. The right environment will accelerate what is already building. You have the drive. Now build the container that sustains it.</div>
+  <div class="pd-trap"><strong>Watch out for:</strong> Going so fast you burn out. Depth matters more than speed. Build the practice before you scale it.</div>
+  <div class="pd-action"><strong>Your next move:</strong> Join a membership. All workshops. Peer circles. Resource library. $89/month. Cancel anytime. changenavigationtraining.com/memberships</div>
+</div>
+
+<hr class="section-divider page-break">
+
+<!-- FRAMEWORK -->
+<h1>Part 3: The Change Navigation Framework</h1>
+<p>Change follows a pattern. When you learn the pattern, you stop reacting and start navigating. This framework works for any transition — career change, new technology, family shift, personal growth.</p>
+
+<div class="framework-step">
+  <div class="fs-num">1</div>
+  <div class="fs-title">See — Name What Is Changing</div>
+  <p>Before you can navigate change, you have to see it clearly. Most people skip this step. They feel the discomfort of change and move immediately to action — any action — to relieve the pressure.</p>
+  <p><strong>Ask yourself:</strong> What exactly is changing? Is it a tool, a role, a relationship, an expectation? What is the scope? Who else is affected? What am I assuming that might not be true?</p>
+  <p>Write it down. Naming the change reduces its power to disorient you. A named thing is a thing you can work with.</p>
+</div>
+
+<div class="framework-step">
+  <div class="fs-num">2</div>
+  <div class="fs-title">Assess — What Is Actually at Stake</div>
+  <p>Not everything that feels urgent is important. Not everything that feels threatening is a threat. Separate the signal from the noise.</p>
+  <p><strong>Ask yourself:</strong> What is the worst that could realistically happen? What is the best? What is most likely? What am I afraid of losing? What might I gain? Whose voice am I hearing when I evaluate this — mine, or someone else's?</p>
+  <p>Most fear lives in the gap between "what if" and "what is." Close the gap by writing down facts versus assumptions.</p>
+</div>
+
+<div class="framework-step">
+  <div class="fs-num">3</div>
+  <div class="fs-title">Decide — Choose a Direction</div>
+  <p>You will never have complete information. Waiting for certainty is waiting forever. The skill is deciding with what you have.</p>
+  <p><strong>Ask yourself:</strong> What is the smallest decision I can make right now that moves me forward? What is the cost of waiting? What is the cost of being wrong? Which decision aligns with who I want to become?</p>
+  <p>Make the decision. Write it down. Tell someone. A decision that is not committed to paper or shared with another person is still a wish.</p>
+</div>
+
+<div class="framework-step">
+  <div class="fs-num">4</div>
+  <div class="fs-title">Act — Move, Observe, Adjust</div>
+  <p>Action produces information that thinking cannot. You learn more from one attempt than from ten hours of planning. The goal is not to get it right the first time. The goal is to start the feedback loop.</p>
+  <p><strong>Ask yourself:</strong> What is the smallest action I can take today? What will I learn from it? How will I know if it is working? What is my rhythm for reviewing and adjusting?</p>
+  <p>Act. Observe the result. Adjust. Repeat. This loop is the engine of change navigation.</p>
+</div>
+
+<hr class="section-divider page-break">
+
+<!-- WORKSHEETS -->
+<h1>Part 4: Worksheets</h1>
+<p>Four guided exercises. One for each core skill. Do them in order or start with the one that feels most relevant right now.</p>
+
+<div class="worksheet">
+  <h3>Worksheet 1: Clarity — Mapping Your Change Landscape</h3>
+  <p style="text-align:center;color:#777;margin-bottom:24px;">Name the changes you are navigating. Get them out of your head and onto the page.</p>
+
+  <div class="prompt">
+    <div class="p-label">1. What is the biggest change you are navigating right now?</div>
+    <div class="p-lines"></div>
+    <div class="p-lines"></div>
+  </div>
+
+  <div class="prompt">
+    <div class="p-label">2. What about this change feels uncertain or uncomfortable?</div>
+    <div class="p-lines"></div>
+    <div class="p-lines"></div>
+  </div>
+
+  <div class="prompt">
+    <div class="p-label">3. What assumptions am I making about this change that might not be true?</div>
+    <div class="p-lines"></div>
+    <div class="p-lines"></div>
+  </div>
+
+  <div class="prompt">
+    <div class="p-label">4. If I were advising a friend in this situation, what would I tell her?</div>
+    <div class="p-lines"></div>
+    <div class="p-lines"></div>
+  </div>
+
+  <div class="prompt">
+    <div class="p-label">5. What is one thing I know for sure about this situation?</div>
+    <div class="p-lines"></div>
+  </div>
+</div>
+
+<div class="worksheet page-break">
+  <h3>Worksheet 2: Confidence — Building Your Change Muscle</h3>
+  <p style="text-align:center;color:#777;margin-bottom:24px;">Confidence comes from doing. Track the actions that build it.</p>
+
+  <div class="prompt">
+    <div class="p-label">1. What is something I did in the past that I did not think I could do?</div>
+    <div class="p-lines"></div>
+    <div class="p-lines"></div>
+  </div>
+
+  <div class="prompt">
+    <div class="p-label">2. What did I learn from that experience about my own capability?</div>
+    <div class="p-lines"></div>
+    <div class="p-lines"></div>
+  </div>
+
+  <div class="prompt">
+    <div class="p-label">3. What is a small challenge I can take on this week — something slightly outside my comfort zone?</div>
+    <div class="p-lines"></div>
+    <div class="p-lines"></div>
+  </div>
+
+  <div class="prompt">
+    <div class="p-label">4. Who in my life believes in me more than I believe in myself right now?</div>
+    <div class="p-lines"></div>
+  </div>
+
+  <div class="prompt">
+    <div class="p-label">5. What would I attempt if I knew I could not fail?</div>
+    <div class="p-lines"></div>
+  </div>
+</div>
+
+<div class="worksheet page-break">
+  <h3>Worksheet 3: Adaptability — The Learning Loop</h3>
+  <p style="text-align:center;color:#777;margin-bottom:24px;">Adaptability is not a trait. It is a practice: act, observe, adjust, repeat.</p>
+
+  <div class="prompt">
+    <div class="p-label">1. Think of a recent situation where something did not go as planned. What happened?</div>
+    <div class="p-lines"></div>
+    <div class="p-lines"></div>
+  </div>
+
+  <div class="prompt">
+    <div class="p-label">2. What did you learn from that experience?</div>
+    <div class="p-lines"></div>
+    <div class="p-lines"></div>
+  </div>
+
+  <div class="prompt">
+    <div class="p-label">3. How quickly did you adjust? What helped you pivot? What slowed you down?</div>
+    <div class="p-lines"></div>
+    <div class="p-lines"></div>
+  </div>
+
+  <div class="prompt">
+    <div class="p-label">4. What is one area of your life where you have become more adaptable over time?</div>
+    <div class="p-lines"></div>
+  </div>
+
+  <div class="prompt">
+    <div class="p-label">5. What is one new skill or tool you could learn this month that would increase your adaptability?</div>
+    <div class="p-lines"></div>
+  </div>
+</div>
+
+<div class="worksheet page-break">
+  <h3>Worksheet 4: Agency — From Reactive to Proactive</h3>
+  <p style="text-align:center;color:#777;margin-bottom:24px;">Agency is the belief that you have a say in what happens next. It is built one decision at a time.</p>
+
+  <div class="prompt">
+    <div class="p-label">1. When do I feel like change is happening TO me rather than something I am choosing?</div>
+    <div class="p-lines"></div>
+    <div class="p-lines"></div>
+  </div>
+
+  <div class="prompt">
+    <div class="p-label">2. What is one area of my life where I have more control than I usually acknowledge?</div>
+    <div class="p-lines"></div>
+    <div class="p-lines"></div>
+  </div>
+
+  <div class="prompt">
+    <div class="p-label">3. What decision have I been postponing? What is the cost of continuing to postpone it?</div>
+    <div class="p-lines"></div>
+    <div class="p-lines"></div>
+  </div>
+
+  <div class="prompt">
+    <div class="p-label">4. If I made that decision today, what would the first step look like?</div>
+    <div class="p-lines"></div>
+  </div>
+
+  <div class="prompt">
+    <div class="p-label">5. What is one thing I will decide this week — and act on — to reclaim a sense of direction?</div>
+    <div class="p-lines"></div>
+  </div>
+</div>
+
+<hr class="section-divider page-break">
+
+<!-- 30-DAY PLAN -->
+<h1>Part 5: 30-Day Practice Plan</h1>
+<p>One small action per day. Do them in order, or pick the ones that resonate. The only wrong move is no move.</p>
+
+<h2>Week 1: See</h2>
+<div class="day-plan"><div class="day-num">Day 1</div><div class="day-action">Complete the self-assessment. Write down your score and profile.</div></div>
+<div class="day-plan"><div class="day-num">Day 2</div><div class="day-action">Worksheet 1: Name the biggest change you are navigating.</div></div>
+<div class="day-plan"><div class="day-num">Day 3</div><div class="day-action">Identify one assumption you are making about this change. Question it.</div></div>
+<div class="day-plan"><div class="day-num">Day 4</div><div class="day-action">Talk to one person about what you wrote. Saying it out loud changes it.</div></div>
+<div class="day-plan"><div class="day-num">Day 5</div><div class="day-action">Read one blog post on changenavigationtraining.com/blog.</div></div>
+<div class="day-plan"><div class="day-num">Day 6</div><div class="day-action">Write down one thing you know for sure about your situation.</div></div>
+<div class="day-plan"><div class="day-num">Day 7</div><div class="day-action">Rest. Reflect. What shifted this week just from naming things?</div></div>
+
+<h2>Week 2: Assess</h2>
+<div class="day-plan"><div class="day-num">Day 8</div><div class="day-action">List your fears about this change. Separate facts from assumptions.</div></div>
+<div class="day-plan"><div class="day-num">Day 9</div><div class="day-action">Worksheet 2: Recall a time you did something you did not think you could do.</div></div>
+<div class="day-plan"><div class="day-num">Day 10</div><div class="day-action">Identify whose voice you hear when you evaluate yourself. Is it yours?</div></div>
+<div class="day-plan"><div class="day-num">Day 11</div><div class="day-action">Try one AI tool for 10 minutes. ChatGPT, Claude, anything. No goal. Just explore.</div></div>
+<div class="day-plan"><div class="day-num">Day 12</div><div class="day-action">Ask yourself: what is the worst that could happen? The best? What is most likely?</div></div>
+<div class="day-plan"><div class="day-num">Day 13</div><div class="day-action">Share your assessment with a friend. Ask what she sees that you might be missing.</div></div>
+<div class="day-plan"><div class="day-num">Day 14</div><div class="day-action">Rest. What became clearer this week?</div></div>
+
+<h2>Week 3: Decide</h2>
+<div class="day-plan"><div class="day-num">Day 15</div><div class="day-action">Worksheet 3: Reflect on a recent situation where things did not go as planned.</div></div>
+<div class="day-plan"><div class="day-num">Day 16</div><div class="day-action">Identify one decision you have been postponing. Name the cost of waiting.</div></div>
+<div class="day-plan"><div class="day-num">Day 17</div><div class="day-action">Make that decision. Write it down. Tell someone.</div></div>
+<div class="day-plan"><div class="day-num">Day 18</div><div class="day-action">Use AI to help with something practical: draft an email, plan a schedule, research a topic.</div></div>
+<div class="day-plan"><div class="day-num">Day 19</div><div class="day-action">Notice: how did it feel to decide? What changed after you committed?</div></div>
+<div class="day-plan"><div class="day-num">Day 20</div><div class="day-action">Worksheet 4: Identify an area where you have more control than you acknowledge.</div></div>
+<div class="day-plan"><div class="day-num">Day 21</div><div class="day-action">Rest. One decision made. How does it feel?</div></div>
+
+<h2>Week 4: Act</h2>
+<div class="day-plan"><div class="day-num">Day 22</div><div class="day-action">Take the smallest possible action toward the decision you made last week.</div></div>
+<div class="day-plan"><div class="day-num">Day 23</div><div class="day-action">Observe the result. What did you learn that you could not have learned by thinking?</div></div>
+<div class="day-plan"><div class="day-num">Day 24</div><div class="day-action">Adjust. Based on what you learned, what is the next action?</div></div>
+<div class="day-plan"><div class="day-num">Day 25</div><div class="day-action">Re-take the self-assessment. Has your score changed? Your profile?</div></div>
+<div class="day-plan"><div class="day-num">Day 26</div><div class="day-action">Write a short reflection: what is different now compared to Day 1?</div></div>
+<div class="day-plan"><div class="day-num">Day 27</div><div class="day-action">Share what you learned with one person. Teaching consolidates learning.</div></div>
+<div class="day-plan"><div class="day-num">Day 28</div><div class="day-action">Identify your next change to navigate. The framework is now yours to reuse.</div></div>
+<div class="day-plan"><div class="day-num">Day 29</div><div class="day-action">Celebrate. You did 28 days of deliberate practice. That is more than most people do in a year.</div></div>
+<div class="day-plan"><div class="day-num">Day 30</div><div class="day-action">Decide what is next. Another cycle? A workshop? A peer circle? The door stays open.</div></div>
+
+<hr class="section-divider page-break">
+
+<!-- RESOURCES -->
+<h1>Part 6: Resource Guide</h1>
+
+<h2>AI Tools to Try</h2>
+<p><strong>ChatGPT</strong> (chat.openai.com) — The best starting point. Free. Ask it anything. Start with: "I need to [task]. Give me a first draft."</p>
+<p><strong>Claude</strong> (claude.ai) — Strong at writing, analysis, and thoughtful conversation. Good for deeper reflection.</p>
+<p><strong>Perplexity</strong> (perplexity.ai) — AI-powered search. Good for research and fact-checking.</p>
+
+<h2>Books for Further Reading</h2>
+<p><strong><em>Mindset</em></strong> by Carol Dweck — The foundational book on fixed vs. growth mindset.</p>
+<p><strong><em>Atomic Habits</em></strong> by James Clear — How small changes compound into remarkable results.</p>
+<p><strong><em>Daring Greatly</em></strong> by Brené Brown — On vulnerability, courage, and showing up.</p>
+
+<h2>CNT Programs</h2>
+<p><strong>Free 20-Minute Consultation</strong> — calendly.com/elie-schulman/free-20-minute-consultation</p>
+<p><strong>Group Workshops</strong> — changenavigationtraining.com/schedule — First session $35</p>
+<p><strong>Membership</strong> — changenavigationtraining.com/memberships — $89/month, all workshops + peer circles</p>
+<p><strong>Blog</strong> — changenavigationtraining.com/blog — New posts weekly</p>
+
+<!-- BACK COVER -->
+<div class="back-cover">
+  <h2>You Have Everything You Need to Begin</h2>
+  <p style="color:#ccc;max-width:500px;margin:0 auto 24px;">Change is not a disruption to survive. It is a skill to develop. You have the raw material. This toolkit gave you the structure. Now it is yours to use.</p>
+  <p style="color:#c8963e;font-size:18px;font-weight:600;">The door stays open.</p>
+  <p class="url">changenavigationtraining.com</p>
+</div>
+
+<button class="no-print" onclick="window.print()">🖨 Print / Save as PDF</button>
+
+</body>
+</html>

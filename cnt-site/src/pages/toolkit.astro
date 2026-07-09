@@ -1,0 +1,155 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CTABanner from '../components/CTABanner.astro';
+import StripeButton from '../components/StripeButton.astro';
+import Testimonial from '../components/Testimonial.astro';
+import { STRIPE_LINKS } from '../config';
+---
+
+<BaseLayout
+  title="Change Readiness Toolkit — Change Navigation Training"
+  description="The Change Readiness Toolkit is a 30-page guided workbook for navigating change with clarity, confidence, and agency. Self-assessment, frameworks, worksheets, and a 30-day practice plan. $49."
+>
+  <Header />
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1>The Change Readiness Toolkit</h1>
+        <p>A guided workbook for navigating change with clarity, confidence, and agency — in the AI era and beyond.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container toolkit-layout">
+        <div class="toolkit-info">
+          <h2>What's Inside</h2>
+          <p>Change is not a disruption to survive. It is a skill to develop. This 30-page workbook gives you the structure to build that skill.</p>
+
+          <div class="feature-list">
+            <div class="feature">
+              <h4>🔭 The Self-Assessment</h4>
+              <p>10 questions. 3 minutes. Discover your Change Readiness Profile — Observer, Explorer, Navigator, or Trailblazer — and what it means for your next move.</p>
+            </div>
+            <div class="feature">
+              <h4>🧭 The Change Navigation Framework</h4>
+              <p>A 4-step system for any transition: See what is changing. Assess what is at stake. Decide on a direction. Act, observe, and adjust.</p>
+            </div>
+            <div class="feature">
+              <h4>📝 Four Guided Worksheets</h4>
+              <p>Build clarity, confidence, adaptability, and agency — one exercise at a time. Each worksheet takes 10-15 minutes. No right answers. Just the practice.</p>
+            </div>
+            <div class="feature">
+              <h4>📅 30-Day Practice Plan</h4>
+              <p>One small action per day. Do them in order or pick the ones that resonate. The only wrong move is no move.</p>
+            </div>
+            <div class="feature">
+              <h4>📚 Resource Guide</h4>
+              <p>AI tools to try, books to read, and CNT programs to continue your journey.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="toolkit-cta">
+          <div class="pricing-box">
+            <p class="pricing-label">Digital Download</p>
+            <p class="pricing-amount">$49</p>
+            <p class="pricing-note">Instant PDF download. Printable. Reusable.</p>
+            <StripeButton
+              url={STRIPE_LINKS.toolkitChangeReadiness}
+              text="Buy the Toolkit — $49"
+            />
+            <p class="pricing-guarantee">30-day satisfaction guarantee. If the toolkit does not help you navigate change more effectively, email us for a full refund.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--color-dark);">
+      <div class="container">
+        <h2 class="text-center">Who This Is For</h2>
+        <div class="audience-grid">
+          <div class="audience-card">
+            <h4>If you feel like change is happening TO you</h4>
+            <p>This toolkit gives you the framework to shift from reactive to proactive. You stop feeling like a passenger and start navigating.</p>
+          </div>
+          <div class="audience-card">
+            <h4>If you are curious about AI but do not know where to start</h4>
+            <p>The toolkit demystifies AI — not by teaching you to code, but by helping you understand what AI means for your life and how to use it practically.</p>
+          </div>
+          <div class="audience-card">
+            <h4>If you want a structured way to think about change</h4>
+            <p>Most people navigate change by instinct. This toolkit gives you a repeatable system. Use it for career shifts, family transitions, technology adoption — any change at all.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center">What Women Say</h2>
+        <div class="testimonials-grid">
+          <Testimonial
+            quote="I didn't expect a workbook to change how I think about my career. But the assessment gave me language for what I was feeling, and the worksheets gave me a way to move forward. I use the framework every month now."
+            author="Rivka M., Toolkit User"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: var(--color-dark);">
+      <div class="container text-center">
+        <h2>Start Navigating Today</h2>
+        <p style="color: var(--color-gray-light); margin: 1rem 0 2rem;">Instant download. 30-page PDF. $49.</p>
+        <StripeButton
+          url={STRIPE_LINKS.toolkitChangeReadiness}
+          text="Get the Toolkit — $49"
+        />
+      </div>
+    </section>
+  </main>
+
+  <CTABanner />
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero { background: linear-gradient(135deg, var(--color-black), #1a1410); padding: 5rem 1.5rem 3rem; text-align: center; border-bottom: 3px solid var(--color-gold); }
+  .page-hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 0.5rem; }
+  .page-hero p { color: var(--color-gray-light); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+  .toolkit-layout { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: start; }
+  .toolkit-info h2 { margin-bottom: 1rem; }
+
+  .feature-list { margin-top: 1.5rem; }
+  .feature { margin-bottom: 1.25rem; }
+  .feature h4 { color: var(--color-gold); margin-bottom: 0.25rem; font-size: 1rem; }
+  .feature p { color: var(--color-gray-light); font-size: 0.85rem; }
+
+  .pricing-box {
+    background: var(--color-dark);
+    border: 2px solid var(--color-gold);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    position: sticky;
+    top: 100px;
+  }
+  .pricing-label { font-size: 0.75rem; color: var(--color-gray-light); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+  .pricing-amount { font-family: var(--font-display); font-size: 3.5rem; color: var(--color-gold); line-height: 1; margin-bottom: 0.5rem; }
+  .pricing-note { color: var(--color-gray-light); font-size: 0.9rem; margin-bottom: 1.5rem; }
+  .pricing-guarantee { font-size: 0.75rem; color: var(--color-gray); margin-top: 1rem; }
+
+  .audience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+  .audience-card { background: var(--color-black); border: 1px solid var(--color-gray); padding: 2rem; }
+  .audience-card h4 { color: var(--color-gold); margin-bottom: 0.75rem; font-size: 1rem; }
+  .audience-card p { color: var(--color-gray-light); font-size: 0.85rem; }
+
+  .testimonials-grid { max-width: 600px; margin: 2rem auto 0; }
+
+  @media (max-width: 768px) {
+    .toolkit-layout { grid-template-columns: 1fr; }
+    .audience-grid { grid-template-columns: 1fr; }
+  }
+</style>

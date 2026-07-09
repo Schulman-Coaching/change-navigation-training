@@ -29,20 +29,20 @@ import { CALENDLY_LINKS } from '../config';
 
             <div class="contact-methods">
               <h3>Email</h3>
-              <p><a href="mailto:info@changenavigationtraining.com">info@changenavigationtraining.com</a></p>
+              <p><a href="mailto:elie@cohortlearninglabs.org">elie@cohortlearninglabs.org</a></p>
             </div>
 
             <div class="contact-methods">
-              <h3>Follow Us</h3>
+              <h3>Get Started</h3>
               <div class="social-links">
-                <a href="#" target="_blank" rel="noopener">WhatsApp Community</a>
+                <a href="/assessment/">Take the Free Assessment</a>
               </div>
             </div>
           </div>
 
           <div class="contact-form">
             <h2>Send Us a Message</h2>
-            <form class="form">
+            <form id="contact-form" class="form">
               <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" required />
@@ -72,7 +72,8 @@ import { CALENDLY_LINKS } from '../config';
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="5"></textarea>
               </div>
-              <button type="submit" class="btn">Send Message</button>
+              <button type="submit" class="btn" id="submit-btn">Send Message</button>
+              <div id="form-message" style="margin-top:1rem;font-size:0.9rem;"></div>
             </form>
           </div>
         </div>
@@ -162,4 +163,47 @@ import { CALENDLY_LINKS } from '../config';
   @media (max-width: 768px) {
     .contact-grid { grid-template-columns: 1fr; }
   }
+  #form-message.success { color: #3ec870; }
+  #form-message.error { color: #c83e6b; }
 </style>
+
+<script>
+  document.getElementById('contact-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    const msg = document.getElementById('form-message');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    msg.className = '';
+    msg.textContent = '';
+
+    const data = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      message: `[Interest: ${document.getElementById('interest').value || 'Not specified'}]\n\n${document.getElementById('message').value}`,
+      site: 'CNT: Lead',
+    };
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const result = await res.json();
+      if (result.success) {
+        msg.className = 'success';
+        msg.textContent = result.message;
+        document.getElementById('contact-form').reset();
+      } else {
+        msg.className = 'error';
+        msg.textContent = result.error || 'Something went wrong.';
+      }
+    } catch (err) {
+      msg.className = 'error';
+      msg.textContent = 'Network error. Please try again or email us directly.';
+    }
+    btn.textContent = 'Send Message';
+    btn.disabled = false;
+  });
+</script>

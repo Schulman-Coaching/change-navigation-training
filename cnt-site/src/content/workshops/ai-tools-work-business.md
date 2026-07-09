@@ -7,13 +7,14 @@ sessions: 6
 duration: "90 min each"
 level: "intermediate"
 category: "practical-tools"
-cohort: "July 2026"
-startDate: 2026-07-07
+cohort: "September 2026"
+startDate: 2026-09-22
 dayOfWeek: "Tuesdays"
 time: "8:00 PM"
 timezone: "ET"
 price: "$35 first session / included with membership"
 spots: 10
+audience: "lead"
 ---
 
 AI is changing how work gets done. Not someday. Now. This workshop is for women who want to use AI strategically — to work more effectively, grow a business, or prepare for what is coming in their industry.

@@ -7,13 +7,14 @@ sessions: 3
 duration: "90 min each"
 level: "all-levels"
 category: "change-navigation"
-cohort: "June 2026"
-startDate: 2026-06-18
+cohort: "September 2026"
+startDate: 2026-09-10
 dayOfWeek: "Thursdays"
 time: "7:30 PM"
 timezone: "ET"
 price: "$35 first session / included with membership"
 spots: 10
+audience: "lead"
 ---
 
 Uncertainty is not a bug in decision-making. It is the normal condition. The question is not how to eliminate it. The question is how to move forward anyway.

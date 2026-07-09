@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CNT Dashboard — Change Navigation Training</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.10/index.global.min.js"></script>
+</head>
+<body>
+  <header class="dashboard-header">
+    <div class="header-left">
+      <h1>CNT Dashboard</h1>
+      <span class="header-subtitle">Change Navigation Training — 90-Day Launch</span>
+    </div>
+    <div class="header-right">
+      <div class="date-range">
+        <span>May 26</span>
+        <span class="date-arrow">→</span>
+        <span>Aug 24, 2026</span>
+      </div>
+      <div class="progress-ring-container">
+        <svg class="progress-ring" width="60" height="60">
+          <circle class="progress-ring-bg" cx="30" cy="30" r="26" />
+          <circle class="progress-ring-fill" cx="30" cy="30" r="26" id="header-progress-circle" />
+        </svg>
+        <span class="progress-text" id="header-progress-text">0%</span>
+      </div>
+    </div>
+  </header>
+
+  <nav class="dashboard-nav">
+    <button class="nav-btn active" data-view="kanban">Kanban Board</button>
+    <button class="nav-btn" data-view="calendar">90-Day Calendar</button>
+    <button class="nav-btn" data-view="automation">Automation Matrix</button>
+    <button class="nav-btn" data-view="sites">Site Status</button>
+    <button class="nav-btn" data-view="dependencies">Dependencies</button>
+    <button class="nav-btn" data-view="stats">Stats &amp; Metrics</button>
+  </nav>
+
+  <main class="dashboard-main">
+    <!-- Kanban View -->
+    <section class="view" id="view-kanban">
+      <div class="kanban-board">
+        <div class="kanban-column" data-status="pending">
+          <div class="column-header">
+            <h3>Pending</h3>
+            <span class="count-badge" id="pending-count">0</span>
+          </div>
+          <div class="column-body" id="pending-column"></div>
+        </div>
+        <div class="kanban-column" data-status="in_progress">
+          <div class="column-header">
+            <h3>In Progress</h3>
+            <span class="count-badge" id="in-progress-count">0</span>
+          </div>
+          <div class="column-body" id="in-progress-column"></div>
+        </div>
+        <div class="kanban-column" data-status="review">
+          <div class="column-header">
+            <h3>Review</h3>
+            <span class="count-badge" id="review-count">0</span>
+          </div>
+          <div class="column-body" id="review-column"></div>
+        </div>
+        <div class="kanban-column" data-status="done">
+          <div class="column-header">
+            <h3>Done</h3>
+            <span class="count-badge" id="done-count">0</span>
+          </div>
+          <div class="column-body" id="done-column"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calendar View -->
+    <section class="view hidden" id="view-calendar">
+      <div id="calendar-container"></div>
+    </section>
+
+    <!-- Automation Matrix View -->
+    <section class="view hidden" id="view-automation">
+      <div class="matrix-container">
+        <div class="matrix-chart-wrapper">
+          <canvas id="automation-chart"></canvas>
+        </div>
+        <div class="matrix-legend">
+          <h3>Quadrants</h3>
+          <div class="legend-item"><span class="legend-dot" style="background:#3ec8a0"></span> High Auto / Low Effort — Do First</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#c8963e"></span> High Auto / High Effort — Batch</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#c83e6b"></span> Low Auto / Low Effort — Delegate</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#8b9dc3"></span> Low Auto / High Effort — Schedule</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Site Status View -->
+    <section class="view hidden" id="view-sites">
+      <div class="sites-grid" id="sites-grid"></div>
+    </section>
+
+    <!-- Dependencies View -->
+    <section class="view hidden" id="view-dependencies">
+      <div class="dep-container">
+        <div class="dep-list" id="dep-list"></div>
+        <div class="dep-chart-wrapper">
+          <canvas id="dep-chart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats View -->
+    <section class="view hidden" id="view-stats">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h4>Total Tasks</h4>
+          <span class="stat-number" id="stat-total">0</span>
+        </div>
+        <div class="stat-card">
+          <h4>Completed</h4>
+          <span class="stat-number" id="stat-done">0</span>
+        </div>
+        <div class="stat-card">
+          <h4>Total Hours</h4>
+          <span class="stat-number" id="stat-hours">0</span>
+        </div>
+        <div class="stat-card">
+          <h4>Auto Coverage</h4>
+          <span class="stat-number" id="stat-auto-pct">0%</span>
+        </div>
+        <div class="stat-card">
+          <h4>Current Week</h4>
+          <span class="stat-number" id="stat-week">1</span>
+        </div>
+        <div class="stat-card">
+          <h4>MRR Target (Month 3)</h4>
+          <span class="stat-number">$1,500</span>
+        </div>
+      </div>
+      <div class="stats-charts">
+        <div class="chart-card">
+          <h4>Tasks by Category</h4>
+          <canvas id="category-chart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h4>Tasks by Week</h4>
+          <canvas id="week-chart"></canvas>
+        </div>
+        <div class="chart-card">
+          <h4>Tasks by Site</h4>
+          <canvas id="site-chart"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Task detail modal -->
+  <div class="modal hidden" id="task-modal">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close">&times;</button>
+      <h2 id="modal-title"></h2>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <div class="toast hidden" id="toast"></div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

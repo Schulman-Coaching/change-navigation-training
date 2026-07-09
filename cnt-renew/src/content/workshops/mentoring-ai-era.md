@@ -7,8 +7,8 @@ sessions: 3
 duration: "90 min each"
 level: "all-levels"
 category: "change-navigation"
-cohort: "July 2026"
-startDate: 2026-07-08
+cohort: "September 2026"
+startDate: 2026-09-07
 dayOfWeek: "Mondays"
 time: "11:00 AM"
 timezone: "ET"

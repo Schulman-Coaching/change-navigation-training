@@ -1,0 +1,645 @@
+{
+  "meta": {
+    "project": "Change Navigation Training",
+    "start_date": "2026-05-26",
+    "end_date": "2026-08-24",
+    "total_weeks": 12,
+    "last_updated": "2026-05-26"
+  },
+  "sites": [
+    {
+      "id": "cnt-start",
+      "name": "CNT: First Steps",
+      "audience": "Women 18-24",
+      "accent": "#3ec8a0",
+      "domain": "https://start.changenavigationtraining.com",
+      "tagline": "Your First Step Into a Bigger World",
+      "pages_built": 19,
+      "blog_posts": 7,
+      "status": "launch-ready",
+      "missing": [
+        "images",
+        "real-testimonials",
+        "contact-backend",
+        "analytics"
+      ]
+    },
+    {
+      "id": "cnt-build",
+      "name": "CNT: Build",
+      "audience": "Women 25-35",
+      "accent": "#c83e6b",
+      "domain": "https://build.changenavigationtraining.com",
+      "tagline": "Build the Life You Want",
+      "pages_built": 19,
+      "blog_posts": 7,
+      "status": "launch-ready",
+      "missing": [
+        "images",
+        "real-testimonials",
+        "contact-backend",
+        "analytics"
+      ]
+    },
+    {
+      "id": "cnt-site",
+      "name": "CNT: Lead",
+      "audience": "Women 35-50",
+      "accent": "#c8963e",
+      "domain": "https://lead.changenavigationtraining.com",
+      "tagline": "Navigate Change With Confidence",
+      "pages_built": 19,
+      "blog_posts": 8,
+      "status": "launch-ready",
+      "missing": [
+        "images",
+        "real-testimonials",
+        "contact-backend",
+        "analytics"
+      ]
+    },
+    {
+      "id": "cnt-renew",
+      "name": "CNT: Renew",
+      "audience": "Women 50+",
+      "accent": "#8b9dc3",
+      "domain": "https://renew.changenavigationtraining.com",
+      "tagline": "What You Know Matters More Than Ever",
+      "pages_built": 19,
+      "blog_posts": 7,
+      "status": "launch-ready",
+      "missing": [
+        "images",
+        "real-testimonials",
+        "contact-backend",
+        "analytics"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "A1",
+      "title": "Build cnt-start site (teal, 18-24 audience)",
+      "category": "automated",
+      "phase": "build",
+      "week": 1,
+      "status": "done",
+      "site": "cnt-start",
+      "dependencies": [],
+      "hours": 2,
+      "source": "Site scaffolds exist, needs content + pages",
+      "automation_note": "AI copies cnt-site patterns, swaps accent/content"
+    },
+    {
+      "id": "A2",
+      "title": "Build cnt-build site (rose, 25-35 audience)",
+      "category": "automated",
+      "phase": "build",
+      "week": 2,
+      "status": "done",
+      "site": "cnt-build",
+      "dependencies": [
+        "A1"
+      ],
+      "hours": 2,
+      "source": "Site scaffolds exist, needs content + pages",
+      "automation_note": "AI copies cnt-site patterns, swaps accent/content"
+    },
+    {
+      "id": "A3",
+      "title": "Build cnt-renew site (slate, 50+ audience)",
+      "category": "automated",
+      "phase": "build",
+      "week": 3,
+      "status": "done",
+      "site": "cnt-renew",
+      "dependencies": [
+        "A2"
+      ],
+      "hours": 2,
+      "source": "Site scaffolds exist, needs content + pages",
+      "automation_note": "AI copies cnt-site patterns, swaps accent/content"
+    },
+    {
+      "id": "A4",
+      "title": "Create blog category pages for all 4 sites",
+      "category": "automated",
+      "phase": "build",
+      "week": 4,
+      "status": "done",
+      "site": "all",
+      "dependencies": [
+        "A1",
+        "A2",
+        "A3"
+      ],
+      "hours": 1,
+      "source": "cnt-site HANDOFF: Blog category pages",
+      "automation_note": "AI generates [category].astro dynamic routes"
+    },
+    {
+      "id": "A5",
+      "title": "Add RSS feeds to all 4 sites",
+      "category": "automated",
+      "phase": "build",
+      "week": 4,
+      "status": "done",
+      "site": "all",
+      "dependencies": [
+        "A1",
+        "A2",
+        "A3"
+      ],
+      "hours": 0.5,
+      "source": "cnt-site HANDOFF: RSS feed",
+      "automation_note": "Astro @astrojs/rss plugin, AI writes config"
+    },
+    {
+      "id": "A6",
+      "title": "Add sitemaps to all 4 sites",
+      "category": "automated",
+      "phase": "build",
+      "week": 4,
+      "status": "done",
+      "site": "all",
+      "dependencies": [
+        "A1",
+        "A2",
+        "A3"
+      ],
+      "hours": 0.25,
+      "source": "cnt-site HANDOFF: Sitemap",
+      "automation_note": "Astro @astrojs/sitemap, single config line"
+    },
+    {
+      "id": "A7",
+      "title": "Create 404 pages for all 4 sites",
+      "category": "automated",
+      "phase": "build",
+      "week": 4,
+      "status": "done",
+      "site": "all",
+      "dependencies": [],
+      "hours": 0.5,
+      "source": "cnt-site HANDOFF: 404 page",
+      "automation_note": "AI creates 404.astro, one template, 4 variants"
+    },
+    {
+      "id": "A8",
+      "title": "Create Privacy Policy and Terms pages",
+      "category": "automated",
+      "phase": "build",
+      "week": 2,
+      "status": "done",
+      "site": "all",
+      "dependencies": [],
+      "hours": 0.5,
+      "source": "cnt-site HANDOFF: Legal pages",
+      "automation_note": "AI generates standard legal pages"
+    },
+    {
+      "id": "A9",
+      "title": "Create lead magnet PDF (10-question assessment)",
+      "category": "automated",
+      "phase": "marketing",
+      "week": 1,
+      "status": "done",
+      "site": "all",
+      "dependencies": [],
+      "hours": 1,
+      "source": "LEAD_MAGNET.md \u2014 fully spec'd",
+      "automation_note": "AI writes PDF content, creates downloadable asset"
+    },
+    {
+      "id": "A10",
+      "title": "Build assessment landing page (/assessment)",
+      "category": "automated",
+      "phase": "marketing",
+      "week": 1,
+      "status": "done",
+      "site": "cnt-site",
+      "dependencies": [
+        "A9"
+      ],
+      "hours": 1,
+      "source": "MARKETING_PLAN.md Week 1",
+      "automation_note": "AI builds Astro page with 10-question interactive form"
+    },
+    {
+      "id": "A11",
+      "title": "Write 15 blog posts in CNT voice (across all 4 sites)",
+      "category": "automated",
+      "phase": "content",
+      "week": 3,
+      "status": "done",
+      "site": "all",
+      "dependencies": [],
+      "hours": 3,
+      "source": "VOICE_PROFILE.md, MARKETING_PLAN.md",
+      "automation_note": "AI generates posts using CNT voice profile, 3-5 per site"
+    },
+    {
+      "id": "A12",
+      "title": "Create IG ad creative (3 image variants + copy)",
+      "category": "automated",
+      "phase": "marketing",
+      "week": 10,
+      "status": "done",
+      "site": "cnt-site",
+      "dependencies": [
+        "A9",
+        "A10"
+      ],
+      "hours": 2,
+      "source": "IG_ADS.md \u2014 3 variants fully spec'd",
+      "automation_note": "AI generates image descriptions + copy; human creates graphics"
+    },
+    {
+      "id": "A13",
+      "title": "Verify Calendly links across all 4 sites (Momence removed)",
+      "category": "automated",
+      "phase": "integration",
+      "week": 1,
+      "status": "done",
+      "site": "all",
+      "dependencies": [],
+      "hours": 0.5,
+      "source": "Replaced Momence with Calendly + Stripe",
+      "automation_note": "MomenceWidget deleted. Calendly already wired on 4 pages per site."
+    },
+    {
+      "id": "A14",
+      "title": "Add analytics (Plausible or GA4) to all sites",
+      "category": "automated",
+      "phase": "integration",
+      "week": 10,
+      "status": "done",
+      "site": "all",
+      "dependencies": [],
+      "hours": 0.25,
+      "source": "cnt-site HANDOFF: Analytics",
+      "automation_note": "Plausible (PUBLIC_PLAUSIBLE_DOMAIN) and GA4 (PUBLIC_GA_ID) support added to BaseLayout. Set env var in Vercel to activate."
+    },
+    {
+      "id": "A15",
+      "title": "Create contact form backend (Vercel serverless)",
+      "category": "automated",
+      "phase": "integration",
+      "week": 7,
+      "status": "done",
+      "site": "all",
+      "dependencies": [],
+      "hours": 1,
+      "source": "cnt-site HANDOFF: Contact form backend",
+      "automation_note": "Contact form + subscribe endpoints live. Resend API key configured on all 4 Vercel projects."
+    },
+    {
+      "id": "A16",
+      "title": "Generate WhatsApp group post templates (12 weeks)",
+      "category": "automated",
+      "phase": "marketing",
+      "week": 3,
+      "status": "done",
+      "site": "all",
+      "dependencies": [],
+      "hours": 0.5,
+      "source": "MARKETING_PLAN.md: WhatsApp channel",
+      "automation_note": "AI drafts 2-3 posts/week in CNT voice"
+    },
+    {
+      "id": "A17",
+      "title": "Build referral program tracking system",
+      "category": "automated",
+      "phase": "marketing",
+      "week": 8,
+      "status": "done",
+      "site": "all",
+      "dependencies": [],
+      "hours": 2,
+      "source": "MARKETING_PLAN.md Week 8",
+      "automation_note": "AI builds referral tracking page + Stripe coupon integration"
+    },
+    {
+      "id": "B1",
+      "title": "Set up 5-email nurture sequence in ESP",
+      "category": "semi",
+      "phase": "marketing",
+      "week": 2,
+      "status": "done",
+      "site": "all",
+      "dependencies": [
+        "A9",
+        "A10"
+      ],
+      "hours": 1,
+      "source": "EMAIL_SEQUENCE.md \u2014 all 5 emails fully written",
+      "automation_note": "Email 1 sends via /api/subscribe on Resend. Emails 2-5 content ready."
+    },
+    {
+      "id": "B2",
+      "title": "Schedule 12 weeks of LinkedIn posts",
+      "category": "semi",
+      "phase": "marketing",
+      "week": 3,
+      "status": "done",
+      "site": "cnt-site",
+      "dependencies": [
+        "A11"
+      ],
+      "hours": 1,
+      "source": "MARKETING_PLAN.md: LinkedIn 1x/week",
+      "automation_note": "AI drafts 12 posts; human schedules or publishes weekly"
+    },
+    {
+      "id": "B3",
+      "title": "Set up Meta Ads Manager campaigns (3 variants)",
+      "category": "semi",
+      "phase": "marketing",
+      "week": 10,
+      "status": "blocked",
+      "site": "cnt-site",
+      "dependencies": [
+        "A12"
+      ],
+      "hours": 1.5,
+      "source": "IG_ADS.md \u2014 campaign structure spec'd",
+      "automation_note": "BLOCKED: Facebook account locked, appeal pending since Jan 2026."
+    },
+    {
+      "id": "B4",
+      "title": "Build retargeting audiences in Meta Ads",
+      "category": "semi",
+      "phase": "marketing",
+      "week": 10,
+      "status": "blocked",
+      "site": "cnt-site",
+      "dependencies": [
+        "A10",
+        "B3"
+      ],
+      "hours": 1,
+      "source": "IG_ADS.md: Retargeting section",
+      "automation_note": "BLOCKED: Depends on B3 (Meta Ads setup)."
+    },
+    {
+      "id": "B5",
+      "title": "Replace placeholder testimonials with real quotes",
+      "category": "semi",
+      "phase": "content",
+      "week": 4,
+      "status": "pending",
+      "site": "all",
+      "dependencies": [
+        "C6"
+      ],
+      "hours": 0.5,
+      "source": "cnt-site HANDOFF: Testimonials placeholder",
+      "automation_note": "AI formats quotes into component; needs real names"
+    },
+    {
+      "id": "B6",
+      "title": "Set up WhatsApp community link on sites",
+      "category": "semi",
+      "phase": "integration",
+      "week": 3,
+      "status": "pending",
+      "site": "all",
+      "dependencies": [],
+      "hours": 0.25,
+      "source": "cnt-site HANDOFF: WhatsApp community link",
+      "automation_note": "AI adds link to Footer/Header; human creates group"
+    },
+    {
+      "id": "B7",
+      "title": "SEO meta optimization across all 4 sites",
+      "category": "semi",
+      "phase": "build",
+      "week": 5,
+      "status": "done",
+      "site": "all",
+      "dependencies": [
+        "A1",
+        "A2",
+        "A3",
+        "A11"
+      ],
+      "hours": 1,
+      "source": "VOICE_PROFILE.md, SEO best practices",
+      "automation_note": "AI generates meta titles/descriptions; human reviews tone"
+    },
+    {
+      "id": "B8",
+      "title": "Create digital product #1: Change Readiness Toolkit ($49)",
+      "category": "semi",
+      "phase": "product",
+      "week": 8,
+      "status": "done",
+      "site": "cnt-site",
+      "dependencies": [
+        "A9"
+      ],
+      "hours": 4,
+      "source": "BUSINESS_MODEL.md: Month 5 milestone",
+      "automation_note": "Workbook created (584 lines). Landing page at /toolkit. Stripe link needs real payment link."
+    },
+    {
+      "id": "C1",
+      "title": "Join and engage in 5+ frum women WhatsApp groups",
+      "category": "human",
+      "phase": "marketing",
+      "week": 3,
+      "status": "pending",
+      "site": "all",
+      "dependencies": [],
+      "hours": 2,
+      "source": "MARKETING_PLAN.md Week 3",
+      "automation_note": "Cannot automate \u2014 requires genuine community presence"
+    },
+    {
+      "id": "C2",
+      "title": "Conduct free 20-min Calendly discovery calls",
+      "category": "human",
+      "phase": "sales",
+      "week": 3,
+      "status": "pending",
+      "site": "all",
+      "dependencies": [
+        "B1"
+      ],
+      "hours": 5,
+      "source": "BUSINESS_MODEL.md: Core sales mechanism",
+      "automation_note": "Cannot automate \u2014 the core trust-building step"
+    },
+    {
+      "id": "C3",
+      "title": "Facilitate first workshop cohort",
+      "category": "human",
+      "phase": "sales",
+      "week": 7,
+      "status": "pending",
+      "site": "cnt-site",
+      "dependencies": [
+        "C2"
+      ],
+      "hours": 3,
+      "source": "MARKETING_PLAN.md Week 7",
+      "automation_note": "Cannot automate \u2014 live teaching and facilitation"
+    },
+    {
+      "id": "C4",
+      "title": "Conduct first free speaking event",
+      "category": "human",
+      "phase": "marketing",
+      "week": 5,
+      "status": "pending",
+      "site": "all",
+      "dependencies": [],
+      "hours": 3,
+      "source": "MARKETING_PLAN.md Week 5",
+      "automation_note": "Cannot automate \u2014 in-person community presence"
+    },
+    {
+      "id": "C5",
+      "title": "Record and post speaking event content",
+      "category": "human",
+      "phase": "content",
+      "week": 6,
+      "status": "pending",
+      "site": "cnt-site",
+      "dependencies": [
+        "C4"
+      ],
+      "hours": 2,
+      "source": "MARKETING_PLAN.md Week 6",
+      "automation_note": "Recording requires human; AI can help with transcription/posting"
+    },
+    {
+      "id": "C6",
+      "title": "Collect authentic testimonials from workshop attendees",
+      "category": "human",
+      "phase": "content",
+      "week": 4,
+      "status": "pending",
+      "site": "all",
+      "dependencies": [
+        "C3"
+      ],
+      "hours": 1,
+      "source": "MARKETING_PLAN.md Week 4",
+      "automation_note": "Cannot automate \u2014 real participant feedback required"
+    },
+    {
+      "id": "C7",
+      "title": "Analyze IG ad performance and pivot strategy",
+      "category": "human",
+      "phase": "marketing",
+      "week": 11,
+      "status": "pending",
+      "site": "cnt-site",
+      "dependencies": [
+        "B3"
+      ],
+      "hours": 2,
+      "source": "MARKETING_PLAN.md Week 11",
+      "automation_note": "Cannot automate \u2014 strategic creative judgment"
+    },
+    {
+      "id": "C8",
+      "title": "90-day strategy review and next-quarter planning",
+      "category": "human",
+      "phase": "strategy",
+      "week": 12,
+      "status": "pending",
+      "site": "all",
+      "dependencies": [],
+      "hours": 3,
+      "source": "MARKETING_PLAN.md Week 12",
+      "automation_note": "Cannot automate \u2014 high-level strategic decision-making"
+    }
+  ],
+  "dependencies": {
+    "A1": [],
+    "A2": [
+      "A1"
+    ],
+    "A3": [
+      "A2"
+    ],
+    "A4": [
+      "A1",
+      "A2",
+      "A3"
+    ],
+    "A5": [
+      "A1",
+      "A2",
+      "A3"
+    ],
+    "A6": [
+      "A1",
+      "A2",
+      "A3"
+    ],
+    "A7": [],
+    "A8": [],
+    "A9": [],
+    "A10": [
+      "A9"
+    ],
+    "A11": [],
+    "A12": [
+      "A9",
+      "A10"
+    ],
+    "A13": [],
+    "A14": [],
+    "A15": [],
+    "A16": [],
+    "A17": [],
+    "B1": [
+      "A9",
+      "A10"
+    ],
+    "B2": [
+      "A11"
+    ],
+    "B3": [
+      "A12"
+    ],
+    "B4": [
+      "A10",
+      "B3"
+    ],
+    "B5": [
+      "C6"
+    ],
+    "B6": [],
+    "B7": [
+      "A1",
+      "A2",
+      "A3",
+      "A11"
+    ],
+    "B8": [
+      "A9"
+    ],
+    "C1": [],
+    "C2": [
+      "B1"
+    ],
+    "C3": [
+      "C2"
+    ],
+    "C4": [],
+    "C5": [
+      "C4"
+    ],
+    "C6": [
+      "C3"
+    ],
+    "C7": [
+      "B3"
+    ],
+    "C8": []
+  }
+}

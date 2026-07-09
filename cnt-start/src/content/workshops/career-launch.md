@@ -7,8 +7,8 @@ sessions: 6
 duration: "90 min each"
 level: "beginner"
 category: "career"
-cohort: "July 2026"
-startDate: 2026-07-07
+cohort: "September 2026"
+startDate: 2026-09-08
 dayOfWeek: "Tuesdays"
 time: "7:00 PM"
 timezone: "ET"

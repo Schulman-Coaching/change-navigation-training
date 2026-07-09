@@ -7,8 +7,8 @@ sessions: 4
 duration: "90 min each"
 level: "beginner"
 category: "ai-literacy"
-cohort: "June 2026"
-startDate: 2026-06-03
+cohort: "September 2026"
+startDate: 2026-09-02
 dayOfWeek: "Wednesdays"
 time: "11:00 AM"
 timezone: "ET"
