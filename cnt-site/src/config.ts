@@ -110,6 +110,7 @@ export const STRIPE_LINKS = {
 export const PILOT_PAYMENT_LINK_ID = 'plink_1USZ1bFL3AcM6AsqH4gzEAkE';
 
 // Founding cohort facts. Dates are the plan's estimate; confirm against a luach before promoting.
+// The Zoom link is not stored here. It is sent only in the post-payment email.
 export const PILOT = {
   title: "Women's AI Confidence: 4-Week Pilot",
   priceLabel: '$149',
@@ -121,25 +122,12 @@ export const PILOT = {
   credit: 'The $149 is credited toward a membership ($69–$89/mo) if you join within 30 days.',
 };
 
-// Calendly. Empty string = not bookable; CalendlyWidget falls back to the contact form.
-//
-// Confirmed 2026-10-20:
-// - calendly.com/elie-schulman and every /elie-schulman/... event return HTTP 404.
-// - Repo history only ever stored elie-schulman links (including an older
-//   calendly.com/elie-schulman/new-meeting-1). None of them resolve.
-// - The connected Calendly account is calendly.com/andrea-schulman-coaching.
-//   These event types exist there and are turned off, so they have no bookable times:
-//     /free-20-minute-consultation
-//     /coaching-discovery-call
-//     /workshop-discovery-call
-// - One active event is bookable: /consultation-with-elie (30 min, free).
-//   Its description is a Cohort Learning Labs group placement call, not the
-//   CNT free consultation or the coaching discovery call, so it is not wired in.
-// TODO: Elie — paste a live scheduling URL for each key below.
+// Live scheduling URLs on calendly.com/andrea-schulman-coaching.
+// workshopBooking is unused on the site; the old elie-schulman links 404.
 export const CALENDLY_LINKS = {
-  consultation: '', // TODO: free consultation
-  workshopBooking: '', // TODO: workshop discovery call
-  coachingSession: '', // TODO: coaching discovery call
+  consultation: 'https://calendly.com/andrea-schulman-coaching/cnt-free-20-min-consultation',
+  workshopBooking: '',
+  coachingSession: 'https://calendly.com/andrea-schulman-coaching/cnt-coaching-discovery-call',
 };
 
 export const CALENDLY_USERNAME = 'andrea-schulman-coaching';

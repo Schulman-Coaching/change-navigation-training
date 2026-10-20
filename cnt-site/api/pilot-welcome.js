@@ -1,27 +1,35 @@
 /**
  * Post-payment Zoom link for the founding pilot.
+ * The meeting link is emailed to the buyer. It is not rendered on public pages.
  *
- * Proposed path (nothing sends until Elie sets env vars — no secrets in this file):
  * 1. STRIPE_LINKS.pilotFounding is https://buy.stripe.com/9B628rdjjeRUgiO3td4ow0F
  * 2. Set that link's after-payment redirect to
  *    https://changenavigationtraining.com/pilot/confirmed/
  * 3. In Stripe, add a webhook endpoint: https://changenavigationtraining.com/api/pilot-welcome
  *    Event: checkout.session.completed
- * 4. Set these Vercel env vars (do not commit secrets):
+ * 4. Set these Vercel env vars (do not commit the webhook secret):
  *      STRIPE_WEBHOOK_SECRET   signing secret from the webhook endpoint
  *      PILOT_PAYMENT_LINK_ID   plink_1USZ1bFL3AcM6AsqH4gzEAkE
- *      PILOT_ZOOM_URL          the Zoom link buyers should receive
+ *      PILOT_ZOOM_URL          optional override; default is DOCUMENTED_ZOOM_URL below
  *      RESEND_API_KEY          already set
  *      NOTIFY_EMAIL            already set
  *
- * On a matching payment the function emails the buyer PILOT_ZOOM_URL via Resend
- * and notifies NOTIFY_EMAIL that the seat email went out. The Zoom URL is never
- * written into the repo or into logs.
+ * Documented default:
+ *   PILOT_ZOOM_URL = https://us06web.zoom.us/j/83462308276?pwd=KaBQQ4clnryHvdCY150taHi2qD11aq.1
+ *   Meeting ID 834 6230 8276
+ *   Passcode 235948
+ *
+ * On a matching payment the function emails the buyer that link via Resend
+ * and notifies NOTIFY_EMAIL that the seat email went out. The notification
+ * does not repeat the Zoom link.
  */
 
 export const config = { runtime: 'edge' };
 
 const FROM = 'Change Navigation Training <welcome@changenavigationtraining.com>';
+const DOCUMENTED_ZOOM_URL = 'https://us06web.zoom.us/j/83462308276?pwd=KaBQQ4clnryHvdCY150taHi2qD11aq.1';
+const ZOOM_MEETING_ID = '834 6230 8276';
+const ZOOM_PASSCODE = '235948';
 
 export default async function handler(request) {
   if (request.method !== 'POST') {
@@ -65,14 +73,14 @@ export default async function handler(request) {
   }
 
   const buyer = session.customer_details?.email || session.customer_email;
-  const zoomUrl = process.env.PILOT_ZOOM_URL;
+  const zoomUrl = process.env.PILOT_ZOOM_URL || DOCUMENTED_ZOOM_URL;
   const resendKey = process.env.RESEND_API_KEY;
 
   if (!buyer || !zoomUrl || !resendKey) {
     await notify(
-      `Pilot payment received${buyer ? ` from ${buyer}` : ''}. Zoom email was not sent. Check PILOT_ZOOM_URL, RESEND_API_KEY, and the checkout email.`
+      `Pilot payment received${buyer ? ` from ${buyer}` : ''}. Zoom email was not sent. Check RESEND_API_KEY and the checkout email.`
     );
-    return json({ error: 'Pilot welcome email is missing buyer, Zoom URL, or Resend key.' }, 500);
+    return json({ error: 'Pilot welcome email is missing a buyer or Resend key.' }, 500);
   }
 
   const sent = await sendEmail(resendKey, {
@@ -97,6 +105,7 @@ function buyerHtml(zoomUrl) {
   <p style="font-size:16px;line-height:1.6;">The founding pilot meets on Zoom, Tuesdays November 10, 17, 24, and December 1, 2026. 20:30 Israel time (13:30 ET). 75 minutes.</p>
   <p style="font-size:16px;line-height:1.6;">This is the link for all four sessions:</p>
   <p style="margin:24px 0;"><a href="${link}" style="color:#c8963e;">${link}</a></p>
+  <p style="font-size:16px;line-height:1.6;">Meeting ID: ${escapeHtml(ZOOM_MEETING_ID)}<br>Passcode: ${escapeHtml(ZOOM_PASSCODE)}</p>
   <p style="font-size:16px;line-height:1.6;">Keep it. The same link is used each Tuesday.</p>
   <hr style="border-color:#222;margin:32px 0;">
   <p style="font-size:11px;color:#444;">Change Navigation Training</p>
