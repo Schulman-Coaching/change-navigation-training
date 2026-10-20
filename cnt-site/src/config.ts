@@ -109,16 +109,13 @@ export const STRIPE_LINKS = {
 // PILOT_PAYMENT_LINK_ID so api/pilot-welcome.js ignores other checkouts.
 export const PILOT_PAYMENT_LINK_ID = 'plink_1USZ1bFL3AcM6AsqH4gzEAkE';
 
-// Google Meet link for the four pilot sessions. Set this as the Vercel env var
-// PILOT_MEET_URL. The welcome email uses this value when the env var is unset.
-export const PILOT_MEET_URL = 'https://meet.google.com/fms-jmwy-ucm';
-
 // Founding cohort facts. Dates are the plan's estimate; confirm against a luach before promoting.
+// The Zoom link is not stored here. It is sent only in the post-payment email.
 export const PILOT = {
   title: "Women's AI Confidence: 4-Week Pilot",
   priceLabel: '$149',
   size: '8–15 women',
-  sessions: '4 weekly live Google Meet sessions, 75 minutes each',
+  sessions: '4 weekly live Zoom sessions, 75 minutes each',
   dates: 'Tuesdays, November 10, 17, 24, and December 1, 2026',
   time: '20:30 Israel time (13:30 ET)',
   closes: 'November 6, 2026',
