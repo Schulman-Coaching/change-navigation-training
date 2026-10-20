@@ -22,7 +22,7 @@ You have heard about AI. You have watched friends use it. You have wondered if y
 
 ## Who This Is For
 
-Women 18-24 who have never used AI or tried once and felt confused. You need a laptop and a willingness to try. Nothing else.
+Anyone 18–24 who has never used AI or tried once and felt confused. You need a laptop and a willingness to try. Nothing else.
 
 ## What You Will Learn
 

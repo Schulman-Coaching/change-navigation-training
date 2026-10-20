@@ -2,7 +2,7 @@
 title: "AI Is Your Edge, Not Your Replacement"
 slug: "ai-is-your-edge"
 date: 2026-05-25
-excerpt: "The fear that AI will take jobs is loud. What is quieter — and truer — is that women who learn to use AI now will have an advantage that compounds for years."
+excerpt: "The fear that AI will take jobs is loud. What is quieter — and truer — is that people who learn to use AI now will have an advantage that compounds for years."
 categories: ["AI Literacy", "Career"]
 word_count: 410
 audience: "start"
@@ -16,7 +16,7 @@ Most of your peers are not learning AI. They are intimidated by it, indifferent 
 
 This is not about becoming an engineer. It is about becoming the person in the room who knows how to get more done in less time. The person who can research faster, write clearer, organize better. That person gets noticed.
 
-The junior employee who can produce a polished research brief in an afternoon instead of a week is not going to be replaced. She is going to be indispensable.
+The junior employee who can produce a polished research brief in an afternoon instead of a week is not going to be replaced. They are going to be indispensable.
 
 Learning AI at 22 is different from learning at 42. Not because it is harder later. It is not. Because you have more time for the advantage to compound. Every year you use these tools, you get better. The tools themselves get better. The gap widens.
 

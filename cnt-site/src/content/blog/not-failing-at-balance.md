@@ -2,13 +2,13 @@
 title: "You Are Not Failing at Balance. The Game Is Rigged."
 slug: "not-failing-at-balance"
 date: 2026-05-25
-excerpt: "The expectation that one woman should simultaneously excel at career, parenting, homemaking, and community involvement without systemic support is not a standard. It is a setup."
+excerpt: "The expectation that one person should simultaneously excel at career, parenting, home, and community involvement without support is not a standard. It is a setup."
 categories: ["Change Navigation"]
 word_count: 390
 audience: "build"
 ---
 
-Every piece of advice about work-life balance assumes a structure that does not exist for most women. Reliable childcare. Predictable hours. A partner who carries half the mental load. A community that values rest as much as contribution.
+Every piece of advice about work-life balance assumes a structure that does not exist for most people. Reliable childcare. Predictable hours. A partner who carries half the mental load. A community that values rest as much as contribution.
 
 If you have all of those, the advice might work. If you do not, the advice feels like accusation — as if the imbalance is your failure rather than the predictable outcome of impossible conditions.
 

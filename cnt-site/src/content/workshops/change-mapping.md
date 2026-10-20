@@ -21,7 +21,7 @@ Change feels chaotic because we experience it all at once. This workshop gives y
 
 ## Who This Is For
 
-Women facing a specific transition — career, family, technology, community role — or simply wanting to build the skill of seeing change clearly before it arrives. No prerequisites.
+Anyone facing a specific transition — career, family, technology, community role — or simply wanting to build the skill of seeing change clearly before it arrives. No prerequisites.
 
 ## What You Will Learn
 

@@ -18,7 +18,7 @@ AI does not require youth. It requires clarity of thought. It requires knowing w
 
 These are not technical skills. They are cognitive skills. They are exactly the skills that deepen with age and experience.
 
-A fifty-five-year-old woman who has run a household, managed a budget, resolved conflicts, and made decisions under uncertainty for three decades is far better equipped to use AI effectively than a twenty-two-year-old who has done none of those things.
+A fifty-five-year-old who has run a household, managed a budget, resolved conflicts, and made decisions under uncertainty for three decades is far better equipped to use AI effectively than a twenty-two-year-old who has done none of those things.
 
 ## The Advantage of Experience
 

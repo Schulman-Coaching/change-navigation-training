@@ -10,7 +10,7 @@ audience: "lead"
 
 Summer is a strange season for learning. The days are longer. The pace is looser. The pressure to produce eases slightly. It is, in other words, exactly the right time to build a skill that requires space to breathe.
 
-We designed our June and July schedule with that in mind. Eight workshops. Four per month. Each one built for a different starting point. Each one designed for women who want to move forward without the noise.
+We designed our June and July schedule with that in mind. Eight workshops. Four per month. Each one built for a different starting point. Each one designed for people who want to move forward without the noise.
 
 ## June: The Foundation
 
@@ -18,15 +18,15 @@ We designed our June and July schedule with that in mind. Eight workshops. Four 
 
 **Change Mapping** (starts June 3) is our shortest workshop — two Wednesday mornings — and possibly our most important. It teaches one framework: how to separate what is changing from how you feel about it. Simple. Foundational. Reusable for the rest of your life.
 
-**AI-Assisted Writing & Communication** (starts June 9) is for women who write. Emails, reports, lesson plans, content for a business. You will learn to use AI as a writing partner without losing your voice.
+**AI-Assisted Writing & Communication** (starts June 9) is for people who write. Emails, reports, lesson plans, content for a business. You will learn to use AI as a writing partner without losing your voice.
 
 **Decision-Making Under Uncertainty** (starts June 18) addresses the thing no one admits: most decisions are made with incomplete information. You will learn to make them clearly anyway.
 
 ## July: Build on It
 
-**Navigating Career Change in the AI Era** (starts July 6) is our longest workshop — six sessions. For women returning to the workforce, shifting fields, or asking what comes next professionally.
+**Navigating Career Change in the AI Era** (starts July 6) is our longest workshop — six sessions. For anyone returning to the workforce, shifting fields, or asking what comes next professionally.
 
-**AI Tools for Work & Business** (starts July 7) is the practical counterpart. Six Tuesday evenings. AI for productivity, communication, marketing, and operations. For women who run businesses or work inside organizations.
+**AI Tools for Work & Business** (starts July 7) is the practical counterpart. Six Tuesday evenings. AI for productivity, communication, marketing, and operations. For people who run businesses or work inside organizations.
 
 **AI for Learning & Teaching** (starts July 8) is for educators and parents. How to think about AI in the classroom and at home. A clear-eyed look at what is happening in education and what to do about it.
 
@@ -36,7 +36,7 @@ We designed our June and July schedule with that in mind. Eight workshops. Four 
 
 All of them are about the same thing: not mastering a tool, but building the capacity to face uncertainty without freezing. AI is the context. Change navigation is the skill.
 
-The workshops are designed for Orthodox Jewish women. The scheduling respects Shabbat and Yom Tov. The conversation happens in a context that understands frum life — its rhythms, its values, its particular pressures and opportunities.
+The workshops are open to anyone. The scheduling respects Shabbat and Yom Tov. The conversation starts from the week you actually live — its rhythms, its values, its particular pressures and opportunities.
 
 ## One Note
 

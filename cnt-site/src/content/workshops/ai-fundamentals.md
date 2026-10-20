@@ -22,7 +22,7 @@ You have heard about AI. You have probably used it without realizing. You have q
 
 ## Who This Is For
 
-Women who want to understand AI but have felt shut out by the conversation. You do not need to be "technical." You do not need to have used ChatGPT before. You need curiosity and a willingness to try.
+Anyone who wants to understand AI but has felt shut out by the conversation. You do not need to be "technical." You do not need to have used ChatGPT before. You need curiosity and a willingness to try.
 
 ## What You Will Learn
 
@@ -36,7 +36,7 @@ Prompting is not programming. It is conversation. You will learn the skill of as
 AI is powerful. It also hallucinates, confabulates, and gets things wrong. You will learn to assess what AI produces — when to trust it, when to verify, and when to walk away.
 
 **Session 4: AI in Your Daily Life**
-Practical applications for frum women: meal planning, lesson preparation, email writing, research for learning, managing household information. You will leave with a personal list of ways AI can serve your actual life.
+Practical applications for everyday life: meal planning, lesson preparation, email writing, research for learning, managing household information. You will leave with a personal list of ways AI can serve your actual life.
 
 ## What Past Participants Say
 

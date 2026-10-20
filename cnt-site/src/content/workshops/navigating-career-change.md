@@ -21,7 +21,7 @@ Career change has always been difficult. AI has made it both more urgent and mor
 
 ## Who This Is For
 
-Women who are returning to the workforce, considering a career shift, building a business, or simply wanting to understand how AI is reshaping professional opportunities. Some professional experience is helpful. AI experience is not required — we will build that together.
+Anyone returning to the workforce, considering a career shift, building a business, or simply wanting to understand how AI is reshaping professional opportunities. Some professional experience is helpful. AI experience is not required — we will build that together.
 
 ## What You Will Learn
 

@@ -20,7 +20,7 @@ The most effective users of AI are not the ones who let it lead. They are the on
 
 You bring the direction. AI brings the speed. You bring the judgment. AI brings the information. You bring the values. AI brings the options.
 
-This is not a diminished role. It is an elevated one. The human in the loop is not a backup. She is the point.
+This is not a diminished role. It is an elevated one. The human in the loop is not a backup. They are the point.
 
 ## What This Means for Your Next Chapter
 
@@ -28,4 +28,4 @@ You have reached a stage where your value is no longer about output volume. It i
 
 AI handles the volume. You handle the discernment. That combination — decades of judgment plus a tool that can execute at scale — is more powerful than either alone.
 
-The women who thrive in the AI era are not the ones who know the most about technology. They are the ones who know the most about everything else — and are willing to add one more tool to their kit.
+The people who thrive in the AI era are not the ones who know the most about technology. They are the ones who know the most about everything else — and are willing to add one more tool to their kit.

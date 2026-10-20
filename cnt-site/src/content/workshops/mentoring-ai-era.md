@@ -21,7 +21,7 @@ You have spent decades building knowledge — about your profession, your commun
 
 ## Who This Is For
 
-Women with professional, communal, or personal expertise who want to mentor, teach, or advise — formally or informally. AI experience helpful but not required.
+Anyone with professional, communal, or personal expertise who wants to mentor, teach, or advise — formally or informally. AI experience helpful but not required.
 
 ## What You Will Learn
 

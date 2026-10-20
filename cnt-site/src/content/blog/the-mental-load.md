@@ -18,7 +18,7 @@ This is not a personal failing. It is a structural reality. The mental load is r
 
 AI cannot carry the load for you. But it can lighten it.
 
-The simplest use: every time something pops into your head that you need to remember, put it into an AI prompt instead of holding it in your brain. "Remind me to call the pediatrician. Add the teacher conference to next week. What do I need to buy for the Shabbos meal? Draft a reply to that email."
+The simplest use: every time something pops into your head that you need to remember, put it into an AI prompt instead of holding it in your brain. "Remind me to call the pediatrician. Add the teacher conference to next week. What do I need to buy for dinner? Draft a reply to that email."
 
 You are not asking AI to do the tasks. You are asking it to hold the list. The list is the weight. Offloading it frees cognitive space.
 

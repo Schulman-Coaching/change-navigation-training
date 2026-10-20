@@ -22,7 +22,7 @@ You are entering a new chapter. Maybe the children have left. Maybe you are cons
 
 ## Who This Is For
 
-Women 50+ navigating a life transition. No AI experience needed. No technical background required. Patience, curiosity, and a willingness to learn at your own pace.
+Anyone 50+ navigating a life transition. No AI experience needed. No technical background required. Patience, curiosity, and a willingness to learn at your own pace.
 
 ## What You Will Learn
 

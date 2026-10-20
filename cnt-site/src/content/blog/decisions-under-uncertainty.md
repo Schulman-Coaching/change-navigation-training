@@ -20,11 +20,11 @@ The first step is recognizing that inaction is itself a decision. Choosing not t
 
 The second step is building judgment. Judgment is not intuition. It is pattern recognition built on repeated exposure to similar situations. You develop it by making decisions, observing outcomes, and adjusting. Not by reading about decisions. By making them.
 
-The third step is living with the result. Some decisions will be wrong. That is not failure. That is feedback. The woman who has made ten decisions and been wrong twice is ahead of the woman who has made none and been wrong never. The first has data. The second has paralysis.
+The third step is living with the result. Some decisions will be wrong. That is not failure. That is feedback. The person who has made ten decisions and been wrong twice is ahead of the person who has made none and been wrong never. The first has data. The second has paralysis.
 
 In an environment of rapid change — which is the environment we are all in now — the premium on decision-making has increased. The cost of waiting has gone up. The value of moving has gone up with it.
 
-The women who will lead through this period are not the ones with the most complete spreadsheets. They are the ones who have practiced deciding. Who know what it feels like to choose a direction without guarantees. Who have made peace with the fact that clarity comes after action, not before it.
+The people who will lead through this period are not the ones with the most complete spreadsheets. They are the ones who have practiced deciding. Who know what it feels like to choose a direction without guarantees. Who have made peace with the fact that clarity comes after action, not before it.
 
 You can start practicing today. Pick something small. Decide. Observe. Adjust. Repeat.
 

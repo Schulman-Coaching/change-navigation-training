@@ -16,9 +16,9 @@ AI can produce text. It cannot know what text needs to be written. It can summar
 
 These are not technical limitations waiting to be solved. They are category differences. AI processes information. Humans interpret meaning. Those are not the same activity.
 
-The woman who understands this distinction will not be replaced by AI. She will be more valuable because of it. Her judgment becomes the scarce resource. Her ability to read a situation, to sense what is unsaid, to weigh competing values — these become more important, not less, as AI handles the rest.
+The person who understands this distinction will not be replaced by AI. They will be more valuable because of it. Their judgment becomes the scarce resource. Their ability to read a situation, to sense what is unsaid, to weigh competing values — these become more important, not less, as AI handles the rest.
 
-Consider a manager deciding whether to restructure her team. AI can model the financial implications. It can draft the announcement. It cannot tell her how the decision will land with each person. It cannot weigh the cultural cost against the operational gain. It cannot sit with someone afterward and mean it when she says the door is still open.
+Consider a manager deciding whether to restructure a team. AI can model the financial implications. It can draft the announcement. It cannot tell them how the decision will land with each person. It cannot weigh the cultural cost against the operational gain. It cannot sit with someone afterward and mean it when they say the door is still open.
 
 Those are human capacities. They are not secondary to the technical work. They are the work.
 

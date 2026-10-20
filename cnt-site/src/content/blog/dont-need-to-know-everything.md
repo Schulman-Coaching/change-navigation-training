@@ -10,11 +10,11 @@ audience: "start"
 
 The assumption that everyone else already understands AI is false. Most people your age have used it once or twice, in passing. They have not learned it. They have not practiced it. They are starting from the same place you are.
 
-The difference is not knowledge. It is willingness. The women who walk into interviews, classrooms, and conversations with a working understanding of AI in six months are not the ones who already knew something. They are the ones who decided to start.
+The difference is not knowledge. It is willingness. The people who walk into interviews, classrooms, and conversations with a working understanding of AI in six months are not the ones who already knew something. They are the ones who decided to start.
 
 ## The Myth of "Behind"
 
-Seminary did not teach AI. Neither did high school. Neither did most colleges, until very recently. That means almost everyone in your position — starting a career, beginning coursework, figuring out what comes next — is learning AI for the first time right now.
+School did not teach AI. Neither did most colleges, until very recently. That means almost everyone in your position — starting a career, beginning coursework, figuring out what comes next — is learning AI for the first time right now.
 
 You are not behind. You are at the starting line with everyone else. The difference is that most people are standing still, looking at the track. You are here, reading this, considering the first step.
 
@@ -24,7 +24,7 @@ That willingness — to not know and move anyway — is more valuable than any t
 
 It looks like one workshop. Not a degree. Not a certification. One session where you open a tool and try something.
 
-It looks like asking a question in a peer circle and hearing three other women say "I was wondering that too."
+It looks like asking a question in a peer circle and hearing three other people say "I was wondering that too."
 
 It looks like using AI to draft a cover letter and realizing it took ten minutes instead of two hours.
 
@@ -32,7 +32,7 @@ It looks small. The smallness is the point. You do not need to learn everything.
 
 ## One Decision
 
-The women who build careers they love in their twenties share one trait. Not a specific degree. Not a particular skill. They make decisions. They try things. They course-correct.
+The people who build careers they love in their twenties share one trait. Not a specific degree. Not a particular skill. They make decisions. They try things. They course-correct.
 
 Learning AI is not a destination. It is a decision. One that says: I am not waiting for permission. I am not waiting until I feel ready. I am starting now, with what I have, from where I am.
 

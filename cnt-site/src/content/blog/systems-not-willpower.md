@@ -2,13 +2,13 @@
 title: "Systems, Not Willpower"
 slug: "systems-not-willpower"
 date: 2026-05-26
-excerpt: "The difference between women who manage their lives and women who feel managed by them is not discipline. It is systems. AI makes systems easier to build."
+excerpt: "The difference between people who manage their lives and people who feel managed by them is not discipline. It is systems. AI makes systems easier to build."
 categories: ["Practical Tools", "Change Navigation"]
 word_count: 460
 audience: "build"
 ---
 
-The culture tells women to try harder. Get up earlier. Plan better. Push through.
+The culture tells people to try harder. Get up earlier. Plan better. Push through.
 
 This advice assumes the problem is effort. It is not. The problem is structure.
 
@@ -20,7 +20,7 @@ A system is a decision you make once. It removes the need to decide again. Meal 
 
 Systems are not exciting. They are not the part of self-improvement anyone posts about. They are unglamorous. They are also the difference between functioning and drowning.
 
-The women who seem to manage everything are not stronger than you. They have better systems. They have offloaded the repetitive decisions to structures that run without their attention. Their willpower is reserved for the things that actually require it.
+The people who seem to manage everything are not stronger than you. They have better systems. They have offloaded the repetitive decisions to structures that run without their attention. Their willpower is reserved for the things that actually require it.
 
 AI accelerates this. It does not just help you do tasks faster. It helps you build the systems that do the tasks for you. A prompt that drafts your weekly schedule. A template that handles routine emails. A workflow that turns a messy brain dump into an organized plan.
 

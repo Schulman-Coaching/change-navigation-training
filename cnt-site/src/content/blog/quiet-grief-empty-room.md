@@ -12,7 +12,7 @@ Nobody warns you. They tell you about the busy years — the noise, the chaos, t
 
 This is not a crisis. It is a transition. Transitions are uncomfortable. They are also doorways.
 
-The women who navigate this chapter well share one trait: they treat the question as serious without treating it as final. "What now" is not a problem to solve in one afternoon. It is an inquiry that unfolds over time. New interests. New projects. New ways to contribute. The answer changes. That is the point.
+The people who navigate this chapter well share one trait: they treat the question as serious without treating it as final. "What now" is not a problem to solve in one afternoon. It is an inquiry that unfolds over time. New interests. New projects. New ways to contribute. The answer changes. That is the point.
 
 AI can help — not by answering the question, but by making the exploration easier. Researching a new field. Drafting a business plan. Writing the first chapter of something. The tool does not tell you who to become. It clears the path so you can find out.
 

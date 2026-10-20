@@ -20,7 +20,7 @@ Most discussions of AI literacy focus on tools. Learn ChatGPT. Learn image gener
 
 The deeper skill is change navigation: the ability to see a shift, assess what it means for you, and respond with intention rather than fear. This is not technical. It is cognitive. It can be learned. It can be practiced.
 
-Women who have done our workshops often arrive expecting to learn about technology. They leave having learned about themselves. That is not a coincidence. The tool reveals the person using it.
+People who have done our workshops often arrive expecting to learn about technology. They leave having learned about themselves. That is not a coincidence. The tool reveals the person using it.
 
 ## Freezing Is a Response
 
@@ -28,7 +28,7 @@ When people say they are "not good with technology," they are not describing a p
 
 Stepping back is not wrong. It is natural. The question is whether you stay there.
 
-One of the first things we do in our workshops is have women open a tool and simply describe what they see. No instructions. No goals. Just observation. What do you notice. What do you wonder. What feels unfamiliar.
+One of the first things we do in our workshops is have people open a tool and simply describe what they see. No instructions. No goals. Just observation. What do you notice. What do you wonder. What feels unfamiliar.
 
 The shift happens quickly. Within minutes, the freeze thaws. The tool becomes an object of curiosity rather than threat. This is not because the tool changed. The person changed.
 
@@ -38,7 +38,7 @@ If you have navigated a career change, raised children, managed a household, vol
 
 AI is another version of this. The specifics are new. The skill is the same.
 
-The women who thrive in our programs are not the ones with technical backgrounds. They are the ones who have learned, at some point in their lives, that discomfort is temporary. That confusion is a stage, not a destination. That asking questions is not a sign of weakness. It is the mechanism of learning.
+The people who thrive in our programs are not the ones with technical backgrounds. They are the ones who have learned, at some point in their lives, that discomfort is temporary. That confusion is a stage, not a destination. That asking questions is not a sign of weakness. It is the mechanism of learning.
 
 ## One Question to Ask Yourself
 
@@ -52,4 +52,4 @@ The first option costs nothing in the short term. It costs agency in the long te
 
 There is no third option. There is only the choice between reacting and responding.
 
-The women who choose to respond do not become different people. They become more fully themselves. That is the part no one talks about. Learning to navigate change does not make you someone new. It makes you someone who trusts herself to handle what comes next.
+The people who choose to respond do not become different people. They become more fully themselves. That is the part no one talks about. Learning to navigate change does not make you someone new. It makes you someone who trusts themselves to handle what comes next.

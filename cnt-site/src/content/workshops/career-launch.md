@@ -1,7 +1,7 @@
 ---
 title: "Career Launch: Build Your Professional Toolkit"
 slug: "career-launch"
-excerpt: "For women starting their careers. Learn to use AI for job searching, applications, networking, and professional communication. Walk into any room ready."
+excerpt: "For anyone starting a career. Learn to use AI for job searching, applications, networking, and professional communication. Walk into any room ready."
 format: "multi-session"
 sessions: 6
 duration: "90 min each"
@@ -17,11 +17,11 @@ spots: 10
 audience: "start"
 ---
 
-The transition from school or seminary to professional life is disorienting. Nobody teaches you how to write a resume that gets noticed, how to prepare for an interview, or how to present yourself. This workshop fills that gap — with AI as your partner.
+The transition from school to professional life is disorienting. Nobody teaches you how to write a resume that gets noticed, how to prepare for an interview, or how to present yourself. This workshop fills that gap — with AI as your partner.
 
 ## Who This Is For
 
-Women 18-24 entering the workforce, applying to college or graduate programs, or looking for their first professional role. No experience needed.
+Anyone 18–24 entering the workforce, applying to college or graduate programs, or looking for their first professional role. No experience needed.
 
 ## What You Will Learn
 

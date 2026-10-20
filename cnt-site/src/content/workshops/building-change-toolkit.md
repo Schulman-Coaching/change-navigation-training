@@ -22,7 +22,7 @@ Most of us navigate change reactively. Something happens. We respond. Then somet
 
 ## Who This Is For
 
-Women who have taken other CNT workshops and want to solidify their practice. Women who have not taken anything yet but know they need a structured way to handle uncertainty. All levels. All contexts.
+People who have taken other CNT workshops and want to solidify their practice. People who have not taken anything yet but know they need a structured way to handle uncertainty. All levels. All contexts.
 
 ## What You Will Learn
 
@@ -30,7 +30,7 @@ Women who have taken other CNT workshops and want to solidify their practice. Wo
 Five practices that form the foundation of change navigation: pausing to observe, naming what is true, separating fact from story, identifying what you can influence, and taking one small action. You will practice each one with a real situation from your life.
 
 **Session 2: Building Your Personal System**
-Every woman's toolkit looks different. You will assemble yours — which practices work for you, which resources you return to, who is in your support network, how you track your progress. By the end, you will have a written toolkit you can return to again and again.
+Every toolkit looks different. You will assemble yours — which practices work for you, which resources you return to, who is in your support network, how you track your progress. By the end, you will have a written toolkit you can return to again and again.
 
 ## The Deliverable
 

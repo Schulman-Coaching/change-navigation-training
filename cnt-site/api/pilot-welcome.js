@@ -85,7 +85,7 @@ export default async function handler(request) {
 
   const sent = await sendEmail(resendKey, {
     to: buyer,
-    subject: 'Your Zoom link — Women’s AI Confidence pilot',
+    subject: 'Your Zoom link — AI Confidence pilot',
     html: buyerHtml(zoomUrl),
   });
 

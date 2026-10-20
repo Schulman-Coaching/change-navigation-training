@@ -21,7 +21,7 @@ Children are using AI. Schools are uncertain what to do about it. Parents are ca
 
 ## Who This Is For
 
-Teachers in Jewish day schools and beyond. Parents who want to understand what their children are encountering. Women who teach in any context — formal classrooms, community programs, or at home.
+Teachers in any setting. Parents who want to understand what their children are encountering. People who teach in any context — formal classrooms, community programs, or at home.
 
 ## What You Will Learn
 
@@ -29,7 +29,7 @@ Teachers in Jewish day schools and beyond. Parents who want to understand what t
 The honest picture. What AI can do for learners. What it threatens. Why "ban it" is not a strategy and "let them use it however they want" is not either. A clear-eyed assessment.
 
 **Session 2: AI as a Teaching Tool**
-How to use AI to plan lessons, create materials, differentiate instruction, and give feedback. Practical demonstrations with tools relevant to Jewish education.
+How to use AI to plan lessons, create materials, differentiate instruction, and give feedback. Practical demonstrations with tools you can use in the classroom and at home.
 
 **Session 3: Teaching Students to Use AI Well**
 If students will use AI — and they will — how do we teach them to use it as a learning tool, not a shortcut? Frameworks for AI literacy that work in classroom and home settings.
@@ -39,4 +39,4 @@ How to talk about AI with stakeholders who may be skeptical or afraid. Building 
 
 ## A Note on Context
 
-This workshop is designed with the Orthodox Jewish educational context in mind. We discuss AI through the lens of Torah values, the rhythms of the Jewish calendar, and the specific concerns of frum educators and parents. The tools are universal. The framing is ours.
+This workshop is open to anyone who teaches or parents. We discuss AI through the lens of the values you already hold, the rhythm of your calendar, and the specific concerns of educators and parents. The tools are universal. The framing starts from your context.

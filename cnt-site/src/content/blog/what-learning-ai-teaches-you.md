@@ -30,7 +30,7 @@ The first response is self-protective. It says: I do not want to look like I do 
 
 Neither is wrong. One leads to learning. The other leads to staying where you are.
 
-The women who type something — even something as simple as "hello, what can you do" — discover within seconds that AI is not intimidating. It is responsive. It meets you where you are. The blank box was never the problem. The fear of the blank box was.
+The people who type something — even something as simple as "hello, what can you do" — discover within seconds that AI is not intimidating. It is responsive. It meets you where you are. The blank box was never the problem. The fear of the blank box was.
 
 ## What You Are Actually Practicing
 
@@ -48,7 +48,7 @@ These are not AI skills. These are change-navigation skills. They transfer to ev
 
 ## The Real Transformation
 
-At the end of a workshop, women often tell us something they did not expect. They say they feel more capable. Not more capable with AI. More capable, period.
+At the end of a workshop, people often tell us something they did not expect. They say they feel more capable. Not more capable with AI. More capable, period.
 
 This is not because they learned to use a chatbot. It is because they learned that unfamiliarity is not a wall. It is a door. And they learned that they already know how to open it.
 
