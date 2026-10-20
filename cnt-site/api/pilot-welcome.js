@@ -1,7 +1,7 @@
 /**
- * Post-payment Zoom link for the founding pilot.
+ * Post-payment Google Meet link for the founding pilot.
  *
- * Proposed path (nothing sends until Elie sets env vars — no secrets in this file):
+ * Proposed path (nothing sends until Elie sets the webhook secret — no secrets in this file):
  * 1. STRIPE_LINKS.pilotFounding is https://buy.stripe.com/9B628rdjjeRUgiO3td4ow0F
  * 2. Set that link's after-payment redirect to
  *    https://changenavigationtraining.com/pilot/confirmed/
@@ -10,18 +10,19 @@
  * 4. Set these Vercel env vars (do not commit secrets):
  *      STRIPE_WEBHOOK_SECRET   signing secret from the webhook endpoint
  *      PILOT_PAYMENT_LINK_ID   plink_1USZ1bFL3AcM6AsqH4gzEAkE
- *      PILOT_ZOOM_URL          the Zoom link buyers should receive
+ *      PILOT_MEET_URL          https://meet.google.com/fms-jmwy-ucm
  *      RESEND_API_KEY          already set
  *      NOTIFY_EMAIL            already set
  *
- * On a matching payment the function emails the buyer PILOT_ZOOM_URL via Resend
- * and notifies NOTIFY_EMAIL that the seat email went out. The Zoom URL is never
- * written into the repo or into logs.
+ * PILOT_MEET_URL is optional. When it is unset, the email uses the Meet link above.
+ * On a matching payment the function emails the buyer that link via Resend
+ * and notifies NOTIFY_EMAIL that the seat email went out.
  */
 
 export const config = { runtime: 'edge' };
 
 const FROM = 'Change Navigation Training <welcome@changenavigationtraining.com>';
+const DOCUMENTED_MEET_URL = 'https://meet.google.com/fms-jmwy-ucm';
 
 export default async function handler(request) {
   if (request.method !== 'POST') {
@@ -56,7 +57,7 @@ export default async function handler(request) {
   const paymentLink = String(session.payment_link || '');
 
   if (!expectedLink) {
-    await notify('A checkout completed, and PILOT_PAYMENT_LINK_ID is unset, so no Zoom email was sent.');
+    await notify('A checkout completed, and PILOT_PAYMENT_LINK_ID is unset, so no Google Meet email was sent.');
     return json({ received: true, skipped: 'PILOT_PAYMENT_LINK_ID unset' });
   }
 
@@ -65,36 +66,36 @@ export default async function handler(request) {
   }
 
   const buyer = session.customer_details?.email || session.customer_email;
-  const zoomUrl = process.env.PILOT_ZOOM_URL;
+  const meetUrl = process.env.PILOT_MEET_URL || DOCUMENTED_MEET_URL;
   const resendKey = process.env.RESEND_API_KEY;
 
-  if (!buyer || !zoomUrl || !resendKey) {
+  if (!buyer || !meetUrl || !resendKey) {
     await notify(
-      `Pilot payment received${buyer ? ` from ${buyer}` : ''}. Zoom email was not sent. Check PILOT_ZOOM_URL, RESEND_API_KEY, and the checkout email.`
+      `Pilot payment received${buyer ? ` from ${buyer}` : ''}. Google Meet email was not sent. Check RESEND_API_KEY and the checkout email.`
     );
-    return json({ error: 'Pilot welcome email is missing buyer, Zoom URL, or Resend key.' }, 500);
+    return json({ error: 'Pilot welcome email is missing a buyer or Resend key.' }, 500);
   }
 
   const sent = await sendEmail(resendKey, {
     to: buyer,
-    subject: 'Your Zoom link — Women’s AI Confidence pilot',
-    html: buyerHtml(zoomUrl),
+    subject: 'Your Google Meet link — Women’s AI Confidence pilot',
+    html: buyerHtml(meetUrl),
   });
 
   if (!sent) {
-    return json({ error: 'Resend did not accept the Zoom email.' }, 500);
+    return json({ error: 'Resend did not accept the Google Meet email.' }, 500);
   }
 
-  await notify(`Pilot seat confirmed. Zoom link emailed to ${buyer}.`);
+  await notify(`Pilot seat confirmed. Google Meet link emailed to ${buyer}.`);
   return json({ received: true, emailed: true });
 }
 
-function buyerHtml(zoomUrl) {
-  const link = escapeHtml(zoomUrl);
+function buyerHtml(meetUrl) {
+  const link = escapeHtml(meetUrl);
   return `
 <div style="max-width:600px;margin:0 auto;font-family:Arial,sans-serif;color:#e0e0e0;background:#0a0a0a;padding:40px 20px;">
   <h1 style="color:#c8963e;font-family:Arial,sans-serif;font-size:28px;">You are in.</h1>
-  <p style="font-size:16px;line-height:1.6;">The founding pilot meets on Zoom, Tuesdays November 10, 17, 24, and December 1, 2026. 20:30 Israel time (13:30 ET). 75 minutes.</p>
+  <p style="font-size:16px;line-height:1.6;">The founding pilot meets on Google Meet, Tuesdays November 10, 17, 24, and December 1, 2026. 20:30 Israel time (13:30 ET). 75 minutes.</p>
   <p style="font-size:16px;line-height:1.6;">This is the link for all four sessions:</p>
   <p style="margin:24px 0;"><a href="${link}" style="color:#c8963e;">${link}</a></p>
   <p style="font-size:16px;line-height:1.6;">Keep it. The same link is used each Tuesday.</p>
