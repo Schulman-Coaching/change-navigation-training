@@ -183,6 +183,19 @@ function getFeaturedPost(audience: string) {
       </div>
     </section>
 
+    <!-- Founding pilot -->
+    <section class="pilot section">
+      <div class="container text-center">
+        <p class="pilot-kicker">Founding cohort</p>
+        <h2>Four Tuesdays. One room.</h2>
+        <p class="pilot-lead">
+          Women's AI Confidence, in four live sessions. November 10, 17, 24, and December 1, 2026.
+          20:30 Israel time (13:30 ET). Eight to fifteen women. $149, credited toward a membership.
+        </p>
+        <a href="/pilot/" class="btn">See the pilot</a>
+      </div>
+    </section>
+
     <!-- Membership Preview -->
     <section class="section">
       <div class="container text-center">
@@ -456,6 +469,21 @@ function getFeaturedPost(audience: string) {
     color: var(--color-gold);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+  }
+
+  .pilot { background: var(--color-dark); border-top: 3px solid var(--color-gold); }
+  .pilot-kicker {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-gold);
+    margin-bottom: 0.75rem;
+  }
+  .pilot-lead {
+    max-width: 640px;
+    margin: 1rem auto 1.75rem;
+    color: var(--color-gray-light);
+    font-size: 1.05rem;
   }
 
   /* Pricing */

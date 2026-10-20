@@ -103,7 +103,11 @@ import { CALENDLY_LINKS } from '../config';
         <p style="color: var(--color-gray-light); margin: 1rem 0 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto;">
           The best way to understand what CNT is, is to talk about it. Twenty minutes. No pitch. Tell me what you are navigating. I will tell you whether this can help.
         </p>
-        <a href={CALENDLY_LINKS.consultation} class="btn">Book a Free Call</a>
+        {CALENDLY_LINKS.consultation.startsWith('https://') ? (
+          <a href={CALENDLY_LINKS.consultation} class="btn">Book a Free Call</a>
+        ) : (
+          <a href="/contact/?interest=call" class="btn">Request a Free Call</a>
+        )}
       </div>
     </section>
   </main>

@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import StripeButton from '../../components/StripeButton.astro';
+import { PILOT, STRIPE_LINKS } from '../../config';
+
+const outline = [
+  {
+    n: '01',
+    title: 'Change is a skill, not a disruption.',
+    body: 'What AI is and what it is not. Set up a free account. A first useful prompt on a real task: a menu, an email, a schedule.',
+  },
+  {
+    n: '02',
+    title: 'Systems, not willpower.',
+    body: 'Use AI for household and work planning. Lists, meal planning, kids’ schedules. Build a simple personal assistant prompt.',
+  },
+  {
+    n: '03',
+    title: 'Writing, learning, research, with judgment.',
+    body: 'Drafting, summarizing, checking claims. What not to put in AI: privacy, and information about your children. Halachic questions go to your rav, not the bot.',
+  },
+  {
+    n: '04',
+    title: 'Decisions under uncertainty, and the next 30 days.',
+    body: 'Each woman shows one workflow she built. You leave with a personal plan, and with the membership offer if it fits.',
+  },
+];
+---
+
+<BaseLayout
+  title="Founding Pilot — Women's AI Confidence"
+  description="Four live Zoom sessions for Orthodox Jewish women. Tuesdays Nov 10, 17, 24, and Dec 1, 2026, at 20:30 Israel time. Founding price $149, credited toward a membership. Limited to 15."
+>
+  <Header />
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="kicker">Founding cohort</p>
+        <h1>Women's AI Confidence</h1>
+        <p>Four weeks. One room. A shorter version of the work, for women who want to start before the year turns.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow">
+        <h2>The room</h2>
+        <p>
+          AI is not the disruption. Your response to it is. This pilot is that response, practiced out loud, with other women in the same years of life.
+        </p>
+        <p>
+          Built for the Build years (25–35) and the Lead years (35–50): women who are working, teaching, raising children, and carrying the week. Women only. Scheduling stays off Shabbos. These four Tuesdays sit before Chanukah.
+        </p>
+        <dl class="facts">
+          <div>
+            <dt>When</dt>
+            <dd>{PILOT.dates}</dd>
+          </div>
+          <div>
+            <dt>Time</dt>
+            <dd>{PILOT.time}. {PILOT.sessions}.</dd>
+          </div>
+          <div>
+            <dt>Where</dt>
+            <dd>Live on Zoom. A weekly practice task, a WhatsApp group, and the recordings.</dd>
+          </div>
+          <div>
+            <dt>Size</dt>
+            <dd>{PILOT.size}. Enrollment closes {PILOT.closes}.</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section price-section">
+      <div class="container narrow text-center">
+        <p class="kicker">Founding price</p>
+        <p class="price">{PILOT.priceLabel}</p>
+        <p class="price-note">{PILOT.credit}</p>
+        <StripeButton href={STRIPE_LINKS.pilotFounding} text={`Reserve a seat — ${PILOT.priceLabel}`} />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="text-center">The four sessions</h2>
+        <ol class="outline">
+          {outline.map((session) => (
+            <li>
+              <span class="session-n">{session.n}</span>
+              <div>
+                <h3>{session.title}</h3>
+                <p>{session.body}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #0a0805, var(--color-black));
+    padding: 5rem 1.5rem 3rem;
+    text-align: center;
+    border-bottom: 3px solid var(--color-gold);
+  }
+  .page-hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 0.5rem; }
+  .page-hero p { color: var(--color-gray-light); font-size: 1.1rem; max-width: 640px; margin: 0 auto; }
+
+  .kicker {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-gold);
+    margin-bottom: 0.75rem;
+  }
+
+  .narrow { max-width: 720px; }
+  .narrow p { color: var(--color-gray-light); font-size: 1.05rem; margin-bottom: 1rem; }
+
+  .facts {
+    margin-top: 2rem;
+    display: grid;
+    gap: 1.25rem;
+  }
+  .facts div {
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-gray);
+  }
+  .facts dt {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-gold);
+    margin-bottom: 0.35rem;
+  }
+  .facts dd { color: var(--color-white); font-size: 1rem; }
+
+  .price-section { background: var(--color-dark); }
+  .price {
+    font-family: var(--font-display);
+    font-size: 4rem;
+    color: var(--color-gold);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+  .price-note {
+    color: var(--color-gray-light);
+    max-width: 460px;
+    margin: 0 auto 1.75rem;
+  }
+
+  .outline {
+    list-style: none;
+    max-width: 800px;
+    margin: 2rem auto 0;
+    display: grid;
+    gap: 1.25rem;
+  }
+  .outline li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.25rem;
+    background: var(--color-dark);
+    border: 1px solid var(--color-gray);
+    padding: 1.5rem;
+  }
+  .session-n {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    color: var(--color-gold);
+    line-height: 1;
+  }
+  .outline h3 { font-size: 1.15rem; margin-bottom: 0.4rem; }
+  .outline p { color: var(--color-gray-light); font-size: 0.95rem; }
+
+  @media (max-width: 640px) {
+    .outline li { grid-template-columns: 1fr; gap: 0.5rem; }
+  }
+</style>

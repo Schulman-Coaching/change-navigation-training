@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { PILOT } from '../../config';
+---
+
+<BaseLayout
+  title="You're in — Founding Pilot"
+  description="Payment received. The Zoom link for the founding pilot arrives by email."
+>
+  <Header />
+
+  <main>
+    <section class="page-hero">
+      <div class="container narrow">
+        <p class="kicker">Founding pilot</p>
+        <h1>You are in.</h1>
+        <p>
+          The payment went through. The Zoom link for these four sessions arrives by email, at the address you used at checkout.
+        </p>
+        <p>
+          Check that inbox. Check spam. If the link is not there within a day, write to
+          <a href="mailto:elie@cohortlearninglabs.org">elie@cohortlearninglabs.org</a>
+          and we will send it.
+        </p>
+        <dl class="facts">
+          <div>
+            <dt>Sessions</dt>
+            <dd>{PILOT.dates}</dd>
+          </div>
+          <div>
+            <dt>Time</dt>
+            <dd>{PILOT.time}. 75 minutes. Live on Zoom.</dd>
+          </div>
+        </dl>
+        <p class="next">
+          <a href="/">Back to the site</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero {
+    background: linear-gradient(135deg, #0a0805, var(--color-black));
+    padding: 5rem 1.5rem 4rem;
+    border-bottom: 3px solid var(--color-gold);
+  }
+  .narrow { max-width: 680px; }
+  .kicker {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--color-gold);
+    margin-bottom: 0.75rem;
+  }
+  h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 1rem; }
+  .narrow p { color: var(--color-gray-light); font-size: 1.05rem; margin-bottom: 1rem; }
+  .narrow a { color: var(--color-gold); }
+  .facts { margin: 2rem 0 1.5rem; display: grid; gap: 1rem; }
+  .facts dt {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--color-gold);
+    margin-bottom: 0.25rem;
+  }
+  .facts dd { color: var(--color-white); }
+  .next { margin-top: 2rem; }
+</style>
