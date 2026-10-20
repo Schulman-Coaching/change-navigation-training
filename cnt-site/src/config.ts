@@ -4,9 +4,9 @@
 export const SITE = {
   name: 'Change Navigation Training',
   domain: 'https://changenavigationtraining.com',
-  audience: 'Orthodox Jewish women',
+  audience: 'Open to everyone',
   tagline: 'Navigate Change With Confidence',
-  description: 'AI training and change-navigation workshops for Orthodox Jewish women. Build confidence, master AI tools, and navigate change — at every stage of life.',
+  description: 'AI training and change-navigation workshops for anyone navigating change. Build confidence, master AI tools, and move forward — at every stage of life.',
   accent: '#c8963e',
   accentDark: '#a67c2e',
   accentLight: '#d4a853',
@@ -23,7 +23,7 @@ export const SEGMENTS = [
     accent: '#3ec8a0',
     accentDark: '#2a8a6e',
     accentLight: '#5ed4b4',
-    description: 'For women beginning their journey with AI and change. Build career confidence, learn AI tools, and develop the skills to navigate your future.',
+    description: 'For anyone beginning their journey with AI and change. Build career confidence, learn AI tools, and develop the skills to navigate your future.',
   },
   {
     id: 'build',
@@ -35,7 +35,7 @@ export const SEGMENTS = [
     accent: '#c83e6b',
     accentDark: '#9e2e50',
     accentLight: '#e06090',
-    description: 'For women balancing careers, families, and community. Practical AI training to get hours back, reduce overwhelm, and build systems that work.',
+    description: 'For anyone balancing careers, families, and community. Practical AI training to get hours back, reduce overwhelm, and build systems that work.',
   },
   {
     id: 'lead',
@@ -47,7 +47,7 @@ export const SEGMENTS = [
     accent: '#c8963e',
     accentDark: '#a67c2e',
     accentLight: '#d4a853',
-    description: 'For women leading in career, community, and family. Master AI tools and change-navigation skills to lead with confidence.',
+    description: 'For anyone leading in career, community, and family. Master AI tools and change-navigation skills to lead with confidence.',
   },
   {
     id: 'renew',
@@ -59,7 +59,7 @@ export const SEGMENTS = [
     accent: '#8b9dc3',
     accentDark: '#6a7fa3',
     accentLight: '#a8b9d8',
-    description: 'For women in new chapters. Amplify your wisdom, navigate transitions, and mentor the next generation — with AI as your tool.',
+    description: 'For anyone in a new chapter. Amplify your wisdom, navigate transitions, and mentor the next generation — with AI as your tool.',
   },
 ];
 
@@ -67,7 +67,7 @@ export const NAV_ITEMS = [
   { label: 'Home', href: '/' },
   { label: 'Schedule', href: '/schedule/' },
   { label: 'Workshops', href: '/group-workshops/' },
-  { label: "Women's AI Confidence", href: '/womens-ai-confidence/' },
+  { label: 'AI Confidence', href: '/womens-ai-confidence/' },
   { label: 'Community', href: '/community/' },
   { label: 'Private Coaching', href: '/private-coaching/' },
   { label: 'Organizations', href: '/organizational-training/' },
@@ -85,7 +85,7 @@ export const STRIPE_LINKS = {
   membershipAnnual: 'https://buy.stripe.com/9B66oH6UV6lo4A6d3N4ow06',
   membershipSixMonth: 'https://buy.stripe.com/3cIcN54MN8twaYu8Nx4ow07',
 
-  // Women's AI Confidence
+  // AI Confidence program. URL kept so existing links still resolve.
   womensAIProgram: 'https://buy.stripe.com/5kQ5kDbbbdNQc2y1l54ow08',
 
   // Private Coaching
@@ -112,9 +112,9 @@ export const PILOT_PAYMENT_LINK_ID = 'plink_1USZ1bFL3AcM6AsqH4gzEAkE';
 // Founding cohort facts. Dates are the plan's estimate; confirm against a luach before promoting.
 // The Zoom link is not stored here. It is sent only in the post-payment email.
 export const PILOT = {
-  title: "Women's AI Confidence: 4-Week Pilot",
+  title: 'AI Confidence: 4-Week Pilot',
   priceLabel: '$149',
-  size: '8–15 women',
+  size: '8–15 people',
   sessions: '4 weekly live Zoom sessions, 75 minutes each',
   dates: 'Tuesdays, November 10, 17, 24, and December 1, 2026',
   time: '20:30 Israel time (13:30 ET)',

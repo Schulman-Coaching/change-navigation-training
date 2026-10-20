@@ -1,7 +1,7 @@
 ---
 title: "AI Tools for Work & Business"
 slug: "ai-tools-work-business"
-excerpt: "Practical AI for professional women. Learn to use AI tools for productivity, client communication, marketing, operations, and growth — without losing the human touch."
+excerpt: "Practical AI for professional life. Learn to use AI tools for productivity, client communication, marketing, operations, and growth — without losing the human touch."
 format: "multi-session"
 sessions: 6
 duration: "90 min each"
@@ -17,11 +17,11 @@ spots: 10
 audience: "lead"
 ---
 
-AI is changing how work gets done. Not someday. Now. This workshop is for women who want to use AI strategically — to work more effectively, grow a business, or prepare for what is coming in their industry.
+AI is changing how work gets done. Not someday. Now. This workshop is for anyone who wants to use AI strategically — to work more effectively, grow a business, or prepare for what is coming in their industry.
 
 ## Who This Is For
 
-Women who are comfortable with basic technology and want to integrate AI into their professional life. You might be running a business, working in an organization, or looking ahead to career opportunities. Some familiarity with AI tools (ChatGPT or similar) is helpful but not required.
+Anyone who is comfortable with basic technology and wants to integrate AI into their professional life. You might be running a business, working in an organization, or looking ahead to career opportunities. Some familiarity with AI tools (ChatGPT or similar) is helpful but not required.
 
 ## What You Will Learn
 

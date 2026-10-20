@@ -10,7 +10,7 @@ audience: "lead"
 
 Certainty is seductive. It feels like strength. It looks like confidence. It is neither of those things. Certainty is often just the absence of new information.
 
-The women who navigate change well are not the ones who know everything. They are the ones who have learned to be comfortable with not knowing.
+The people who navigate change well are not the ones who know everything. They are the ones who have learned to be comfortable with not knowing.
 
 ## What Not-Knowing Feels Like
 
@@ -26,7 +26,7 @@ There is another response to not-knowing. You can stay with it. You can say: I d
 
 This is not passivity. It is discipline. It takes more strength to hold a question open than to close it with a premature answer.
 
-The women in our workshops who make the most progress are not the ones who ask the most questions. They are the ones who let the questions sit. Who come back the next week and say: I have been thinking about what we discussed. I do not have an answer. But I have better questions.
+The people in our workshops who make the most progress are not the ones who ask the most questions. They are the ones who let the questions sit. Who come back the next week and say: I have been thinking about what we discussed. I do not have an answer. But I have better questions.
 
 Better questions are the goal. Not faster answers.
 

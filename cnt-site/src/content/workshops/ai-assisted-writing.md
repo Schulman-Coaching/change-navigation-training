@@ -21,7 +21,7 @@ AI can write. But should it? And how do you use it without losing your voice? Th
 
 ## Who This Is For
 
-Women who write — emails, reports, lesson plans, articles, WhatsApp messages to their community, content for a business. If words are part of your life, this workshop will change how you produce them.
+People who write — emails, reports, lesson plans, articles, messages to their community, content for a business. If words are part of your life, this workshop will change how you produce them.
 
 ## What You Will Learn
 

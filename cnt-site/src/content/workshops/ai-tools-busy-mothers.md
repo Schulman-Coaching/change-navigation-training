@@ -1,7 +1,7 @@
 ---
-title: "AI Tools for Busy Mothers"
+title: "AI Tools for Busy Parents"
 slug: "ai-tools-busy-mothers"
-excerpt: "Practical AI for women managing households, children, and careers. Meal planning, scheduling, communication, and organization — faster and with less mental load."
+excerpt: "Practical AI for people managing households, children, and careers. Meal planning, scheduling, communication, and organization — faster and with less mental load."
 format: "multi-session"
 sessions: 4
 duration: "90 min each"
@@ -22,7 +22,7 @@ You are running a household, raising children, and possibly working. The mental 
 
 ## Who This Is For
 
-Women 25-35 managing households with young children. You do not need AI experience. You need the desire to reclaim some of your evening.
+Anyone 25–35 managing a household with young children. You do not need AI experience. You need the desire to reclaim some of your evening.
 
 ## What You Will Learn
 

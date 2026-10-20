@@ -21,7 +21,7 @@ Your twenties and thirties are a cascade of transitions. Marriage. First child. 
 
 ## Who This Is For
 
-Women in the thick of life transitions — new marriage, new parenthood, career shifts, relocation. If you feel like you are constantly adjusting and never quite catching up, this is for you.
+Anyone in the thick of life transitions — a new marriage, new parenthood, career shifts, relocation. If you feel like you are constantly adjusting and never quite catching up, this is for you.
 
 ## What You Will Learn
 

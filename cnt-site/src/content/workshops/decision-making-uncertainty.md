@@ -21,7 +21,7 @@ Uncertainty is not a bug in decision-making. It is the normal condition. The que
 
 ## Who This Is For
 
-Women facing decisions where the information is incomplete — career moves, educational choices for children, community involvement, business direction. If you have ever felt paralyzed by "what if," this workshop is for you.
+Anyone facing decisions where the information is incomplete — career moves, educational choices for children, community involvement, business direction. If you have ever felt paralyzed by "what if," this workshop is for you.
 
 ## What You Will Learn
 
@@ -36,4 +36,4 @@ Every decision creates ripples. Some you expect. Some you do not. You will learn
 
 ## The Core Insight
 
-Most people wait for certainty before deciding. But certainty almost never arrives — it is manufactured after the fact, in hindsight. The women who navigate well are not the ones who always choose correctly. They are the ones who choose clearly, learn from outcomes, and keep moving.
+Most people wait for certainty before deciding. But certainty almost never arrives — it is manufactured after the fact, in hindsight. The people who navigate well are not the ones who always choose correctly. They are the ones who choose clearly, learn from outcomes, and keep moving.

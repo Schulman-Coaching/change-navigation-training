@@ -8,15 +8,15 @@ word_count: 440
 audience: "lead"
 ---
 
-The most common reason women give for not learning AI is that they are not ready. They want to wait until they have more time. Until the tools stabilize. Until someone tells them exactly where to start.
+The most common reason people give for not learning AI is that they are not ready. They want to wait until they have more time. Until the tools stabilize. Until someone tells them exactly where to start.
 
 This is reasonable. It is also expensive.
 
-Every month that passes is a month in which other people are learning. Not technical people. Not engineers. Other women. Women with the same demands on their time. Women who also felt not ready. They started anyway.
+Every month that passes is a month in which other people are learning. Not technical people. Not engineers. Other people. People with the same demands on their time. People who also felt not ready. They started anyway.
 
 The gap is not between you and the technology. The technology is not going anywhere. The gap is between you and the version of yourself who has already built the skill. Every month of waiting widens that gap.
 
-There is a compounding effect to early adoption that is hard to see from the outside. The woman who started using AI six months ago is not just six months ahead. She has integrated it into her workflows. She has developed instincts about when to use it and when not to. She has made the mistakes and learned from them. She is operating at a different level — not because she is smarter, but because she started sooner.
+There is a compounding effect to early adoption that is hard to see from the outside. The person who started using AI six months ago is not just six months ahead. They have integrated it into their workflows. They have developed instincts about when to use it and when not to. They have made the mistakes and learned from them. They are operating at a different level — not because they are smarter, but because they started sooner.
 
 This is not a race. There is no finish line. But there is a cost to waiting that is paid in lost time, lost momentum, and lost confidence. The confidence gap grows as the skill gap grows. The longer you wait, the more the internal voice says "see, this is not for you." That voice is wrong. But it gets louder.
 

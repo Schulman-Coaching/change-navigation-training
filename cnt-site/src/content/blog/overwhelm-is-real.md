@@ -8,7 +8,7 @@ word_count: 460
 audience: "build"
 ---
 
-The modern frum woman in her late twenties or early thirties is managing a load that would have required a staff a generation ago. Work. Young children. Household. Community. Extended family. And somewhere in there, a self — with interests, ambitions, and a need for sleep that is not being met.
+Someone in their late twenties or early thirties is managing a load that would have required a staff a generation ago. Work. Young children. Household. Community. Extended family. And somewhere in there, a self — with interests, ambitions, and a need for sleep that is not being met.
 
 The advice is usually about doing less. Saying no. Setting boundaries. Good advice. Insufficient. The math does not work. There are simply more tasks than hours.
 
@@ -18,7 +18,7 @@ AI does not judge you. It does not get tired. It does not need gratitude. It wil
 
 This is not about becoming a tech person. It is about acknowledging that you have been running a complex operation solo, and there is a tool that can take some of the load.
 
-## Where AI Fits Into a Frum Woman's Week
+## Where AI Fits Into the Week
 
 Sunday: meal plan and grocery list. AI does it in ninety seconds.
 
@@ -28,7 +28,7 @@ Tuesday: school communication. Permission slips, teacher notes, schedule coordin
 
 Wednesday: personal project or business. AI helps with content, research, or planning while the kids are in bed.
 
-Thursday: Shabbos prep. AI handles the lists, the schedule, the reminders.
+Thursday: the week's prep. AI handles the lists, the schedule, the reminders.
 
 Friday: you have actual time back. Not theory. Practice.
 

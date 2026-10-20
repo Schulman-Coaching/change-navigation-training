@@ -31,7 +31,7 @@ const EMAILS = [
   <a href="${SITE_URL}${p.link}" style="display:inline-block;padding:14px 28px;background:#c8963e;color:#0a0a0a;text-decoration:none;font-weight:600;font-size:15px;">${p.linkText} &rarr;</a>
   <p style="margin-top:32px;font-size:12px;color:#555;">If you want to skip ahead: <a href="${SITE_URL}/contact/" style="color:#c8963e;">Book a Free Call</a></p>
   <hr style="border-color:#222;margin:32px 0;">
-  <p style="font-size:11px;color:#444;">Change Navigation Training — Helping Orthodox Jewish women navigate change with confidence.</p>
+  <p style="font-size:11px;color:#444;">Change Navigation Training — Helping people navigate change with confidence.</p>
 </div>`,
   },
   {
@@ -52,10 +52,10 @@ const EMAILS = [
     subject: 'Why learning alone is harder than it needs to be',
     html: () => `
 <div style="max-width:600px;margin:0 auto;font-family:Arial,sans-serif;color:#e0e0e0;background:#0a0a0a;padding:40px 20px;">
-  <p style="font-size:16px;line-height:1.6;">Most women who try to learn AI on their own stop. Not because they are not capable. Because they hit a wall and have no one to ask.</p>
-  <p style="font-size:16px;line-height:1.6;">The question that stumps you at 10 PM is the same question three other women had that week. In a group, someone asks out loud and everyone learns. Alone, you close the laptop and tell yourself you'll try again tomorrow.</p>
+  <p style="font-size:16px;line-height:1.6;">Most people who try to learn AI on their own stop. Not because they are not capable. Because they hit a wall and have no one to ask.</p>
+  <p style="font-size:16px;line-height:1.6;">The question that stumps you at 10 PM is the same question three other people had that week. In a group, someone asks out loud and everyone learns. Alone, you close the laptop and tell yourself you'll try again tomorrow.</p>
   <p style="font-size:16px;line-height:1.6;">This is not a personal failing. It is structural. Learning anything new — especially something carrying cultural weight like "technology" — is harder in isolation. The discomfort compounds. The voice that says "maybe this is not for me" gets louder.</p>
-  <p style="font-size:16px;line-height:1.6;">In a peer circle, that voice gets quieter. Not because someone talks you out of it. Because you hear other women say the same thing. And you realize: it is not about you. It is about how learning works.</p>
+  <p style="font-size:16px;line-height:1.6;">In a peer circle, that voice gets quieter. Not because someone talks you out of it. Because you hear other people say the same thing. And you realize: it is not about you. It is about how learning works.</p>
   <p style="font-size:16px;line-height:1.6;">Community is not a nice-to-have. It is the mechanism.</p>
   <a href="${SITE_URL}/community/" style="display:inline-block;padding:14px 28px;background:#c8963e;color:#0a0a0a;text-decoration:none;font-weight:600;font-size:15px;margin-top:16px;">See Peer Circles &rarr;</a>
   <hr style="border-color:#222;margin:32px 0;">
@@ -70,7 +70,7 @@ const EMAILS = [
   <p style="font-size:16px;line-height:1.6;">Four weeks later, she was using AI to plan lessons, draft emails, and help her kids with research.</p>
   <p style="font-size:16px;line-height:1.6;">She told us: "The shift was not in my technical skill. It was in my sense of what was possible."</p>
   <p style="font-size:16px;line-height:1.6;">That is the part no one talks about. Learning AI does not just change what you can do. It changes what you believe you can do. That shift is bigger than any single tool.</p>
-  <p style="font-size:16px;line-height:1.6;">It comes from doing. From trying something in a room with other women trying too. From seeing someone else hesitate and push through. From realizing the discomfort is temporary — and the confidence lasts.</p>
+  <p style="font-size:16px;line-height:1.6;">It comes from doing. From trying something in a room with other people trying too. From seeing someone else hesitate and push through. From realizing the discomfort is temporary — and the confidence lasts.</p>
   <p style="font-size:16px;line-height:1.6;">First session: $35. Not a discount. An invitation.</p>
   <a href="${SITE_URL}/group-workshops/" style="display:inline-block;padding:14px 28px;background:#c8963e;color:#0a0a0a;text-decoration:none;font-weight:600;font-size:15px;margin-top:16px;">Try a Workshop &mdash; $35 &rarr;</a>
   <hr style="border-color:#222;margin:32px 0;">
@@ -84,7 +84,7 @@ const EMAILS = [
   <p style="font-size:16px;line-height:1.6;">Twelve days. Four emails. If you have read this far, something is resonating.</p>
   <p style="font-size:16px;line-height:1.6;">Here is what I suggest — not as a pitch, but as a genuine next step:</p>
   <p style="font-size:16px;line-height:1.6;">Book a free 20-minute call. We'll talk about where you are. What you are navigating. What feels hard. What feels possible. I'll ask questions. You'll answer honestly. At the end, I'll tell you whether CNT is a fit — and if it is not, I'll tell you that too.</p>
-  <p style="font-size:16px;line-height:1.6;">No pressure. No urgency. No countdown timer. Just a conversation with someone who has watched enough women navigate change to know what the early stages look like.</p>
+  <p style="font-size:16px;line-height:1.6;">No pressure. No urgency. No countdown timer. Just a conversation with someone who has watched enough people navigate change to know what the early stages look like.</p>
   <p style="font-size:16px;line-height:1.6;">If you are not ready, that is fine. Keep reading the blog. The door stays open.</p>
   <p style="font-size:16px;line-height:1.6;">But if you are curious enough for 20 minutes — this is the next step.</p>
   <a href="${SITE_URL}/contact/" style="display:inline-block;padding:14px 28px;background:#c8963e;color:#0a0a0a;text-decoration:none;font-weight:600;font-size:15px;margin-top:16px;">Book Your Free Call &rarr;</a>
