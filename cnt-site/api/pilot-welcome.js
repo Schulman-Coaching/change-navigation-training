@@ -2,14 +2,14 @@
  * Post-payment Zoom link for the founding pilot.
  *
  * Proposed path (nothing sends until Elie sets env vars — no secrets in this file):
- * 1. Create the $149 Stripe Payment Link. Paste it into STRIPE_LINKS.pilotFounding.
+ * 1. STRIPE_LINKS.pilotFounding is https://buy.stripe.com/9B628rdjjeRUgiO3td4ow0F
  * 2. Set that link's after-payment redirect to
  *    https://changenavigationtraining.com/pilot/confirmed/
  * 3. In Stripe, add a webhook endpoint: https://changenavigationtraining.com/api/pilot-welcome
  *    Event: checkout.session.completed
- * 4. Set these Vercel env vars (do not commit the values):
+ * 4. Set these Vercel env vars (do not commit secrets):
  *      STRIPE_WEBHOOK_SECRET   signing secret from the webhook endpoint
- *      PILOT_PAYMENT_LINK_ID   the plink_... id, so membership checkouts are ignored
+ *      PILOT_PAYMENT_LINK_ID   plink_1USZ1bFL3AcM6AsqH4gzEAkE
  *      PILOT_ZOOM_URL          the Zoom link buyers should receive
  *      RESEND_API_KEY          already set
  *      NOTIFY_EMAIL            already set

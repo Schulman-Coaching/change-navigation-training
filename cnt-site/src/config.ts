@@ -99,10 +99,15 @@ export const STRIPE_LINKS = {
   // Digital Products
   toolkitChangeReadiness: 'https://buy.stripe.com/cNicN5ennaBE1nUbZJ4ow0y',
 
-  // Founding pilot ($149). TODO: Elie — create the Stripe Payment Link and paste it here.
-  // Set that link's after-payment redirect to https://changenavigationtraining.com/pilot/confirmed/
-  pilotFounding: 'TODO',
+  // Founding pilot ($149).
+  // After payment, redirect to https://changenavigationtraining.com/pilot/confirmed/
+  // PILOT_PAYMENT_LINK_ID=plink_1USZ1bFL3AcM6AsqH4gzEAkE
+  pilotFounding: 'https://buy.stripe.com/9B628rdjjeRUgiO3td4ow0F',
 };
+
+// Payment Link id for the founding pilot. Set this as the Vercel env var
+// PILOT_PAYMENT_LINK_ID so api/pilot-welcome.js ignores other checkouts.
+export const PILOT_PAYMENT_LINK_ID = 'plink_1USZ1bFL3AcM6AsqH4gzEAkE';
 
 // Founding cohort facts. Dates are the plan's estimate; confirm against a luach before promoting.
 export const PILOT = {
