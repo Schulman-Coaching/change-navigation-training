@@ -17,17 +17,44 @@ export interface Props {
   href: string;
   text?: string;
   variant?: 'primary' | 'outline';
+  /** Used when href is not a live https Payment Link (for example the TODO pilot link). */
+  pendingHref?: string;
 }
 
 const {
   href,
   text = 'Pay Now',
   variant = 'primary',
+  pendingHref = '/contact/?interest=pilot',
 } = Astro.props;
 
 const classNames = variant === 'outline' ? 'btn btn-outline' : 'btn';
+const payable = typeof href === 'string' && href.startsWith('https://');
 ---
 
-<a href={href} class={classNames} target="_blank" rel="noopener">
-  {text}
-</a>
+{payable ? (
+  <a href={href} class={classNames} target="_blank" rel="noopener">
+    {text}
+  </a>
+) : (
+  <span class="stripe-pending">
+    <a href={pendingHref} class={classNames}>{text}</a>
+    <p class="stripe-pending-note">TODO: the Stripe Payment Link is not connected yet. This opens the contact form.</p>
+  </span>
+)}
+
+<style>
+  .stripe-pending {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    max-width: 360px;
+  }
+
+  .stripe-pending-note {
+    font-size: 0.8rem;
+    color: var(--color-gray-light);
+    line-height: 1.4;
+  }
+</style>

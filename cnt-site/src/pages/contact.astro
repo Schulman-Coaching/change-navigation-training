@@ -65,6 +65,9 @@ import { CALENDLY_LINKS } from '../config';
                   <option value="community">Joining a peer circle</option>
                   <option value="private">Private coaching</option>
                   <option value="organizational">Organizational training</option>
+                  <option value="call">A free consultation</option>
+                  <option value="coaching">A coaching discovery call</option>
+                  <option value="pilot">The founding pilot cohort</option>
                   <option value="other">Other</option>
                 </select>
               </div>
@@ -168,6 +171,23 @@ import { CALENDLY_LINKS } from '../config';
 </style>
 
 <script>
+  const interestPresets = {
+    call: 'I would like a free consultation. A time that works for me: ',
+    coaching: 'I would like a coaching discovery call. A time that works for me: ',
+    pilot: 'I want a seat in the founding pilot (Tuesdays Nov 10, 17, 24, and Dec 1, 2026). ',
+  };
+  const params = new URLSearchParams(window.location.search);
+  const interestParam = params.get('interest');
+  const interestField = document.getElementById('interest');
+  const messageField = document.getElementById('message');
+  if (interestParam && interestField instanceof HTMLSelectElement) {
+    const match = [...interestField.options].some((option) => option.value === interestParam);
+    if (match) interestField.value = interestParam;
+  }
+  if (interestParam && messageField instanceof HTMLTextAreaElement && !messageField.value && interestPresets[interestParam]) {
+    messageField.value = interestPresets[interestParam];
+  }
+
   document.getElementById('contact-form').addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = document.getElementById('submit-btn');

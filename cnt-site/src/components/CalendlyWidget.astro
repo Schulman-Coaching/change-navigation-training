@@ -17,6 +17,8 @@ export interface Props {
   mode?: 'inline' | 'popup';
   text?: string;
   height?: string;
+  /** Contact-form interest value used when `url` is not a live https link. */
+  fallbackInterest?: string;
 }
 
 const {
@@ -24,29 +26,43 @@ const {
   mode = 'inline',
   text = 'Schedule a Session',
   height = '650px',
+  fallbackInterest = 'call',
 } = Astro.props;
+
+const liveUrl = typeof url === 'string' && url.startsWith('https://') ? url : '';
+const fallbackHref = `/contact/?interest=${encodeURIComponent(fallbackInterest)}`;
 ---
 
-{mode === 'inline' && (
+{liveUrl && mode === 'inline' && (
   <div
     class="calendly-inline-widget"
-    data-url={url}
+    data-url={liveUrl}
     style={`min-width:320px;height:${height};`}
   >
     <div class="calendly-placeholder">
       <p class="calendly-placeholder-title">Schedule a Session</p>
       <p class="calendly-placeholder-text">Loading scheduling calendar&hellip;</p>
       <p class="calendly-placeholder-note">
-        If the calendar does not load, <a href={url} target="_blank" rel="noopener">open scheduling page</a>.
+        If the calendar does not load, <a href={liveUrl} target="_blank" rel="noopener">open scheduling page</a>.
       </p>
     </div>
   </div>
 )}
 
-{mode === 'popup' && (
-  <a href={url} class="btn calendly-popup-link" target="_blank" rel="noopener">
+{liveUrl && mode === 'popup' && (
+  <a href={liveUrl} class="btn calendly-popup-link" target="_blank" rel="noopener">
     {text}
   </a>
+)}
+
+{!liveUrl && (
+  <div class="calendly-fallback">
+    <p class="calendly-placeholder-title">The calendar is offline</p>
+    <p class="calendly-placeholder-text">
+      The booking link on this page no longer opens. Write to us and name the call you want. We will answer with a time.
+    </p>
+    <a href={fallbackHref} class="btn">{text === 'Schedule a Session' ? 'Request a time' : text}</a>
+  </div>
 )}
 
 <style>
@@ -93,5 +109,19 @@ const {
   .calendly-placeholder-note a {
     color: var(--color-gold);
     text-decoration: underline;
+  }
+
+  .calendly-fallback {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    background: var(--color-dark);
+    border: 1px solid var(--color-gray);
+    border-left: 3px solid var(--color-gold);
+  }
+
+  .calendly-fallback .calendly-placeholder-text {
+    margin-bottom: 1.25rem;
   }
 </style>

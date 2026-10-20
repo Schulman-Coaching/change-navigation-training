@@ -98,13 +98,43 @@ export const STRIPE_LINKS = {
 
   // Digital Products
   toolkitChangeReadiness: 'https://buy.stripe.com/cNicN5ennaBE1nUbZJ4ow0y',
+
+  // Founding pilot ($149). TODO: Elie — create the Stripe Payment Link and paste it here.
+  // Set that link's after-payment redirect to https://changenavigationtraining.com/pilot/confirmed/
+  pilotFounding: 'TODO',
 };
 
-// Calendly Links
+// Founding cohort facts. Dates are the plan's estimate; confirm against a luach before promoting.
+export const PILOT = {
+  title: "Women's AI Confidence: 4-Week Pilot",
+  priceLabel: '$149',
+  size: '8–15 women',
+  sessions: '4 weekly live Zoom sessions, 75 minutes each',
+  dates: 'Tuesdays, November 10, 17, 24, and December 1, 2026',
+  time: '20:30 Israel time (13:30 ET)',
+  closes: 'November 6, 2026',
+  credit: 'The $149 is credited toward a membership ($69–$89/mo) if you join within 30 days.',
+};
+
+// Calendly. Empty string = not bookable; CalendlyWidget falls back to the contact form.
+//
+// Confirmed 2026-10-20:
+// - calendly.com/elie-schulman and every /elie-schulman/... event return HTTP 404.
+// - Repo history only ever stored elie-schulman links (including an older
+//   calendly.com/elie-schulman/new-meeting-1). None of them resolve.
+// - The connected Calendly account is calendly.com/andrea-schulman-coaching.
+//   These event types exist there and are turned off, so they have no bookable times:
+//     /free-20-minute-consultation
+//     /coaching-discovery-call
+//     /workshop-discovery-call
+// - One active event is bookable: /consultation-with-elie (30 min, free).
+//   Its description is a Cohort Learning Labs group placement call, not the
+//   CNT free consultation or the coaching discovery call, so it is not wired in.
+// TODO: Elie — paste a live scheduling URL for each key below.
 export const CALENDLY_LINKS = {
-  consultation: 'https://calendly.com/elie-schulman/free-20-minute-consultation',
-  workshopBooking: 'https://calendly.com/elie-schulman/workshop-discovery-call',
-  coachingSession: 'https://calendly.com/elie-schulman/coaching-discovery-call',
+  consultation: '', // TODO: free consultation
+  workshopBooking: '', // TODO: workshop discovery call
+  coachingSession: '', // TODO: coaching discovery call
 };
 
-export const CALENDLY_USERNAME = 'elie-schulman';
+export const CALENDLY_USERNAME = 'andrea-schulman-coaching';

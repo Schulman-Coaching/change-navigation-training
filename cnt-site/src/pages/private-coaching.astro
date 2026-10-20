@@ -65,7 +65,7 @@ import { STRIPE_LINKS, CALENDLY_LINKS } from '../config';
       <div class="container">
         <h2>Ready to Begin?</h2>
         <p style="color: var(--color-gray-light); margin: 1rem 0 1.5rem;">Schedule a free 20-minute call to discuss what you need and how coaching can help.</p>
-                <CalendlyWidget url={CALENDLY_LINKS.coachingSession} text="Book a Consultation" mode="popup" />
+                <CalendlyWidget url={CALENDLY_LINKS.coachingSession} text="Request a coaching call" mode="popup" fallbackInterest="coaching" />
       </div>
     </section>
 
